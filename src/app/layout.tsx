@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/custom-hooks/useNavbar";
 import { LayoutProvider } from "../../context/LayoutContext";
+import { Sidebar } from "@/components/custom-hooks/useSidebar";
 
 
 const inter = Poppins({
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: any) {
       <body className={inter.className}>
         <LayoutProvider>
           <Navbar />
+          <Sidebar />
           {children}
         </LayoutProvider>
       </body>
