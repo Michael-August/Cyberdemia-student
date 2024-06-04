@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
+
 import { useLayoutContext } from '../../context/LayoutContext';
 
 const Home = () => {

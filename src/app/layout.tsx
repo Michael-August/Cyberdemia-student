@@ -1,8 +1,11 @@
-import { Poppins } from 'next/font/google';
 import './globals.css';
+
+import { Poppins } from 'next/font/google';
+
 import { Navbar } from '@/components/custom-hooks/useNavbar';
-import { LayoutProvider } from '../../context/LayoutContext';
 import { Sidebar } from '@/components/custom-hooks/useSidebar';
+
+import { LayoutProvider } from '../../context/LayoutContext';
 
 const inter = Poppins({
   weight: ['400', '700'],
