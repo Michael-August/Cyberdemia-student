@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\" --log-level error",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "yarn format && eslint . --ext .js,.jsx,.ts,.tsx --fix",
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",

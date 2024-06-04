@@ -1,7 +1,7 @@
 "use client"
 import { useLayoutContext } from "../../../context/LayoutContext";
 import DashboardNavbar from "../ui/DashboardNavbar";
-import WebNavbar from "../ui/webNavbar";
+import WebNavbar from "../ui/WebNavbar";
 
 
 export const Navbar = () => {
