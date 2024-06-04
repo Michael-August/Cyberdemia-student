@@ -1,12 +1,13 @@
 import React from 'react'
 import Loader from './Loader'
 
-function Navbar() {
+function WebNavbar() {
     return (
         <div className="w-[100vw] bg-cp-primary text-white shadow-md z-[10000] h-[60px]">
-            <Loader />
+            {/* <Loader /> */}
+            hi
         </div>
     )
 }
 
-export default Navbar
+export default WebNavbar
