@@ -1,8 +1,11 @@
 import React from 'react'
+import Loader from './Loader'
 
 function Navbar() {
     return (
-        <div>Navbar</div>
+        <div className="w-[100vw] bg-cp-primary text-white shadow-md z-[10000] h-[60px]">
+            <Loader />
+        </div>
     )
 }
 
