@@ -7,7 +7,7 @@ import { Sidebar } from '@/components/custom-hooks/useSidebar';
 
 import { LayoutProvider } from '../../context/LayoutContext';
 
-const inter = Poppins({
+const poppins = Poppins({
   weight: ['400', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <LayoutProvider>
           <Navbar />
           <Sidebar />
