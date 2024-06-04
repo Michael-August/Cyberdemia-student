@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function CourseSidebar() {
-    return (
-        <div>CourseSidebar</div>
-    )
+  return <div>CourseSidebar</div>;
 }
 
-export default CourseSidebar
+export default CourseSidebar;
