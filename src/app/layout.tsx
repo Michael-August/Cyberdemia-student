@@ -2,8 +2,7 @@ import './globals.css';
 
 import { Poppins } from 'next/font/google';
 
-import { Navbar } from '@/components/custom-hooks/useNavbar';
-import { Sidebar } from '@/components/custom-hooks/useSidebar';
+import { RootLayoutInner } from '@/components/custom-hooks/useInnerLayout';
 
 import { LayoutProvider } from '../../context/LayoutContext';
 
@@ -23,9 +22,7 @@ export default function RootLayout({ children }: any) {
     <html lang="en">
       <body className={poppins.className}>
         <LayoutProvider>
-          <Navbar />
-          <Sidebar />
-          {children}
+          <RootLayoutInner>{children}</RootLayoutInner>
         </LayoutProvider>
       </body>
     </html>
