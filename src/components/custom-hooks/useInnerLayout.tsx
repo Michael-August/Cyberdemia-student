@@ -6,8 +6,6 @@ import { Sidebar } from "./useSidebar";
 export function RootLayoutInner({ children }: any) {
   const { state } = useLayoutContext();
 
-  console.log(state, "state");
-
   let dynamicClass = "";
 
   if (state.navbarType !== "none") {
