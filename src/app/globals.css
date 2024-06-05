@@ -1,4 +1,4 @@
-/* @tailwind base; */
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -56,15 +56,6 @@ body {
   color: #461934;
   transform: rotateY(70deg);
   animation-delay: 0.4s;
-}
-
-.mobile-menu {
-  transform: translateX(-100%);
-  transition: all 0.3s ease-in;
-}
-
-.mobile-menu.open {
-  transform: translateX(0);
 }
 
 @keyframes rotate {

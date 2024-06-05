@@ -1,21 +1,52 @@
-import React from 'react';
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Links from "../links/Links";
+import { IoArrowForward } from "react-icons/io5";
 
-function WebNavbar() {
-  return (
-    <div className="w-full flex items-center justify-center gap-[10px] py-[13px] px-4 md:px-0 bg-cp-primary text-white shadow-md z-[10000] h-[60px]">
-      <img src="/icons/notification1.png" className="w-[26.5px] md:w-[32px]" />
-      <div className="intro text-center">
-        <span className="text-xs md:text-sm font-extrabold">
-          We are excited to announce the launch of Cyber Security &
-          Infrastructure Engineering / SOC Management courser.
-        </span>
-        <span className="text-xs ml-2 md:text-sm font-medium">
-          View Course Details
-        </span>
-      </div>
-      <img src="/icons/ArrowLeft.png" className="w-[18.25px] md:w-[24px]" />
-    </div>
-  );
-}
+const WebNavbar: React.FC = () => {
+    const [toggle, setToggle] = useState(false);
+
+    return (
+        <div className="w-[100vw] text-white z-[10000]">
+            <div className="bg-cp-primary flex justify-center items-center py-6 h-[10px] text-[12px] gap-4">
+                <Image
+                    src="/images/notification.svg"
+                    alt="Description of image"
+                    width={28}
+                    height={28}
+                />
+                <span>
+                    We are excited to announce the launch of Cyber Security & Infrastructure Engineering / SOC Management course.
+                </span>
+                <span className="underline text-gray-200">View Course Details</span>
+                <IoArrowForward size={22} />
+            </div>
+            <div className="flex py-8 h-[20px] border-b items-center justify-between px-20 border-pink-200 ">
+                <Link href="/">
+                    <Image
+                        src="/images/logo.svg"
+                        alt="Description of image"
+                        width={130}
+                        height={130}
+                    />
+                </Link>
+                <div className="flex justify-center items-center gap-8">
+                    <ul className="flex">
+                        <Links direction="row" toggle={toggle} setToggle={setToggle} />
+                    </ul>
+                    <div className="text-cp-secondary font-extrabold text-[12px] border-[1.5px] border-[#AC1D7E] px-2 py-1">
+                        Log in
+                    </div>
+                    <div className="text-white bg-[#2BDE48] font-extrabold text-[12px] px-2 py-1.5 flex justify-center items-center">
+                        Apply Now
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    );
+};
 
 export default WebNavbar;
