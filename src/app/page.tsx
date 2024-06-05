@@ -17,9 +17,7 @@ const Home = () => {
 
   return (
     <main>
-      <div className="banner">
-        
-      </div>
+      <div className="banner"></div>
     </main>
   );
 };
