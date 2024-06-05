@@ -39,6 +39,7 @@ body {
   height: 48px;
   color: #da7dbd;
 }
+
 .loader:before,
 .loader:after {
   content: "";
