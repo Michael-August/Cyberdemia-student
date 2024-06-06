@@ -12,6 +12,8 @@ const config: Config = {
         cp: {
           primary: '#461934',
           secondary: '#AC1D7E',
+          accent: '#8F185E',
+        
         },
       },
       backgroundImage: {
