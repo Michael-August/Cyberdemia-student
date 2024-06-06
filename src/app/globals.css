@@ -59,6 +59,16 @@ body {
   animation-delay: 0.4s;
 }
 
+.secion-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: #AC1D7E;
+  width: 12%;
+}
+
 @keyframes rotate {
   0% {
     transform: translate(-50%, -50%) rotateZ(0deg);
