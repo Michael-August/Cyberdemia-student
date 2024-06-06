@@ -178,6 +178,19 @@ const Home = () => {
             <span className='text-lg text-[#000000B2] leading-[25px]'>Training is essential to preparing the cybersecurity workforce of tomorrow, and for keeping current cybersecurity workers up-to-date on skills and evolving threats. Our vast cybersecurity training portfolio can help you and your team build fundamental to advanced cybersecurity techniques, prepare for top industry-recognized certifications or master product-specific skills. Your in-house team will learn to approach cybersecurity offensively and defensively through real-world examples and exercises, hands-on labs and expert instruction. Where they will gain knowledge to close skillset gaps, meet and maintain mandates and sustain and retain a highly-qualified workforce to secure your critical systems and assets.</span>
           </div>
         </div>
+        <div className="tab-area">
+          <div className="tabs relative flex items-center gap-8 border-b border-solid border-cp-secondary pb-4">
+            <div className="tab cursor-pointer active font-semibold text-[20px] text-[#00000099]">
+              <span>Available</span>
+            </div>
+            <div className="tab cursor-pointer font-semibold text-[20px] text-[#00000099]">
+              <span>Coming Soon</span>
+            </div>
+          </div>
+          <div className="tab-contents">
+
+          </div>
+        </div>
       </div>
     </main>
   );
