@@ -1,28 +1,28 @@
-'use client';
-import { createContext, useReducer, ReactNode, useContext } from 'react';
+"use client";
+import { createContext, useReducer, ReactNode, useContext } from "react";
 
 type LayoutState = {
-  navbarType: 'none' | 'webNavbar' | 'dashboardNavbar';
-  sidebarType: 'none' | 'defaultSidebar' | 'courseSideBar';
+  navbarType: "none" | "webNavbar" | "dashboardNavbar";
+  sidebarType: "none" | "defaultSidebar" | "courseSideBar";
 };
 
 const initialState: LayoutState = {
-  navbarType: 'webNavbar',
-  sidebarType: 'none',
+  navbarType: "none",
+  sidebarType: "none",
 };
 
 type LayoutAction =
-  | { type: 'SET_NAVBAR'; navbarType: LayoutState['navbarType'] }
-  | { type: 'SET_SIDEBAR'; sidebarType: LayoutState['sidebarType'] };
+  | { type: "SET_NAVBAR"; navbarType: LayoutState["navbarType"] }
+  | { type: "SET_SIDEBAR"; sidebarType: LayoutState["sidebarType"] };
 
 const layoutReducer = (
   state: LayoutState,
-  action: LayoutAction,
+  action: LayoutAction
 ): LayoutState => {
   switch (action.type) {
-    case 'SET_NAVBAR':
+    case "SET_NAVBAR":
       return { ...state, navbarType: action.navbarType };
-    case 'SET_SIDEBAR':
+    case "SET_SIDEBAR":
       return { ...state, sidebarType: action.sidebarType };
     default:
       return state;
@@ -46,7 +46,7 @@ export const LayoutProvider = ({ children }: { children: ReactNode }) => {
 export const useLayoutContext = () => {
   const context = useContext(LayoutContext);
   if (!context) {
-    throw new Error('useLayoutContext must be used within a LayoutProvider');
+    throw new Error("useLayoutContext must be used within a LayoutProvider");
   }
   return context;
 };

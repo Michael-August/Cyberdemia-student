@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { ReactNode } from 'react';
 
@@ -16,18 +15,22 @@ const SideItems: React.FC<SideItemsProps> = ({ img: Icon, link, children }) => {
   };
 
   return (
-    <Link href={link}>
-      <div
-        className={`py-3 items-center  w-full hover:bg-sa-light font-bold cursor-pointer p-5 mb-2 flex gap-5 ${isLinkActive(link) ? 'bg-white text-cp-primary' : ''}`}
+    <div
+      className={`py-3 items-center w-full hover:bg-sa-light font-bold cursor-pointer p-5 mb-2 flex gap-5 ${
+        isLinkActive(link) ? 'bg-white text-cp-primary' : 'text-white'
+      }`}
+    >
+      <span
+        className={
+          isLinkActive(link)
+            ? 'text-cp-primary text-[20px]'
+            : 'text-white text-[20px]'
+        }
       >
-        <span
-          className={`text-white text-[20px] ${isLinkActive(link) ? 'text-cp-primary' : ''}`}
-        >
-          <Icon />
-        </span>
-        <div>{children}</div>
-      </div>
-    </Link>
+        <Icon />
+      </span>
+      <div>{children}</div>
+    </div>
   );
 };
 
