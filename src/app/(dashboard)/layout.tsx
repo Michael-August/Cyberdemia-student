@@ -19,7 +19,7 @@ function Layout({ children }: any) {
   }, [dispatch]);
 
   return (
-    <div className="">
+    <div className=" overflow-y-auto">
       <Image
         src="/images/backgroundImage.svg"
         alt="background image"

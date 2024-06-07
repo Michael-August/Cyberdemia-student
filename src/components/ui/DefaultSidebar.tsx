@@ -2,7 +2,7 @@
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { CgProfile } from 'react-icons/cg';
 import { GoBook } from 'react-icons/go';
 import { MdChat } from 'react-icons/md';
@@ -22,11 +22,6 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const isSmallScreen = useMediaQuery('(max-width:768px)');
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   const sidebarLinks = [
     { img: PiHouseFill, link: '/home', text: 'Home' },
@@ -66,24 +61,17 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           </div>
         </div>
         <div className="mt-10">
-          {isClient &&
-            sidebarLinks.map((link, index) => (
-              <Link key={index} href={link.link}>
-                <div onClick={onClose}>
-                  <SideItems img={link.img} link={link.link}>
-                    {link.text}
-                  </SideItems>
-                </div>
-              </Link>
-            ))}
+          {sidebarLinks.map((link, index) => (
+            <Link key={index} href={link.link}>
+              <div onClick={onClose}>
+                <SideItems img={link.img} link={link.link}>
+                  {link.text}
+                </SideItems>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
-      {isClient && (
-        <div
-          className={`fixed inset-0 ${isOpen ? 'block' : 'hidden'} md:hidden`}
-          onClick={onClose}
-        ></div>
-      )}
     </>
   );
 };
