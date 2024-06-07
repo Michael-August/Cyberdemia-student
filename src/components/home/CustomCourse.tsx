@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { GoArrowRight } from "react-icons/go";
+import Image from 'next/image';
+import React from 'react';
+import { GoArrowRight } from 'react-icons/go';
 
 function CustomCourse() {
   return (

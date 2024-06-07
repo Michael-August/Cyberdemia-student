@@ -1,10 +1,11 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-import { useLayoutContext } from "../../../context/LayoutContext";
-import DashboardNavbar from "../ui/DashboardNavbar";
-import Sidebar from "../ui/DefaultSidebar";
-// import Loader from "../ui/Loader";
+'use client';
+import React, { useEffect, useState } from 'react';
+
+import { Skeleton } from '@/components/ui/skeleton';
+
+import { useLayoutContext } from '../../../context/LayoutContext';
+import DashboardNavbar from '../ui/DashboardNavbar';
+import Sidebar from '../ui/DefaultSidebar';
 interface RootLayoutInnerProps {
   children: React.ReactNode;
 }
@@ -22,14 +23,14 @@ export function RootLayoutInner({ children }: RootLayoutInnerProps) {
     setSidebarOpen(false);
   };
 
-  let dynamicClass = "";
+  let dynamicClass = '';
 
-  if (state.navbarType !== "none") {
-    dynamicClass += "md:mt-[80px]";
+  if (state.navbarType !== 'none') {
+    dynamicClass += 'md:mt-[80px]';
   }
 
-  if (state.sidebarType !== "none") {
-    dynamicClass += " md:ml-[250px] md:mr-[30px]";
+  if (state.sidebarType !== 'none') {
+    dynamicClass += ' md:ml-[250px] md:mr-[30px]';
   }
 
   return (
