@@ -1,25 +1,25 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import React, { useEffect } from 'react';
+import Image from "next/image";
+import React, { useEffect } from "react";
 
-import { useLayoutContext } from '../../../context/LayoutContext';
+import { useLayoutContext } from "../../../context/LayoutContext";
 
 function Layout({ children }: any) {
   const { dispatch } = useLayoutContext();
 
   useEffect(() => {
-    dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
-    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
+    dispatch({ type: "SET_NAVBAR", navbarType: "dashboardNavbar" });
+    dispatch({ type: "SET_SIDEBAR", sidebarType: "defaultSidebar" });
 
     return () => {
-      dispatch({ type: 'SET_NAVBAR', navbarType: 'none' });
-      dispatch({ type: 'SET_SIDEBAR', sidebarType: 'none' });
+      dispatch({ type: "SET_NAVBAR", navbarType: "none" });
+      dispatch({ type: "SET_SIDEBAR", sidebarType: "none" });
     };
   }, [dispatch]);
 
   return (
-    <div className="">
+    <div className=" overflow-y-auto">
       <Image
         src="/images/backgroundImage.svg"
         alt="background image"
