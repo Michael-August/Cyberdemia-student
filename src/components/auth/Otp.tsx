@@ -5,24 +5,25 @@ import { InputOTPControlled } from "./otp-input";
 const Otp = () => {
   return (
     <>
-      <main className="border border-red-500 px-[20rem] pt-[5rem] h-full">
-        <div className="flex flex-col justify-center items-start gap-10">
-          <Image
-            src={"/images/cyberdemiaLogo.svg"}
-            width={200}
-            height={200}
-            alt={"cyberdemia logo"}
-          />
-          <div>
-            <h1 className="text-3xl font-bold">
+      <main className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64 pt-20 h-full">
+        <div className="flex flex-col justify-center items-center gap-10">
+          <div className="flex flex-col justify-center w-full items-center sm:items-start text-center sm:text-left">
+            <Image
+              src={"/images/cyberdemiaLogo.svg"}
+              width={200}
+              height={200}
+              alt={"cyberdemia logo"}
+              className="max-w-full h-auto pb-10"
+            />
+            <h1 className="text-2xl sm:text-3xl font-bold">
               Please verify your email address
             </h1>
-            <p className="text-black py-2">
+            <p className="text-black py-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Doloribus, accusantium!
             </p>
           </div>
-          <div className="flex justify-center items-center w-full">
+          <div className="flex flex-col sm:flex-row justify-center items-center w-full">
             <InputOTPControlled />
           </div>
         </div>
