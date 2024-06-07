@@ -13,7 +13,6 @@ type FormValues = {
 };
 
 const PasswordRestForm: React.FC = () => {
-
   const {
     register,
     watch,

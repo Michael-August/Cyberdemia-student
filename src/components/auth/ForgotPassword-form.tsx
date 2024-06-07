@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { Input } from '../inputs';
@@ -17,7 +17,6 @@ const ForgotPassword: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>();
-
 
   const submitForm: SubmitHandler<FormValues> = (data) => {
     console.log('Form submitted', data);
