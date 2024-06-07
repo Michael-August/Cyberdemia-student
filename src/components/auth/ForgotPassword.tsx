@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-import SigninForm from './Signin-form';
+import ForgotPasswordForm from './ForgotPassword-form';
 
-const Signin = () => {
+const ForgotPassword = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 m-10">
       <div className="col-span-1 hidden sm:block">
@@ -32,13 +32,13 @@ const Signin = () => {
             alt={'cyberdemia logo'}
           />
           <div>
-            <h1 className="text-3xl font-bold">Sign In</h1>
+            <h1 className="text-3xl font-bold">Reset Password</h1>
             <p className="text-black py-2">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Doloribus, accusantium!
             </p>
           </div>
-          <SigninForm />
+          <ForgotPasswordForm />
         </div>
         <div>
           <p className="text-black py-5">
@@ -55,4 +55,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default ForgotPassword;

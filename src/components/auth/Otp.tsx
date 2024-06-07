@@ -1,12 +1,12 @@
-"use client";
-import Image from "next/image";
-import React from "react";
+'use client';
+import Image from 'next/image';
+import React from 'react';
 
-import { InputOTPControlled } from "./otp-input";
+import { InputOTPControlled } from './otp-input';
 
 const Otp = () => {
   const handleResendOPT = () => {
-    console.log("Resend OTP");
+    console.log('Resend OTP');
   };
   return (
     <>
@@ -14,10 +14,10 @@ const Otp = () => {
         <div className="flex flex-col justify-center items-center gap-10">
           <div className="flex flex-col justify-center w-full items-center sm:items-start text-center sm:text-left">
             <Image
-              src={"/images/cyberdemiaLogo.svg"}
+              src={'/images/cyberdemiaLogo.svg'}
               width={200}
               height={200}
-              alt={"cyberdemia logo"}
+              alt={'cyberdemia logo'}
               className="max-w-full h-auto pb-10"
             />
             <h1 className="text-2xl sm:text-3xl font-bold">
@@ -33,7 +33,7 @@ const Otp = () => {
           </div>
           <div>
             <p className="text-black py-5">
-              Didn&apos;t receive the code?{" "}
+              Didn&apos;t receive the code?{' '}
               <span
                 className="text-blue-600 cursor-pointer underline-offset-4 hover:underline"
                 onClick={handleResendOPT}

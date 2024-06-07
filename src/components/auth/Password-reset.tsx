@@ -1,9 +1,8 @@
 // Signup.tsx
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
-import SigninForm from './Signin-form';
+import PawordRestForm from './PasswordRest-form';
 
 const Signin = () => {
   return (
@@ -32,23 +31,13 @@ const Signin = () => {
             alt={'cyberdemia logo'}
           />
           <div>
-            <h1 className="text-3xl font-bold">Sign In</h1>
+            <h1 className="text-3xl font-bold">Reset Password</h1>
             <p className="text-black py-2">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Doloribus, accusantium!
             </p>
           </div>
-          <SigninForm />
-        </div>
-        <div>
-          <p className="text-black py-5">
-            Not a CyberDemia student yet?{' '}
-            <Link href="/signup">
-              <span className="text-blue-600 cursor-pointer underline-offset-4 hover:underline">
-                Register Now!
-              </span>
-            </Link>
-          </p>
+          <PawordRestForm />
         </div>
       </div>
     </div>
