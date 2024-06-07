@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@/components/ui/input-otp";
+} from '@/components/ui/input-otp';
 
 export function InputOTPControlled() {
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState('');
 
   const handleOptChange = () => {
     console.log(value);
-  }
+  };
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -52,7 +52,7 @@ export function InputOTPControlled() {
         </InputOTP>
       </div>
       <button
-      onClick={handleOptChange}
+        onClick={handleOptChange}
         type="submit"
         className="w-full p-5 py-4 mt-10 bg-cp-secondary text-white rounded-md hover:bg-cp-secondaryDarker transition duration-200"
       >

@@ -1,10 +1,11 @@
 // Signup.tsx
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
-import SignupForm from './Signup-form';
+import SigninForm from './Signin-form';
 
-const Signup = () => {
+const Signin = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 m-10">
       <div className="col-span-1 hidden sm:block">
@@ -37,11 +38,21 @@ const Signup = () => {
               Doloribus, accusantium!
             </p>
           </div>
-          <SignupForm />
+          <SigninForm />
+        </div>
+        <div>
+          <p className="text-black py-5">
+            Not a CyberDemia student yet?{' '}
+            <Link href="/signup">
+              <span className="text-blue-600 cursor-pointer underline-offset-4 hover:underline">
+                Register Now!
+              </span>
+            </Link>
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default Signin;

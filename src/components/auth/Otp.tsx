@@ -1,8 +1,13 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+
 import { InputOTPControlled } from "./otp-input";
 
 const Otp = () => {
+  const handleResendOPT = () => {
+    console.log("Resend OTP");
+  };
   return (
     <>
       <main className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64 pt-20 h-full">
@@ -25,6 +30,17 @@ const Otp = () => {
           </div>
           <div className="flex flex-col sm:flex-row justify-center items-center w-full">
             <InputOTPControlled />
+          </div>
+          <div>
+            <p className="text-black py-5">
+              Didn&apos;t receive the code?{" "}
+              <span
+                className="text-blue-600 cursor-pointer underline-offset-4 hover:underline"
+                onClick={handleResendOPT}
+              >
+                Resend code
+              </span>
+            </p>
           </div>
         </div>
       </main>
