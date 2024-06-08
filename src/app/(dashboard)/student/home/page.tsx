@@ -26,6 +26,7 @@ const Home = () => {
       </div>
 
       <ResumeLearning />
+
       <hr
         style={{ height: '1px', backgroundColor: '#AC1D7E', border: 'none' }}
       />
