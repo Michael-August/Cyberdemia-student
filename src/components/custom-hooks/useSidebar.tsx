@@ -1,21 +1,15 @@
-'use client';
-import { useState } from 'react';
-
-import { useLayoutContext } from '../../../context/LayoutContext';
-import CourseSidebar from '../ui/CourseSidebar';
-import DashboardNavbar from '../ui/DashboardNavbar';
+"use client";
+import { useLayoutContext } from "../../../context/LayoutContext";
+import CourseSidebar from "../ui/CourseSidebar";
+import DefaultSidebar from "../ui/DefaultSidebar";
 
 export const Sidebar = () => {
   const { state } = useLayoutContext();
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-
-  if (state.sidebarType === 'defaultSidebar')
+  if (state.sidebarType === "defaultSidebar")
     return (
-      <DashboardNavbar
-        setSidebarOpen={setSidebarOpen}
-        isSidebarOpen={isSidebarOpen}
-      />
+      <DefaultSidebar isOpen={false} onClose={() => console.log("closed")} />
     );
-  if (state.sidebarType === 'courseSideBar') return <CourseSidebar />;
+  if (state.sidebarType === "courseSideBar") return <CourseSidebar />;
+  if (state.sidebarType === "none") return null;
   return null;
 };
