@@ -1,23 +1,22 @@
-"use client";
+'use client';
+import { usePathname } from 'next/navigation';
+
 import {
   Breadcrumb,
-  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { usePathname } from "next/navigation";
+} from '@/components/ui/breadcrumb';
 
 export function NavigationCrumbs() {
   const pathname = usePathname();
 
-  const links = pathname.split("/");
+  const links = pathname.split('/');
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        {links.map((el, i) => (
+        {links.map((el) => (
           <>
             <BreadcrumbItem>
               <BreadcrumbLink href={`/${el}`}>{el}</BreadcrumbLink>
