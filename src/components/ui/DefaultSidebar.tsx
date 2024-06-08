@@ -44,8 +44,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   return (
     <>
       <div
-        className={`bg-cp-primary w-[220px] text-white shadow-md z-[10000] h-full fixed top-10 left-0 bottom-0 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'
-          } md:translate-x-0`}
+        className={`bg-cp-primary w-[220px] text-white shadow-md z-[10000] h-full fixed top-10 left-0 bottom-0 transform transition-transform duration-300 ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        } md:translate-x-0`}
       >
         <div className="flex py-10 justify-center items-center gap-2 border-b-[0.8px] border-cp-secondary md:hidden pb-5">
           <Image
