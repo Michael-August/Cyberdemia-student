@@ -25,7 +25,7 @@ function Layout({ children }: any) {
         alt="background image"
         width={600}
         height={600}
-        className="absolute right-[-150px] bottom-[-150px]"
+        className="fixed right-[-150px] bottom-[-150px]"
       />
       <div>{children}</div>
     </div>
