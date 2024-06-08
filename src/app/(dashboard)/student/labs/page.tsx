@@ -1,7 +1,12 @@
 import React from 'react';
 
-const page = () => {
-  return <div>page</div>;
+import VirtualLab from '@/components/virtual-lab';
+const Page = () => {
+  return (
+    <>
+      <VirtualLab />
+    </>
+  );
 };
 
-export default page;
+export default Page;
