@@ -1,5 +1,5 @@
-"use client";
-import React, { useRef } from "react";
+'use client';
+import React, { useRef } from 'react';
 
 interface VideoCardProps {
   videoSrc: string;

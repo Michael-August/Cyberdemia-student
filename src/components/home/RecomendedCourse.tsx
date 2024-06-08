@@ -1,7 +1,7 @@
-"use client";
-import Image, { StaticImageData } from "next/image";
-import React from "react";
-import { GoArrowRight } from "react-icons/go";
+'use client';
+import Image, { StaticImageData } from 'next/image';
+import React from 'react';
+import { GoArrowRight } from 'react-icons/go';
 
 interface RecommendedCourseProps {
   availableCourses: string;

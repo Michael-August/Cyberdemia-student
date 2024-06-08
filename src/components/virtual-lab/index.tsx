@@ -1,9 +1,10 @@
-"use client";
-import React from "react";
-import Header from "./Header";
-import StandardCard from "./StandardCard";
-import VideoCard from "./VideoCard";
-import { coursesData } from "../../../utils/datas";
+'use client';
+import React from 'react';
+
+import { coursesData } from '../../../utils/datas';
+import Header from './Header';
+import StandardCard from './StandardCard';
+import VideoCard from './VideoCard';
 
 const Index = () => {
   return (
@@ -29,7 +30,7 @@ const Index = () => {
               buttonText={course.buttonText}
               isComingSoon={course.isComingSoon}
               handleViewCourse={() => {
-                console.log("you clicked me");
+                console.log('you clicked me');
               }}
             />
           ))}

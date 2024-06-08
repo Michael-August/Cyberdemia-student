@@ -1,7 +1,8 @@
-"use client";
-import Image, { StaticImageData } from "next/image";
-import { GoArrowRight } from "react-icons/go";
-import { truncateText } from "../../../utils/constants";
+'use client';
+import Image, { StaticImageData } from 'next/image';
+import { GoArrowRight } from 'react-icons/go';
+
+import { truncateText } from '../../../utils/constants';
 
 interface StandardCardProps {
   imageSrc: string | StaticImageData;
