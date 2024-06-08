@@ -7,8 +7,8 @@ type LayoutState = {
 };
 
 const initialState: LayoutState = {
-  navbarType: 'dashboardNavbar',
-  sidebarType: 'defaultSidebar',
+  navbarType: 'none',
+  sidebarType: 'none',
 };
 
 type LayoutAction =

@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "-": "^0.0.1",
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
-    "@radix-ui/react-label": "^2.0.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.19",
     "@tanstack/react-query": "^5.26.3",
     "D": "^1.0.0",
     "axios": "^1.6.7",
