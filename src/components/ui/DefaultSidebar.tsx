@@ -1,19 +1,19 @@
-"use client";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { CgProfile } from "react-icons/cg";
-import { GoBook } from "react-icons/go";
-import { MdChat } from "react-icons/md";
-import { PiHouseFill } from "react-icons/pi";
-import { PiCertificateBold } from "react-icons/pi";
-import { PiHeadsetBold } from "react-icons/pi";
-import { SiSimpleanalytics } from "react-icons/si";
-import { TbCube } from "react-icons/tb";
-import { TbCreditCard } from "react-icons/tb";
+'use client';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { CgProfile } from 'react-icons/cg';
+import { GoBook } from 'react-icons/go';
+import { MdChat } from 'react-icons/md';
+import { PiHouseFill } from 'react-icons/pi';
+import { PiCertificateBold } from 'react-icons/pi';
+import { PiHeadsetBold } from 'react-icons/pi';
+import { SiSimpleanalytics } from 'react-icons/si';
+import { TbCube } from 'react-icons/tb';
+import { TbCreditCard } from 'react-icons/tb';
 
-import SideItems from "./SideItems";
+import SideItems from './SideItems';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -21,31 +21,31 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
-  const isSmallScreen = useMediaQuery("(max-width:768px)");
+  const isSmallScreen = useMediaQuery('(max-width:768px)');
 
   const sidebarLinks = [
-    { img: PiHouseFill, link: "/home", text: "Home" },
-    { img: GoBook, link: "/myCourses", text: "My Courses" },
+    { img: PiHouseFill, link: '/home', text: 'Home' },
+    { img: GoBook, link: '/myCourses', text: 'My Courses' },
     {
       img: isSmallScreen ? SiSimpleanalytics : PiCertificateBold,
-      link: "/certificate",
-      text: isSmallScreen ? "Analytics" : "Certificates",
+      link: '/certificate',
+      text: isSmallScreen ? 'Analytics' : 'Certificates',
     },
-    { img: TbCube, link: "/labs", text: "Virtual Labs" },
+    { img: TbCube, link: '/labs', text: 'Virtual Labs' },
     {
       img: isSmallScreen ? MdChat : TbCreditCard,
-      link: "/payments",
-      text: isSmallScreen ? "Communication" : "Payments",
+      link: '/payments',
+      text: isSmallScreen ? 'Communication' : 'Payments',
     },
-    { img: CgProfile, link: "/profile", text: "Profile" },
-    { img: PiHeadsetBold, link: "/support", text: "Help & Support" },
+    { img: CgProfile, link: '/profile', text: 'Profile' },
+    { img: PiHeadsetBold, link: '/support', text: 'Help & Support' },
   ];
 
   return (
     <>
       <div
         className={`bg-cp-primary w-[220px] text-white shadow-md z-[10000] h-full fixed top-10 left-0 bottom-0 transform transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
+          isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0`}
       >
         <div className="flex py-10 justify-center items-center gap-2 border-b-[0.8px] border-cp-secondary md:hidden pb-5">
