@@ -28,7 +28,7 @@ const StandardCard: React.FC<StandardCardProps> = ({
       <div className="border-[1px] border-[#AC1D7E] h-full w-[325px] mb-20 p-5 flex flex-col gap-4">
         {/* Conditional Rendering of "Coming Soon" Tag */}
         {isComingSoon && (
-          <div className="absolute top-8 sm:left-8 left-12 bg-green-600 text-white text-xs py-1 px-2 border-2 rounded-full border-white rounded">
+          <div className="absolute top-8 sm:left-8 left-12 bg-green-600 text-white text-xs py-1 px-2 border-2 rounded-full border-white">
             Coming Soon
           </div>
         )}
