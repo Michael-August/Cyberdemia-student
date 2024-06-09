@@ -1,5 +1,6 @@
-import Table from "@/components/payment/Table";
-import React from "react";
+import React from 'react';
+
+import Table from '@/components/payment/Table';
 
 const page = () => {
   return (
@@ -12,9 +13,9 @@ const page = () => {
           <div className="w-[103px] h-[8px] bg-[#AC1D7E]"></div>
           <hr
             style={{
-              height: "1px",
-              backgroundColor: "#AC1D7E",
-              border: "none",
+              height: '1px',
+              backgroundColor: '#AC1D7E',
+              border: 'none',
             }}
           />
         </div>
