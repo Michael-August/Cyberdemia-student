@@ -89,7 +89,7 @@ const Table: React.FC = () => {
             className="bg-cp-secondary text-white w-[150px] py-3 flex justify-center hover:bg-cp-secondaryDarker items-center text-[13px] gap-2"
             onClick={() => setSelectedCourse(row)}
           >
-           View Course
+            View Course
             <GoArrowRight size={19} />
           </div>
         </div>
