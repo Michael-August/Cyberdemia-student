@@ -26,6 +26,7 @@ const Home = () => {
       </div>
 
       <ResumeLearning />
+
       <hr
         style={{ height: '1px', backgroundColor: '#AC1D7E', border: 'none' }}
       />
@@ -44,6 +45,7 @@ const Home = () => {
           body="Lorem ipsum dolor sit amet consectetur. Ut porttitor et viverra malesuada fringilla. Dictum vitae mi nunc a tellus. Faucibus ac id pellentesque interdum. Vestibulum convallis velit feugiat aliquam pellentesque etiam. In posuere purus aliquet dolor pretium eget dictum."
           handleClick={() => router.push('home/dhjfhjdfh')}
           isCourseAvailable={true}
+          isCourseComing={false}
         />
         <RecomendedCourse
           availableCourses="3 Courses Available"
@@ -52,6 +54,7 @@ const Home = () => {
           body="Lorem ipsum dolor sit amet consectetur. Ut porttitor et viverra malesuada fringilla. Dictum vitae mi nunc a tellus. Faucibus ac id pellentesque interdum. Vestibulum convallis velit feugiat aliquam pellentesque etiam. In posuere purus aliquet dolor pretium eget dictum."
           handleClick={() => router.push('home/shfdhf')}
           isCourseAvailable={true}
+          isCourseComing={false}
         />
       </div>
     </div>
