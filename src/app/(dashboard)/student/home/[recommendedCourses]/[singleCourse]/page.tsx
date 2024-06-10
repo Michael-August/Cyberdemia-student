@@ -8,7 +8,7 @@ import CourseOverview from '@/components/home/tabs/CourseOverview';
 import LabQuestion from '@/components/home/tabs/LabQuestion';
 import Resources from '@/components/home/tabs/Resources';
 import { NavigationCrumbs } from '@/components/NavigationCrumbs';
-import { Tab,Tabs } from '@/components/ui/Tab';
+import { Tab, Tabs } from '@/components/ui/Tab';
 
 function page() {
   return (
