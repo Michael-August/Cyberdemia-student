@@ -54,6 +54,26 @@ body {
   height: 48px;
   color: #da7dbd;
 }
+.star-rating {
+  display: flex;
+}
+
+.star {
+  width: 15px;
+  height: 15px;
+}
+
+.inactive {
+  filter: grayscale(1); /* Converts the image to grayscale */
+}
+
+.active {
+  filter: none; /* Removes grayscale filter for active stars */
+}
+
+.star:hover {
+  filter: brightness(0.8); /* Adds brightness effect on hover */
+}
 
 .loader:before,
 .loader:after {

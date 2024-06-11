@@ -1,10 +1,10 @@
-'use client';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import React from 'react';
-import { GoArrowRight } from 'react-icons/go';
-
-import QuestionList from '../QuestionList';
+"use client";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React from "react";
+import { GoArrowRight } from "react-icons/go";
+import VideoCard from "@/components/virtual-lab/VideoCard";
+import QuestionList from "../QuestionList";
 
 function LabQuestion() {
   const router = useRouter();
@@ -59,7 +59,7 @@ function LabQuestion() {
             <span>3mb</span>
           </div>
         </div>
-        <div onClick={() => router.push('home/dhjfhjdfh/ksks')}>
+        <div onClick={() => router.push("home/dhjfhjdfh/ksks")}>
           <div className="bg-cp-secondary text-white px-2 py-2 flex justify-center items-center text-[13px] gap-2">
             Enroll now to Access Labs
             <GoArrowRight size={19} className="animate-pulse" />
@@ -79,17 +79,12 @@ function LabQuestion() {
           dictum.
         </span>
       </div>
-      <div className="border grid w-[240px] justify-center gap-4 border-black p-3">
-        <Image
-          src="/images/videoPlay.svg"
-          alt="card image"
-          width={200}
-          height={150}
-          className=""
+      <div>
+        <VideoCard
+          videoSrc="/video/Tim Godfrey ft Travis Greene - Nara (Official Video).mp4"
+          poster="/images/Certificate.svg"
+          title="Watch a video tutorial on how to use Virtual Labs."
         />
-        <div className="text-[14px] font-extrabold">
-          Watch a video tutorials on how to use Virtual Labs.
-        </div>
       </div>
     </div>
   );
