@@ -78,12 +78,34 @@ body {
   flex-direction: column;
   gap: 8px; 
 }
+.certificate-bg {
+  background-image: url('/images/certificateBackground.svg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;  /* Adjust as needed */
+  width: 530px;  /* Match the width of the background image */
+  height: 428px;  /* Match the height of the background image */
+}
 
 .question-input-label {
   font-size: 12px;
   font-weight: 400;
   margin: 0;
+  width: 500px;
 }
+@media screen and (max-width: 768px) {
+  .question-input-label {
+    width: 300px; 
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media screen and (max-width: 480px) {
+  .question-input-label {
+    width: 200px; /* Adjusted width for even smaller screens */
+  }
+}
+
 .custom-textarea {
   padding: 20px 10px 10px 10px; 
   height: 100px;

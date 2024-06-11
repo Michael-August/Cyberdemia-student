@@ -22,7 +22,7 @@ export const Tabs: React.FC<TabsProps> = ({ children }) => {
   };
 
   return (
-    <div className="tabs">
+    <div className="tabs ">
       <div className="tab-list flex items-center gap-3 mb-5 relative">
         {React.Children.map(
           children,
@@ -36,11 +36,13 @@ export const Tabs: React.FC<TabsProps> = ({ children }) => {
                 {child.props.icon && (
                   <div className="tab-icon">{child.props.icon}</div>
                 )}
-                <div className="tab-title text-14px font-extrabold">
+                <div
+                  className={`tab-title text-14px  font-extrabold ${index === activeTab ? 'text-cp-secondary' : 'text-gray-600'}`}
+                >
                   {child.props.title}
                 </div>
                 {index === activeTab && (
-                  <div className="active-tab-line bg-cp-secondary w-[80px] md:w-[125px] h-1.5 md:h-2 absolute bottom-0"></div>
+                  <div className="active-tab-line bg-cp-secondary w-[80px] text-cp-secondary md:w-[125px] h-1.5 md:h-2 absolute bottom-0"></div>
                 )}
               </div>
             );
