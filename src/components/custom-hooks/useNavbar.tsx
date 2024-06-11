@@ -6,6 +6,7 @@ import WebNavbar from '../ui/WebNavbar';
 export const Navbar = () => {
   const { state } = useLayoutContext();
   if (state.navbarType === 'webNavbar') return <WebNavbar />;
-  if (state.navbarType === 'dashboardNavbar') return <DashboardNavbar />;
+  if (state.navbarType === 'dashboardNavbar')
+    return <DashboardNavbar setSidebarOpen={undefined} isSidebarOpen={false} />;
   return null;
 };

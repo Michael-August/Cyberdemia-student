@@ -7,7 +7,7 @@ type LayoutState = {
 };
 
 const initialState: LayoutState = {
-  navbarType: 'webNavbar',
+  navbarType: 'none',
   sidebarType: 'none',
 };
 

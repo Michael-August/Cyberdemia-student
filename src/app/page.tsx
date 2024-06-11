@@ -1,6 +1,4 @@
 'use client';
-import 'swiper/css';
-
 import React, { useEffect, useState } from 'react';
 import {
   IoArrowDown,
