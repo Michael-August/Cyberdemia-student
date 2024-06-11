@@ -1,31 +1,32 @@
 'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useState } from 'react';
-import { IoArrowForward } from 'react-icons/io5';
+import React from 'react';
 
-import Links from '../links/Links';
+import LandingPageNavbar from './LandingPageNavbar';
 
 const WebNavbar: React.FC = () => {
-  const [toggle, setToggle] = useState(false);
-
   return (
     <div className="w-[100vw] text-white z-[10000]">
-      <div className="bg-cp-primary flex justify-center items-center py-6 h-[10px] text-[12px] gap-4">
-        <Image
-          src="/images/notification.svg"
-          alt="Description of image"
-          width={28}
-          height={28}
+      <div className="w-full flex items-center justify-center gap-1 md:gap-[10px] py-[13px] px-4 xl:px-0 bg-cp-primary text-white shadow-md z-[10000] h-[60px]">
+        <img
+          src="/icons/notification1.png"
+          className="w-[1.65625rem] lg:w-[2rem]"
         />
-        <span>
-          We are excited to announce the launch of Cyber Security &
-          Infrastructure Engineering / SOC Management course.
-        </span>
-        <span className="underline text-gray-200">View Course Details</span>
-        <IoArrowForward size={22} />
+        <div className="intro text-center">
+          <span className="text-xs lg:text-sm font-extrabold">
+            We are excited to announce the launch of Cyber Security &
+            Infrastructure Engineering / SOC Management courser.
+          </span>
+          <span className="text-xs ml-2 lg:text-sm font-medium">
+            View Course Details
+          </span>
+        </div>
+        <img
+          src="/icons/ArrowLeft.png"
+          className="w-[1.140625rem] lg:w-[1.5rem]"
+        />
       </div>
-      <div className="flex py-8 h-[20px] border-b items-center justify-between px-20 border-pink-200 ">
+      <LandingPageNavbar />
+      {/* <div className="flex py-8 h-[20px] border-b items-center justify-between lg:px-20 border-pink-200 ">
         <Link href="/">
           <Image
             src="/images/logo.svg"
@@ -45,7 +46,7 @@ const WebNavbar: React.FC = () => {
             Apply Now
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

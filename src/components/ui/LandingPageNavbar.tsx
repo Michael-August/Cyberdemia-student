@@ -6,21 +6,21 @@ function LandingPageNavbar() {
 
   return (
     <>
-      <div className="w-screen flex items-center justify-between py-[10px] px-4 md:px-10 border-b border-0 border-solid border-[#AA167666]">
+      <div className="w-screen flex items-center justify-between py-[10px] px-4 xl:px-20 2xl:px-52 border-b border-0 border-solid border-[#AA167666]">
         <div className="logo">
           <img
             src="/images/logo.png"
             alt="Cyberdemia Logo"
-            className="w-[157px] md:w-[182px]"
+            className="w-[157px] lg:w-[11.375rem]"
           />
         </div>
-        <div className="md:hidden" onClick={() => setExpandNavBar(true)}>
+        <div className="lg:hidden" onClick={() => setExpandNavBar(true)}>
           <img src="/icons/hamburger.png" alt="show menu" className="w-8" />
         </div>
-        <div className="hidden nav-links md:flex items-center gap-4">
+        <div className="hidden nav-links lg:flex items-center gap-4">
           <div className="link-item">
             <Link
-              className="text-base text-[#000000CC] font-normal no-underline"
+              className="text-base xl:text-sm text-[#000000CC] font-normal no-underline"
               href={''}
             >
               Why CyberDemia
@@ -86,15 +86,15 @@ function LandingPageNavbar() {
       </div>
 
       <div
-        className={`absolute w-[108vw] top-0 bg-white mobile-menu flex flex-col h-screen nav-links md:hidden ${expandNavBar ? 'open' : 'closed'}`}
+        className={`absolute w-[100vw] top-0 bg-white mobile-menu flex flex-col h-screen nav-links lg:hidden ${expandNavBar ? 'open' : 'closed'}`}
       >
         <div
-          className="close flex justify-end mt-5 mb-20 mr-3"
+          className="close flex justify-end mt-5 mb-14 mr-3"
           onClick={() => setExpandNavBar(false)}
         >
           <img src="/icons/close.png" alt="close" className="text-right w-8" />
         </div>
-        <div className="logo mb-16 flex items-center flex-col">
+        <div className="logo mb-10 flex items-center flex-col">
           <img
             src="/images/logo.png"
             alt="Cyberdemia Logo"
