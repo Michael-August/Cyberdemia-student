@@ -1,9 +1,8 @@
-'use client';
-import React from 'react';
-
-import Completed from '@/components/courses/tabs/Completed';
-import InProgess from '@/components/courses/tabs/InProgess';
-import { Tab, Tabs } from '@/components/ui/Tab';
+"use client";
+import React from "react";
+import Completed from "@/components/courses/tabs/Completed";
+import InProgess from "@/components/courses/tabs/InProgess";
+import { Tab, Tabs } from "@/components/ui/Tab";
 
 const page = () => {
   return (
