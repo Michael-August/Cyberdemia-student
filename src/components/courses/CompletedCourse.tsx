@@ -2,17 +2,16 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { GoArrowRight } from "react-icons/go";
+
 import {
   Dialog,
+  DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogClose,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Button } from "../button";
 
 function CompletedCourse() {
   const stars = document.querySelectorAll(".star");
@@ -118,27 +117,27 @@ function CompletedCourse() {
                     Give star rating
                   </span>
                   <div className="star-rating flex gap-1">
-                    <img
+                    <Image
                       src="/images/star2.svg"
                       alt="Inactive Star"
                       className="star inactive cursor-pointer"
                     />
-                    <img
+                    <Image
                       src="/images/star2.svg"
                       alt="Inactive Star"
                       className="star inactive cursor-pointer"
                     />
-                    <img
+                    <Image
                       src="/images/star2.svg"
                       alt="Inactive Star"
                       className="star inactive cursor-pointer"
                     />
-                    <img
+                    <Image
                       src="/images/star2.svg"
                       alt="Inactive Star"
                       className="star inactive cursor-pointer"
                     />
-                    <img
+                    <Image
                       src="/images/star2.svg"
                       alt="Inactive Star"
                       className="star inactive cursor-pointer"

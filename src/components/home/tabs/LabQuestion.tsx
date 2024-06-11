@@ -1,10 +1,12 @@
-"use client";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React from "react";
-import { GoArrowRight } from "react-icons/go";
-import VideoCard from "@/components/virtual-lab/VideoCard";
-import QuestionList from "../QuestionList";
+'use client';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import React from 'react';
+import { GoArrowRight } from 'react-icons/go';
+
+import VideoCard from '@/components/virtual-lab/VideoCard';
+
+import QuestionList from '../QuestionList';
 
 function LabQuestion() {
   const router = useRouter();
@@ -59,7 +61,7 @@ function LabQuestion() {
             <span>3mb</span>
           </div>
         </div>
-        <div onClick={() => router.push("home/dhjfhjdfh/ksks")}>
+        <div onClick={() => router.push('home/dhjfhjdfh/ksks')}>
           <div className="bg-cp-secondary text-white px-2 py-2 flex justify-center items-center text-[13px] gap-2">
             Enroll now to Access Labs
             <GoArrowRight size={19} className="animate-pulse" />
