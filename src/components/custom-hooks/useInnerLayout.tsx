@@ -20,11 +20,11 @@ export function RootLayoutInner({ children }: RootLayoutInnerProps) {
 
   let dynamicClass = '';
   if (state.navbarType === 'dashboardNavbar') {
-    dynamicClass += 'md:mt-[80px]';
+    dynamicClass += 'md:mt-[80px] mt-4';
   }
 
   if (state.sidebarType === 'defaultSidebar') {
-    dynamicClass += ' md:ml-[250px] md:mr-[30px]';
+    dynamicClass += ' md:ml-[250px] md:mr-[30px] mx-4';
   }
 
   return (

@@ -1,9 +1,9 @@
-import React from 'react';
+import Profile from '@/components/profile';
 
 const page = () => {
   return (
     <div className="profile">
-      <div className="top"></div>
+      <Profile />
     </div>
   );
 };
