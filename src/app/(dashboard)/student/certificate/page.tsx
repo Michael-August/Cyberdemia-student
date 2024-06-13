@@ -1,8 +1,13 @@
-import Certificates from '@/components/certificates';
 import React from 'react';
 
+import Certificates from '@/components/certificates';
+
 const page = () => {
-  return <div><Certificates /></div>;
+  return (
+    <div>
+      <Certificates />
+    </div>
+  );
 };
 
 export default page;
