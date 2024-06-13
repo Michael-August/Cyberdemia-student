@@ -1,10 +1,10 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 
-import { coursesData } from '../../../utils/datas';
-import Header from './Header';
-import StandardCard from './StandardCard';
-import VideoCard from './VideoCard';
+import { coursesData } from "../../../utils/datas";
+import Header from "./Header";
+import StandardCard from "./StandardCard";
+import VideoCard from "./VideoCard";
 
 const Index = () => {
   return (
@@ -19,7 +19,7 @@ const Index = () => {
         <h1 className="text-2xl font-extrabold  py-10 text-center sm:text-start">
           Courses with Virtual Labs included
         </h1>
-        <div className="flex justify-between items-center flex-wrap">
+        <div className="flex justify-between items-center gap-5  overflow-x-scroll">
           {coursesData?.map((course, index) => (
             <StandardCard
               key={index}
@@ -30,7 +30,7 @@ const Index = () => {
               buttonText={course.buttonText}
               isComingSoon={course.isComingSoon}
               handleViewCourse={() => {
-                console.log('you clicked me');
+                console.log("you clicked me");
               }}
             />
           ))}
