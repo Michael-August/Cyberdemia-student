@@ -1,8 +1,8 @@
-"use client";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React from "react";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+'use client';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import React from 'react';
+import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
 
 const Checkout = () => {
   const router = useRouter();
@@ -50,15 +50,15 @@ const Checkout = () => {
                   Discount
                 </h3>
                 <h3 className="text-16px py-5 font-extrabold text-start">
-                  {""}
+                  {''}
                   {/* Discount amount will be here */}
                 </h3>
               </div>
               <hr
                 style={{
-                  height: "1px",
-                  backgroundColor: "black",
-                  border: "none",
+                  height: '1px',
+                  backgroundColor: 'black',
+                  border: 'none',
                 }}
               />
               <div className=" flex justify-between items-center">
@@ -87,10 +87,7 @@ const Checkout = () => {
                 width={100}
                 height={50}
               />
-              <GoArrowRight
-                size={19}
-                color="black"
-              />
+              <GoArrowRight size={19} color="black" />
             </div>
           </div>
         </main>

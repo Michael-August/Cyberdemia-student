@@ -1,12 +1,13 @@
-import Checkout from '@/components/home/Checkout'
-import React from 'react'
+import React from 'react';
+
+import Checkout from '@/components/home/Checkout';
 
 const Page = () => {
   return (
     <div>
-        <Checkout />
+      <Checkout />
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
