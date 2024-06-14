@@ -9,8 +9,10 @@ export function NavigationCrumbs() {
   const links = pathname.split('/');
   return (
     <Breadcrumb
-      breadcrumbsArray={links.map((link) => {
-        return { name: link, url: `/${link}` };
+      breadcrumbsArray={links.map((link, index) => {
+        const urlParts = links.slice(0, index + 1);
+        const url = `${urlParts.join('/')}`;
+        return { name: link, url };
       })}
     />
   );
