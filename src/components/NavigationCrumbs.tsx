@@ -1,5 +1,6 @@
 'use client';
 import { usePathname } from 'next/navigation';
+
 import Breadcrumb from './ui/breadcrumb';
 
 export function NavigationCrumbs() {
@@ -7,6 +8,10 @@ export function NavigationCrumbs() {
 
   const links = pathname.split('/');
   return (
-    <Breadcrumb breadcrumbsArray={links.map(link => {return {name: link, url: `/${link}`}})}  />
+    <Breadcrumb
+      breadcrumbsArray={links.map((link) => {
+        return { name: link, url: `/${link}` };
+      })}
+    />
   );
 }
