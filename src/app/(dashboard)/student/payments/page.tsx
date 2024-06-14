@@ -1,8 +1,19 @@
-import React from 'react';
+"use client";
+import React, { useEffect } from "react";
 
-import Table from '@/components/payment/Table';
+import Table from "@/components/payment/Table";
 
-const page = () => {
+import { useLayoutContext } from "../../../../../context/LayoutContext";
+
+// Renaming the function to start with an uppercase letter
+const Page = () => {
+  const { dispatch } = useLayoutContext();
+
+  useEffect(() => {
+    dispatch({ type: "SET_NAVBAR", navbarType: "dashboardNavbar" });
+    dispatch({ type: "SET_SIDEBAR", sidebarType: "defaultSidebar" });
+  }, [dispatch]);
+
   return (
     <>
       <div className="flex flex-col gap-2 ">
@@ -13,9 +24,9 @@ const page = () => {
           <div className="w-[103px] h-[8px] bg-[#AC1D7E]"></div>
           <hr
             style={{
-              height: '1px',
-              backgroundColor: '#AC1D7E',
-              border: 'none',
+              height: "1px",
+              backgroundColor: "#AC1D7E",
+              border: "none",
             }}
           />
         </div>
@@ -27,4 +38,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

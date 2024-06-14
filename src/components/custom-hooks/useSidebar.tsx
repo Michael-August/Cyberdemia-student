@@ -5,9 +5,9 @@ import DefaultSidebar from '../ui/DefaultSidebar';
 
 export const Sidebar = ({ isSidebarOpen, setSidebarOpen }: any) => {
   const { state } = useLayoutContext();
-  console.log(state.sidebarType, 'state.sidebarType');
-  {
-    state.sidebarType === 'defaultSidebar' && (
+
+  if (state.sidebarType === 'defaultSidebar') {
+    return (
       <DefaultSidebar
         isOpen={isSidebarOpen}
         onClose={() => setSidebarOpen(false)}
@@ -15,8 +15,14 @@ export const Sidebar = ({ isSidebarOpen, setSidebarOpen }: any) => {
     );
   }
 
-  {
-    state.sidebarType === 'courseSideBar' && <CourseSidebar />;
+  if (state.sidebarType === 'courseSideBar') {
+    return (
+      <CourseSidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+      />
+    );
   }
+
   return null;
 };

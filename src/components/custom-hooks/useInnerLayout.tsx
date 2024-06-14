@@ -11,7 +11,6 @@ interface RootLayoutInnerProps {
 }
 
 export function RootLayoutInner({ children }: RootLayoutInnerProps) {
-  // const isSmallScreen = useMediaQuery('(max-width:768px)');
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [client, setClient] = useState(false);
   const { state } = useLayoutContext();
@@ -25,7 +24,10 @@ export function RootLayoutInner({ children }: RootLayoutInnerProps) {
     dynamicClass += 'md:mt-[80px]';
   }
 
-  if (state.sidebarType === 'defaultSidebar') {
+  if (
+    state.sidebarType === 'defaultSidebar' ||
+    state.sidebarType === 'courseSideBar'
+  ) {
     dynamicClass += ' md:ml-[250px] md:mr-[30px]';
   }
 

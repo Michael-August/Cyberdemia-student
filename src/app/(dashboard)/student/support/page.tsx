@@ -1,7 +1,19 @@
-import React from 'react';
+// File: ./src/app/(dashboard)/student/support/Page.tsx
 
-const page = () => {
+"use client";
+import React, { useEffect } from "react";
+
+import { useLayoutContext } from "../../../../../context/LayoutContext";
+
+const Page = () => {
+  const { dispatch } = useLayoutContext();
+
+  useEffect(() => {
+    dispatch({ type: "SET_NAVBAR", navbarType: "dashboardNavbar" });
+    dispatch({ type: "SET_SIDEBAR", sidebarType: "defaultSidebar" });
+  }, [dispatch]);
+
   return <div>page</div>;
 };
 
-export default page;
+export default Page;

@@ -17,25 +17,21 @@ const Page: React.FC = () => {
   useEffect(() => {
     dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
     dispatch({ type: 'SET_SIDEBAR', sidebarType: 'courseSideBar' });
-
-    return () => {
-      dispatch({ type: 'SET_NAVBAR', navbarType: 'none' });
-      dispatch({ type: 'SET_SIDEBAR', sidebarType: 'none' });
-    };
   }, [dispatch]);
 
   return (
-    <div className="w-full  grid gap-10">
-      <div className="w-full flex flex-col gap-7 ">
+    <div className="md:w-full  grid gap-10">
+      <div className="md:w-full flex flex-col gap-7 ">
         <ReactPlayer
           url="https://www.youtube.com/watch?v=NWnBxQjssvQ"
           className="react-player"
-          controls
+          controls={true}
+          style={{ pointerEvents: 'auto' }}
         />
-        <div className="bg-[#DCF2FF] border-[1px] border-[#246938] text-[#246938] text-[12px] w-max h-max p-3 rounded-lg flex gap-2 items-center ml-8">
-          Mark as completed
-          <FaRegCircleCheck size={18} color="#246938" />
-        </div>
+      </div>
+      <div className="bg-[#DCF2FF] border-[1px] border-[#246938] text-[#246938] text-[12px] w-max h-max p-3 rounded-lg flex gap-2 items-center ml-8">
+        Mark as completed
+        <FaRegCircleCheck size={18} color="#246938" />
       </div>
       <div className="">
         <Tabs>

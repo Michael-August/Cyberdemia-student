@@ -1,11 +1,19 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import CustomCourse from '@/components/home/CustomCourse';
 import RecomendedCourse from '@/components/home/RecomendedCourse';
 import ResumeLearning from '@/components/home/ResumeLearning';
+
+import { useLayoutContext } from '../../../../../context/LayoutContext';
 const Home = () => {
+  const { dispatch } = useLayoutContext();
+
+  useEffect(() => {
+    dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
+    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
+  }, [dispatch]);
   const router = useRouter();
   return (
     <div className="flex flex-col gap-8  h-[100%] px-4 md:px-0">

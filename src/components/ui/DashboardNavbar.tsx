@@ -29,7 +29,7 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({
   };
 
   return (
-    <div className="bg-cp-primary py-3 md:fixed top-0 right-0 left-0 flex items-center justify-between md:px-5 px-4 shadow-md z-[10000]">
+    <div className="fixed top-0 left-0 right-0 bg-cp-primary py-3  flex items-center justify-between md:px-5 px-4 shadow-md z-[10000]">
       <Link href="/">
         <Image
           src="/images/logo2.svg"
