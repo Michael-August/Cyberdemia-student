@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
 import { Input } from '../inputs';
@@ -40,7 +40,7 @@ const SignupForm: React.FC = () => {
   const toggleConfirmPasswordVisibility = () =>
     setShowConfirmPassword(!showConfirmPassword);
 
-  const submitForm: SubmitHandler<FormValues> = (data) => {
+  const submitForm = (data: any) => {
     console.log('Form submitted', data);
   };
   const password = watch('password');
@@ -286,7 +286,7 @@ const SignupForm: React.FC = () => {
                 className="w-full p-2 border rounded-md"
                 {...register('confirmpassword', {
                   required: 'Confirm Password is required',
-                  validate: (value) =>
+                  validate: (value: string) =>
                     value === password || 'Passwords do not match',
                 })}
               />
