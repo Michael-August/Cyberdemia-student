@@ -1,8 +1,7 @@
 'use client';
 
-
 import { useState } from 'react';
-import { IoChevronDown,IoChevronUp } from 'react-icons/io5';
+import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 
 import { faqsArray } from '../../../utils/constants/faqs';
 import Breadcrumb from '../ui/breadcrumb';
