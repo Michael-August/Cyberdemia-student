@@ -1,8 +1,9 @@
-import HelpAndSupport from '@/components/help-support';
 import React from 'react';
 
+import HelpAndSupport from '@/components/help-support';
+
 const page = () => {
-  return(
+  return (
     <div>
       <HelpAndSupport />
     </div>

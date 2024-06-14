@@ -1,26 +1,30 @@
-import { Link } from "lucide-react"
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList } from "../ui/breadcrumb"
+import { Link } from 'lucide-react';
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+} from '../ui/breadcrumb';
 
 const Faqs = () => {
-    return (
-        <div>
-            <div className="breadcrumbs">
-                <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink>
-                                <Link href="/">Home</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        {/* ... */}
-                    </BreadcrumbList>
-                </Breadcrumb>
-            </div>
-            <div className="faqs">
+  return (
+    <div>
+      <div className="breadcrumbs">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            {/* ... */}
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+      <div className="faqs"></div>
+    </div>
+  );
+};
 
-            </div>
-        </div>
-    )
-}
-
-export default Faqs
+export default Faqs;
