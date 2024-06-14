@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { GoArrowRight } from 'react-icons/go';
-
 function ResumeLearning() {
+  const Router = useRouter();
+  const handleClick = () => Router.push('coursePlayer');
   return (
     <div className="h-[153px] w-[382px] md:w-[752px] bg-[#f8cfeb] p-5 flex gap-5">
       <div>
@@ -29,7 +31,10 @@ function ResumeLearning() {
           </div>
         </div>
         <div className="flex md:justify-end mt-3 md:mt-0">
-          <div className="bg-cp-secondary py-2 w-[90%] md:w-[158px] text-white text-[12px] flex justify-center items-center gap-2">
+          <div
+            className="bg-cp-secondary py-2 w-[90%] md:w-[158px] text-white text-[12px] cursor-pointer flex justify-center items-center gap-2"
+            onClick={handleClick}
+          >
             Resume Learning
             <GoArrowRight size={20} />
           </div>

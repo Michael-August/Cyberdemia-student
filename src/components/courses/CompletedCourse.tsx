@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React from "react";
-import { GoArrowRight } from "react-icons/go";
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import React from 'react';
+import { GoArrowRight } from 'react-icons/go';
 
 import {
   Dialog,
@@ -11,25 +11,25 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from '@/components/ui/dialog';
 
 function CompletedCourse() {
-  const stars = document.querySelectorAll(".star");
+  const stars = document.querySelectorAll('.star');
 
   stars.forEach((star, index) => {
-    star.addEventListener("click", () => {
+    star.addEventListener('click', () => {
       stars.forEach((s, i) => {
         const imgElement = s as HTMLImageElement; // Explicitly cast to HTMLImageElement
         if (i <= index) {
-          imgElement.src = "/images/starImage.svg"; // Change the image source for selected stars
+          imgElement.src = '/images/starImage.svg'; // Change the image source for selected stars
         } else {
-          imgElement.src = "/images/star2.svg"; // Change the image source for unselected stars
+          imgElement.src = '/images/star2.svg'; // Change the image source for unselected stars
         }
       });
     });
   });
   const Router = useRouter();
-  const handleClick = () => Router.push("/student/courses/certificate");
+  const handleClick = () => Router.push('/student/courses/certificate');
   return (
     <div className="h-[153px] w-[382px] md:w-[752px] bg-[#f8cfeb] p-5 flex gap-5">
       <div className="hidden md:flex">

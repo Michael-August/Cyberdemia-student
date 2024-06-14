@@ -1,4 +1,5 @@
 'use client';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import React, { useEffect, useState } from 'react';
 
 import Loader from '@/components/ui/Loader';
@@ -11,6 +12,8 @@ interface RootLayoutInnerProps {
 }
 
 export function RootLayoutInner({ children }: RootLayoutInnerProps) {
+  const isSmallScreen = useMediaQuery('(max-width:768px)');
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [client, setClient] = useState(false);
   const { state } = useLayoutContext();
 
@@ -29,26 +32,12 @@ export function RootLayoutInner({ children }: RootLayoutInnerProps) {
 
   return (
     <div className="w-[100vw] h-[100vh] relative">
-      <Navbar />
-      <Sidebar />
+      <Navbar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+
+      <Sidebar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+
       <div className={` ${dynamicClass}`}>
-        {!client ? (
-          // <div className="h-full w-[80%] md:mt-[80px] md:ml-[250px] grid gap-10 flex-col">
-          //   <Skeleton className="h-[125px] rounded-xl bg-gray-300" />
-          //   <div className="grid gap-10">
-          //     <Skeleton className="h-4 " />
-          //     <Skeleton className="h-4 " />
-          //   </div>
-          //   <Skeleton className="h-[125px]  rounded-xl bg-gray-300" />
-          //   <div className="grid gap-10">
-          //     <Skeleton className="h-4 " />
-          //     <Skeleton className="h-4 " />
-          //   </div>
-          // </div>
-          <Loader />
-        ) : (
-          <>{children}</>
-        )}
+        {!client ? <Loader /> : <>{children}</>}
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({
   isSidebarOpen,
 }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  console.log(isSidebarOpen, 'isSidebarOpen');
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);

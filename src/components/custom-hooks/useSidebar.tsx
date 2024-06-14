@@ -3,13 +3,20 @@ import { useLayoutContext } from '../../../context/LayoutContext';
 import CourseSidebar from '../ui/CourseSidebar';
 import DefaultSidebar from '../ui/DefaultSidebar';
 
-export const Sidebar = () => {
+export const Sidebar = ({ isSidebarOpen, setSidebarOpen }: any) => {
   const { state } = useLayoutContext();
-  if (state.sidebarType === 'defaultSidebar')
-    return (
-      <DefaultSidebar isOpen={false} onClose={() => console.log('closed')} />
+  console.log(state.sidebarType, 'state.sidebarType');
+  {
+    state.sidebarType === 'defaultSidebar' && (
+      <DefaultSidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+      />
     );
-  if (state.sidebarType === 'courseSideBar') return <CourseSidebar />;
-  if (state.sidebarType === 'none') return null;
+  }
+
+  {
+    state.sidebarType === 'courseSideBar' && <CourseSidebar />;
+  }
   return null;
 };

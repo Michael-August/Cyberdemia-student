@@ -20,12 +20,13 @@ function CourseOverview() {
           enim eget etiam. Neque penatibus iaculis non ultrices augue. Platea
           tellus ut sit lectus. Ligula aliquam tristique egestas semper
         </span>
-        <div className="flex font-extrabold text-black gap-3 items-center">
+        <div className="flex font-extrabold  gap-3 items-center text-cp-secondary">
           <Image
             src="/images/pass.svg"
             alt="Certificate Icon"
             width={20}
             height={50}
+            color="#AC1D7E"
             className="cursor-pointer"
           />
           Pass 2 Certification Exams and get certified.
