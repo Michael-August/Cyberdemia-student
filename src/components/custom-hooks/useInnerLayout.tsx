@@ -1,5 +1,4 @@
 'use client';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import React, { useEffect, useState } from 'react';
 
 import Loader from '@/components/ui/Loader';
@@ -12,7 +11,7 @@ interface RootLayoutInnerProps {
 }
 
 export function RootLayoutInner({ children }: RootLayoutInnerProps) {
-  const isSmallScreen = useMediaQuery('(max-width:768px)');
+  // const isSmallScreen = useMediaQuery('(max-width:768px)');
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [client, setClient] = useState(false);
   const { state } = useLayoutContext();
