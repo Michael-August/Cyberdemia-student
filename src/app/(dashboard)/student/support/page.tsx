@@ -1,7 +1,13 @@
 import React from 'react';
 
+import HelpAndSupport from '@/components/help-support';
+
 const page = () => {
-  return <div>page</div>;
+  return (
+    <div>
+      <HelpAndSupport />
+    </div>
+  );
 };
 
 export default page;
