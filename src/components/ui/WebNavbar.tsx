@@ -1,8 +1,8 @@
-"use client";
-import Image from "next/image"; // Importing Image from next/image
-import React from "react";
+'use client';
+import Image from 'next/image'; // Importing Image from next/image
+import React from 'react';
 
-import LandingPageNavbar from "./LandingPageNavbar";
+import LandingPageNavbar from './LandingPageNavbar';
 
 const WebNavbar: React.FC = () => {
   return (

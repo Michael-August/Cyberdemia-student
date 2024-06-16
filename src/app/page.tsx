@@ -1,25 +1,25 @@
-"use client";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+'use client';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
 import {
   IoArrowDown,
   IoArrowForward,
   IoChevronDown,
   IoChevronUp,
-} from "react-icons/io5";
+} from 'react-icons/io5';
 
-import { useLayoutContext } from "../../context/LayoutContext";
-import { faqsArray } from "../../utils/constants/faqs";
+import { useLayoutContext } from '../../context/LayoutContext';
+import { faqsArray } from '../../utils/constants/faqs';
 
 const Home = () => {
   const { dispatch } = useLayoutContext();
   useEffect(() => {
-    dispatch({ type: "SET_NAVBAR", navbarType: "webNavbar" });
-    dispatch({ type: "SET_SIDEBAR", sidebarType: "none" });
+    dispatch({ type: 'SET_NAVBAR', navbarType: 'webNavbar' });
+    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'none' });
   }, [dispatch]);
 
-  const [tab, setTab] = useState("available-tech");
-  const [tab2, setTab2] = useState("available");
+  const [tab, setTab] = useState('available-tech');
+  const [tab2, setTab2] = useState('available');
   const switchTab = (tab: string) => setTab(tab);
   const switchTab2 = (tab: string) => setTab2(tab);
 
@@ -41,7 +41,7 @@ const Home = () => {
         <div className="desc">
           <div className="intro mb-3 md:mb-5">
             <span className="text-4xl md:text-5xl font-semibold leading-[3.125rem] md:leading-[4.1875rem]">
-              Get Technical Training on{" "}
+              Get Technical Training on{' '}
             </span>
             <span className=" text-4xl md:text-5xl font-semibold leading-[3.125rem] md:leading-[4.1875rem] text-cp-secondary">
               Cyber Security
@@ -78,10 +78,10 @@ const Home = () => {
         <div className="paragraph">
           <div className="first mb-7">
             <span className="text-base md:text-lg text-[#000000CC]">
-              CyberDemia is a product from{" "}
+              CyberDemia is a product from{' '}
               <span className="text-cp-secondary font-semibold">
                 CyberPlural
-              </span>{" "}
+              </span>{' '}
               that focuses on CyberSecurity Education and Awareness
             </span>
           </div>
@@ -280,14 +280,14 @@ const Home = () => {
         <div className="tab-area">
           <div className="tabs flex items-center gap-8 border-b border-solid border-cp-secondary pb-4 mb-6">
             <div
-              onClick={() => switchTab("available-tech")}
-              className={`tab relative cursor-pointer ${tab === "available-tech" ? "active" : ""} font-semibold text-lg md:text-[1.25rem] text-[#00000099]`}
+              onClick={() => switchTab('available-tech')}
+              className={`tab relative cursor-pointer ${tab === 'available-tech' ? 'active' : ''} font-semibold text-lg md:text-[1.25rem] text-[#00000099]`}
             >
               <span>Available</span>
             </div>
             <div
-              onClick={() => switchTab("coming-tech")}
-              className={`tab relative cursor-pointer ${tab === "coming-tech" ? "active" : ""} font-semibold text-lg md:text-[1.25rem] text-[#00000099]`}
+              onClick={() => switchTab('coming-tech')}
+              className={`tab relative cursor-pointer ${tab === 'coming-tech' ? 'active' : ''} font-semibold text-lg md:text-[1.25rem] text-[#00000099]`}
             >
               <span>Coming Soon</span>
             </div>
@@ -553,14 +553,14 @@ const Home = () => {
         <div className="tab-area">
           <div className="tabs flex items-center gap-8 border-b border-solid border-cp-secondary pb-4 mb-6">
             <div
-              onClick={() => switchTab2("available")}
-              className={`tab relative cursor-pointer ${tab2 === "available" ? "active" : ""} font-semibold text-lg md:text-[1.25rem] text-[#00000099]`}
+              onClick={() => switchTab2('available')}
+              className={`tab relative cursor-pointer ${tab2 === 'available' ? 'active' : ''} font-semibold text-lg md:text-[1.25rem] text-[#00000099]`}
             >
               <span>Available</span>
             </div>
             <div
-              onClick={() => switchTab2("coming")}
-              className={`tab relative cursor-pointer ${tab2 === "coming" ? "active" : ""} font-semibold text-lg md:text-[1.25rem] text-[#00000099]`}
+              onClick={() => switchTab2('coming')}
+              className={`tab relative cursor-pointer ${tab2 === 'coming' ? 'active' : ''} font-semibold text-lg md:text-[1.25rem] text-[#00000099]`}
             >
               <span>Coming Soon</span>
             </div>
@@ -956,7 +956,7 @@ const Home = () => {
               exercises, hands-on labs and expert instruction. Training is
               essential to preparing the cybersecurity workforce of tomorrow,
               and for keeping current cybersecurity workers up-to-date on skills
-              and evolving threats.{" "}
+              and evolving threats.{' '}
             </span>
           </div>
           <div className="buttons flex flex-wrap md:gap-6 gap-3 w-full">
@@ -1003,7 +1003,7 @@ const Home = () => {
                   />
                 )}
               </div>
-              <div className={`answer mt-8 ${faq.expanded ? "expanded" : ""}`}>
+              <div className={`answer mt-8 ${faq.expanded ? 'expanded' : ''}`}>
                 <span className="text-base md:text-lg font-normal text-[#000000B2]">
                   {faq.answer}
                 </span>

@@ -4,7 +4,7 @@ import React from 'react';
 import { GoArrowRight } from 'react-icons/go';
 function ResumeLearning() {
   const Router = useRouter();
-  const handleClick = () => Router.push('coursePlayer');
+  const handleClick = () => Router.push('courses/coursePlayer');
   return (
     <div className="h-[153px] w-[382px] md:w-[752px] bg-[#f8cfeb] p-5 flex gap-5">
       <div>

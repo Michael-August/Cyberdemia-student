@@ -1,6 +1,6 @@
-import Image from "next/image"; // Importing Image from next/image
-import Link from "next/link";
-import React, { useState } from "react";
+import Image from 'next/image'; // Importing Image from next/image
+import Link from 'next/link';
+import React, { useState } from 'react';
 
 function LandingPageNavbar() {
   const [expandNavBar, setExpandNavBar] = useState(false);
@@ -95,7 +95,7 @@ function LandingPageNavbar() {
       </div>
 
       <div
-        className={`absolute w-[100vw] top-0 bg-white mobile-menu flex flex-col h-screen nav-links lg:hidden ${expandNavBar ? "open" : "closed"}`}
+        className={`absolute w-[100vw] top-0 bg-white mobile-menu flex flex-col h-screen nav-links lg:hidden ${expandNavBar ? 'open' : 'closed'}`}
       >
         <div
           className="close flex justify-end mt-5 mb-14 mr-3"
