@@ -11,6 +11,7 @@ interface RootLayoutInnerProps {
 }
 
 export function RootLayoutInner({ children }: RootLayoutInnerProps) {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [client, setClient] = useState(false);
   const { state } = useLayoutContext();
 
@@ -23,32 +24,21 @@ export function RootLayoutInner({ children }: RootLayoutInnerProps) {
     dynamicClass += 'md:mt-[80px] mt-4';
   }
 
-  if (state.sidebarType === 'defaultSidebar') {
-    dynamicClass += ' md:ml-[250px] md:mr-[30px] mx-4';
+  if (
+    state.sidebarType === 'defaultSidebar' ||
+    state.sidebarType === 'courseSideBar'
+  ) {
+    dynamicClass += ' md:ml-[250px] md:mr-[30px]';
   }
 
   return (
     <div className="w-[100vw] h-[100vh] relative">
-      <Navbar />
-      <Sidebar />
+      <Navbar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+
+      <Sidebar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+
       <div className={` ${dynamicClass}`}>
-        {!client ? (
-          // <div className="h-full w-[80%] md:mt-[80px] md:ml-[250px] grid gap-10 flex-col">
-          //   <Skeleton className="h-[125px] rounded-xl bg-gray-300" />
-          //   <div className="grid gap-10">
-          //     <Skeleton className="h-4 " />
-          //     <Skeleton className="h-4 " />
-          //   </div>
-          //   <Skeleton className="h-[125px]  rounded-xl bg-gray-300" />
-          //   <div className="grid gap-10">
-          //     <Skeleton className="h-4 " />
-          //     <Skeleton className="h-4 " />
-          //   </div>
-          // </div>
-          <Loader />
-        ) : (
-          <>{children}</>
-        )}
+        {!client ? <Loader /> : <>{children}</>}
       </div>
     </div>
   );

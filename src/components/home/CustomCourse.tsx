@@ -1,8 +1,11 @@
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { GoArrowRight } from 'react-icons/go';
 
 function CustomCourse() {
+  const router = useRouter();
+  const handleClick = () => router.push('home/requestForm');
   return (
     <div className="h-[194px] w-[370px] border-[1.5px] border-[#AC1D7E] p-2 flex flex-col gap-4">
       <div className="flex items-center gap-3">
@@ -24,7 +27,10 @@ function CustomCourse() {
         </span>
       </div>
       <div className="flex justify-end">
-        <div className="bg-cp-secondary text-white w-[93px] py-2 flex justify-center items-center text-[13px] gap-2 ">
+        <div
+          className="bg-cp-secondary text-white w-[93px] py-2 flex justify-center items-center text-[13px] cursor-pointer gap-2 "
+          onClick={handleClick}
+        >
           Apply
           <GoArrowRight size={19} />
         </div>

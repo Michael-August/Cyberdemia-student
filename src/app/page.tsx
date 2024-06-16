@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import {
   IoArrowDown,
@@ -15,11 +16,6 @@ const Home = () => {
   useEffect(() => {
     dispatch({ type: 'SET_NAVBAR', navbarType: 'webNavbar' });
     dispatch({ type: 'SET_SIDEBAR', sidebarType: 'none' });
-
-    return () => {
-      dispatch({ type: 'SET_NAVBAR', navbarType: 'none' });
-      dispatch({ type: 'SET_SIDEBAR', sidebarType: 'none' });
-    };
   }, [dispatch]);
 
   const [tab, setTab] = useState('available-tech');
@@ -66,11 +62,11 @@ const Home = () => {
             </button>
           </div>
           <div className="dots mt-5 md:mt-20 flex items-center justify-center md:block">
-            <img src="/images/tracker.png" alt="" />
+            <Image src="/images/tracker.png" alt="" />
           </div>
         </div>
-        <div className="banner-img -mx-4 md:mx-0">
-          <img src="/images/banner-img.png" alt="" />
+        <div className="banner-Image -mx-4 md:mx-0">
+          <Image src="/images/banner-Image.png" alt="" />
         </div>
       </div>
 
@@ -111,7 +107,7 @@ const Home = () => {
         </div>
         <div className="values-list flex flex-wrap items-center justify-center gap-6">
           <div className="value w-full md:w-[20rem] flex flex-col items-center justify-center md:block">
-            <img className="mb-8" src="images/idea.png" alt="" />
+            <Image className="mb-8" src="images/idea.png" alt="" />
             <div className="value-title mb-4">
               <span className="text-[1.25rem] md:text-[1.375rem] font-semibold md:leading-[1.925rem] text-[#000000CC]">
                 Awareness & Training
@@ -126,7 +122,7 @@ const Home = () => {
             </div>
           </div>
           <div className="value w-full md:w-[20rem] flex flex-col items-center justify-center md:block">
-            <img className="mb-8" src="images/completed.png" alt="" />
+            <Image className="mb-8" src="images/completed.png" alt="" />
             <div className="value-title mb-4">
               <span className="text-[1.25rem] md:text-[1.375rem] font-semibold md:leading-[1.925rem] text-[#000000CC]">
                 Virtual Labs Access
@@ -141,7 +137,11 @@ const Home = () => {
             </div>
           </div>
           <div className="value w-full md:w-[20rem] flex flex-col items-center justify-center md:block">
-            <img className="mb-5 md:mb-8" src="images/certificate.png" alt="" />
+            <Image
+              className="mb-5 md:mb-8"
+              src="images/certificate.png"
+              alt=""
+            />
             <div className="value-title mb-4">
               <span className="text-[1.25rem] md:text-[1.375rem] font-semibold md:leading-[1.925rem] text-[#000000CC]">
                 Certification
@@ -156,7 +156,7 @@ const Home = () => {
             </div>
           </div>
           <div className="value w-full md:w-[20rem] flex flex-col items-center justify-center md:block">
-            <img className="mb-5 md:mb-8" src="images/network.png" alt="" />
+            <Image className="mb-5 md:mb-8" src="images/network.png" alt="" />
             <div className="value-title mb-4">
               <span className="text-[1.25rem] md:text-[1.375rem] font-semibold md:leading-[1.925rem] text-[#000000CC]">
                 Transfer of knowledge
@@ -183,8 +183,8 @@ const Home = () => {
             <div className="course-count px-2 py-1 border w-fit border-solid border-black mb-4">
               <span className="text-sm font-semibold">7 courses available</span>
             </div>
-            <div className="cover-img mb-4">
-              <img src="/images/course1.png" alt="" />
+            <div className="cover-Image mb-4">
+              <Image src="/images/course1.png" alt="" />
             </div>
             <div className="details mb-7">
               <div className="heading mb-4">
@@ -202,7 +202,7 @@ const Home = () => {
             </div>
             <div className="foot-area flex flex-col gap-5">
               <div className="cert flex gap-2 items-center">
-                <img src="/images/certificate-outine.png" alt="" />
+                <Image src="/images/certificate-outine.png" alt="" />
                 <span className="text-base font-medium text-[#000000CC]">
                   Earn Certificate on Completion
                 </span>
@@ -217,8 +217,8 @@ const Home = () => {
             <div className="course-count px-2 py-1 border w-fit border-solid border-black mb-4">
               <span className="text-sm font-semibold">3 courses available</span>
             </div>
-            <div className="cover-img mb-4">
-              <img src="/images/course2.png" alt="" />
+            <div className="cover-Image mb-4">
+              <Image src="/images/course2.png" alt="" />
             </div>
             <div className="details mb-7">
               <div className="heading mb-4">
@@ -236,7 +236,7 @@ const Home = () => {
             </div>
             <div className="foot-area flex flex-col gap-5">
               <div className="cert flex gap-2 items-center">
-                <img src="/images/certificate-outine.png" alt="" />
+                <Image src="/images/certificate-outine.png" alt="" />
                 <span className="text-base font-medium text-[#000000CC]">
                   Earn Certificate on Completion
                 </span>
@@ -296,7 +296,7 @@ const Home = () => {
             <div className="available-tech">
               <div className="w-full flex gap-5 overflow-x-scroll">
                 <div className="border h-fit border-solid border-cp-secondary p-5">
-                  <img
+                  <Image
                     className="w-full"
                     src="/images/tech-banner.png"
                     alt=""
@@ -322,7 +322,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="border h-fit border-solid border-cp-secondary p-5">
-                  <img
+                  <Image
                     className="w-full"
                     src="/images/tech-banner.png"
                     alt=""
@@ -348,7 +348,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="border h-fit border-solid border-cp-secondary p-5">
-                  <img
+                  <Image
                     className="w-full"
                     src="/images/tech-banner.png"
                     alt=""
@@ -374,7 +374,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="border h-fit border-solid border-cp-secondary p-5">
-                  <img
+                  <Image
                     className="w-full"
                     src="/images/tech-banner.png"
                     alt=""
@@ -400,7 +400,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="border h-fit border-solid border-cp-secondary p-5">
-                  <img
+                  <Image
                     className="w-full"
                     src="/images/tech-banner.png"
                     alt=""
@@ -434,7 +434,7 @@ const Home = () => {
                 <div className="w-full flex gap-5 overflow-x-scroll">
                   <div>
                     <div className="border w-[264px] border-solid border-cp-secondary p-5">
-                      <img src="/images/tech-banner.png" alt="" />
+                      <Image src="/images/tech-banner.png" alt="" />
                       <div className="details mb-6">
                         <div className="head mt-4 mb-6">
                           <span className="text-lg font-semibold text-[#000000CC]">
@@ -452,7 +452,7 @@ const Home = () => {
                   </div>
                   <div>
                     <div className="border w-[264px] border-solid border-cp-secondary p-5">
-                      <img src="/images/tech-banner.png" alt="" />
+                      <Image src="/images/tech-banner.png" alt="" />
                       <div className="details mb-6">
                         <div className="head mt-4 mb-6">
                           <span className="text-lg font-semibold text-[#000000CC]">
@@ -470,7 +470,7 @@ const Home = () => {
                   </div>
                   <div>
                     <div className="border w-[264px] border-solid border-cp-secondary p-5">
-                      <img src="/images/awareness-banner.png" alt="" />
+                      <Image src="/images/awareness-banner.png" alt="" />
                       <div className="details mb-6">
                         <div className="head mt-4 mb-6">
                           <span className="text-lg font-semibold text-[#000000CC]">
@@ -488,7 +488,7 @@ const Home = () => {
                   </div>
                   <div>
                     <div className="border border-solid w-[264px] border-cp-secondary p-5">
-                      <img src="/images/tech-banner.png" alt="" />
+                      <Image src="/images/tech-banner.png" alt="" />
                       <div className="details mb-6">
                         <div className="head mt-4 mb-6">
                           <span className="text-lg font-semibold text-[#000000CC]">
@@ -506,7 +506,7 @@ const Home = () => {
                   </div>
                   <div>
                     <div className="border border-solid w-[264px] border-cp-secondary p-5">
-                      <img src="/images/awareness-banner.png" alt="" />
+                      <Image src="/images/awareness-banner.png" alt="" />
                       <div className="details mb-6">
                         <div className="head mt-4 mb-6">
                           <span className="text-lg font-semibold text-[#000000CC]">
@@ -569,7 +569,7 @@ const Home = () => {
             <div className="available flex">
               <div className="w-full flex gap-5 overflow-x-scroll">
                 <div className="border h-fit border-solid border-cp-secondary p-5">
-                  <img
+                  <Image
                     className="w-full"
                     src="/images/tech-banner.png"
                     alt=""
@@ -595,7 +595,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="border h-fit border-solid border-cp-secondary p-5">
-                  <img
+                  <Image
                     className="w-full"
                     src="/images/tech-banner.png"
                     alt=""
@@ -621,7 +621,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="border h-fit border-solid border-cp-secondary p-5">
-                  <img
+                  <Image
                     className="w-full"
                     src="/images/awareness-banner.png"
                     alt=""
@@ -647,7 +647,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="h-fit border border-solid border-cp-secondary p-5">
-                  <img
+                  <Image
                     className="w-full"
                     src="/images/tech-banner.png"
                     alt=""
@@ -673,7 +673,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="border h-fit border-solid border-cp-secondary p-5">
-                  <img
+                  <Image
                     className="w-full"
                     src="/images/awareness-banner.png"
                     alt=""
@@ -706,7 +706,7 @@ const Home = () => {
               <div className="w-full flex gap-5 overflow-x-scroll">
                 <div>
                   <div className="border w-[264px] border-solid border-cp-secondary p-5">
-                    <img src="/images/tech-banner.png" alt="" />
+                    <Image src="/images/tech-banner.png" alt="" />
                     <div className="details mb-6">
                       <div className="head mt-4 mb-6">
                         <span className="text-lg font-semibold text-[#000000CC]">
@@ -724,7 +724,7 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="border w-[264px] border-solid border-cp-secondary p-5">
-                    <img src="/images/tech-banner.png" alt="" />
+                    <Image src="/images/tech-banner.png" alt="" />
                     <div className="details mb-6">
                       <div className="head mt-4 mb-6">
                         <span className="text-lg font-semibold text-[#000000CC]">
@@ -742,7 +742,7 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="border w-[264px] border-solid border-cp-secondary p-5">
-                    <img src="/images/awareness-banner.png" alt="" />
+                    <Image src="/images/awareness-banner.png" alt="" />
                     <div className="details mb-6">
                       <div className="head mt-4 mb-6">
                         <span className="text-lg font-semibold text-[#000000CC]">
@@ -760,7 +760,7 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="border border-solid w-[264px] border-cp-secondary p-5">
-                    <img src="/images/tech-banner.png" alt="" />
+                    <Image src="/images/tech-banner.png" alt="" />
                     <div className="details mb-6">
                       <div className="head mt-4 mb-6">
                         <span className="text-lg font-semibold text-[#000000CC]">
@@ -778,7 +778,7 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="border border-solid w-[264px] border-cp-secondary p-5">
-                    <img src="/images/awareness-banner.png" alt="" />
+                    <Image src="/images/awareness-banner.png" alt="" />
                     <div className="details mb-6">
                       <div className="head mt-4 mb-6">
                         <span className="text-lg font-semibold text-[#000000CC]">
@@ -826,13 +826,13 @@ const Home = () => {
           </div>
         </div>
         <div className="banner -mx-4 md:mx-0 lg:hidden xl:block">
-          <img src="/images/children.png" alt="" />
+          <Image src="/images/children.png" alt="" />
         </div>
       </div>
 
       <div className="instructor mt-20 lg:mt-32 flex items-center lg:flex-row flex-col-reverse gap-10">
         <div className="banner -mx-4 lg:mx-0 lg:hidden xl:block">
-          <img src="/images/instructor.png" alt="" />
+          <Image src="/images/instructor.png" alt="" />
         </div>
 
         <div className="details w-full lg:w-[52.75rem]">
@@ -868,7 +868,7 @@ const Home = () => {
               </span>
             </div>
             <div className="profile flex items-center gap-5">
-              <img src="/images/profile.png" alt="" />
+              <Image src="/images/profile.png" alt="" />
               <div className="flex flex-col">
                 <span className="text-base md:text-[1.25rem] font-bold text-[#000000CC]">
                   Full name
@@ -888,7 +888,7 @@ const Home = () => {
               </span>
             </div>
             <div className="profile flex items-center gap-5">
-              <img src="/images/profile.png" alt="" />
+              <Image src="/images/profile.png" alt="" />
               <div className="flex flex-col">
                 <span className="text-base md:text-[1.25rem] font-bold text-[#000000CC]">
                   Full name
@@ -908,7 +908,7 @@ const Home = () => {
               </span>
             </div>
             <div className="profile flex items-center gap-5">
-              <img src="/images/profile.png" alt="" />
+              <Image src="/images/profile.png" alt="" />
               <div className="flex flex-col">
                 <span className="text-base md:text-[1.25rem] font-bold text-[#000000CC]">
                   Full name
@@ -928,7 +928,7 @@ const Home = () => {
               </span>
             </div>
             <div className="profile flex items-center gap-5">
-              <img src="/images/profile.png" alt="" />
+              <Image src="/images/profile.png" alt="" />
               <div className="flex flex-col">
                 <span className="text-base md:text-[1.25rem] font-bold text-[#000000CC]">
                   Full name
@@ -971,7 +971,7 @@ const Home = () => {
           </div>
         </div>
         <div className="hidden xl:block -mx-4">
-          <img className="-mx-4 md:mx-0" src="/images/student.png" alt="" />
+          <Image className="-mx-4 md:mx-0" src="/images/student.png" alt="" />
         </div>
       </div>
 
@@ -1026,7 +1026,11 @@ const Home = () => {
           <div className="">
             <div className="flex gap-5 overflow-x-scroll">
               <div className="border h-fit border-solid border-cp-secondary p-5">
-                <img className="w-full" src="/images/tech-banner.png" alt="" />
+                <Image
+                  className="w-full"
+                  src="/images/tech-banner.png"
+                  alt=""
+                />
                 <div className="details mb-6">
                   <div className="head mt-4 mb-6">
                     <span className="text-lg font-semibold text-[#000000CC]">
@@ -1048,7 +1052,11 @@ const Home = () => {
                 </div>
               </div>
               <div className="border h-fit border-solid border-cp-secondary p-5">
-                <img className="w-full" src="/images/tech-banner.png" alt="" />
+                <Image
+                  className="w-full"
+                  src="/images/tech-banner.png"
+                  alt=""
+                />
                 <div className="details mb-6">
                   <div className="head mt-4 mb-6">
                     <span className="text-lg font-semibold text-[#000000CC]">
@@ -1070,7 +1078,11 @@ const Home = () => {
                 </div>
               </div>
               <div className="border h-fit border-solid border-cp-secondary p-5">
-                <img className="w-full" src="/images/tech-banner.png" alt="" />
+                <Image
+                  className="w-full"
+                  src="/images/tech-banner.png"
+                  alt=""
+                />
                 <div className="details mb-6">
                   <div className="head mt-4 mb-6">
                     <span className="text-lg font-semibold text-[#000000CC]">
@@ -1092,7 +1104,11 @@ const Home = () => {
                 </div>
               </div>
               <div className="border h-fit border-solid border-cp-secondary p-5">
-                <img className="w-full" src="/images/tech-banner.png" alt="" />
+                <Image
+                  className="w-full"
+                  src="/images/tech-banner.png"
+                  alt=""
+                />
                 <div className="details mb-6">
                   <div className="head mt-4 mb-6">
                     <span className="text-lg font-semibold text-[#000000CC]">
@@ -1114,7 +1130,11 @@ const Home = () => {
                 </div>
               </div>
               <div className="border h-fit border-solid border-cp-secondary p-5">
-                <img className="w-full" src="/images/tech-banner.png" alt="" />
+                <Image
+                  className="w-full"
+                  src="/images/tech-banner.png"
+                  alt=""
+                />
                 <div className="details mb-6">
                   <div className="head mt-4 mb-6">
                     <span className="text-lg font-semibold text-[#000000CC]">
@@ -1142,7 +1162,7 @@ const Home = () => {
           <div className="available flex">
             <div className="w-full flex gap-5 overflow-x-scroll">
               <div className="border h-fit border-solid border-cp-secondary p-5">
-                <img src="/images/awareness-banner.png" alt="" />
+                <Image src="/images/awareness-banner.png" alt="" />
                 <div className="details mb-6">
                   <div className="head mt-4 mb-6">
                     <span className="text-lg font-semibold text-[#000000CC]">
@@ -1164,7 +1184,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="border h-fit border-solid border-cp-secondary p-5">
-                <img src="/images/awareness-banner.png" alt="" />
+                <Image src="/images/awareness-banner.png" alt="" />
                 <div className="details mb-6">
                   <div className="head mt-4 mb-6">
                     <span className="text-lg font-semibold text-[#000000CC]">
@@ -1186,7 +1206,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="border h-fit border-solid border-cp-secondary p-5">
-                <img src="/images/awareness-banner.png" alt="" />
+                <Image src="/images/awareness-banner.png" alt="" />
                 <div className="details mb-6">
                   <div className="head mt-4 mb-6">
                     <span className="text-lg font-semibold text-[#000000CC]">
@@ -1208,7 +1228,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="border h-fit border-solid border-cp-secondary p-5">
-                <img src="/images/awareness-banner.png" alt="" />
+                <Image src="/images/awareness-banner.png" alt="" />
                 <div className="details mb-6">
                   <div className="head mt-4 mb-6">
                     <span className="text-lg font-semibold text-[#000000CC]">
@@ -1230,7 +1250,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="border h-fit border-solid border-cp-secondary p-5">
-                <img src="/images/awareness-banner.png" alt="" />
+                <Image src="/images/awareness-banner.png" alt="" />
                 <div className="details mb-6">
                   <div className="head mt-4 mb-6">
                     <span className="text-lg font-semibold text-[#000000CC]">
@@ -1259,7 +1279,7 @@ const Home = () => {
       <div className="footer flex flex-col gap-5 -mx-4 p-4 lg:-mx-20 bg-cp-primary lg:px-20 py-16 text-white mt-20 lg:mt-32">
         <div className="top border-b border-solid flex flex-col xl:flex-row xl:items-center justify-between border-white pb-5">
           <div className="logo flex flex-col gap-4 mb-5">
-            <img
+            <Image
               className="w-[11.375rem]"
               src="/images/footer-logo.png"
               alt=""
@@ -1267,7 +1287,7 @@ const Home = () => {
             <span className="text-sm">A product of CyberPlural</span>
 
             <div className="socials mt-7">
-              <img src="/images/socials.png" alt="" />
+              <Image src="/images/socials.png" alt="" />
             </div>
           </div>
           <div className="moreinfo flex flex-col md:flex-row md:items-center gap-10 xl:gap-20">

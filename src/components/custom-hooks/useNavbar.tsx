@@ -3,10 +3,15 @@ import { useLayoutContext } from '../../../context/LayoutContext';
 import DashboardNavbar from '../ui/DashboardNavbar';
 import WebNavbar from '../ui/WebNavbar';
 
-export const Navbar = () => {
+export const Navbar = ({ isSidebarOpen, setSidebarOpen }: any) => {
   const { state } = useLayoutContext();
   if (state.navbarType === 'webNavbar') return <WebNavbar />;
   if (state.navbarType === 'dashboardNavbar')
-    return <DashboardNavbar setSidebarOpen={undefined} isSidebarOpen={false} />;
+    return (
+      <DashboardNavbar
+        setSidebarOpen={setSidebarOpen}
+        isSidebarOpen={isSidebarOpen}
+      />
+    );
   return null;
 };

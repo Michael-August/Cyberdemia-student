@@ -8,6 +8,7 @@ interface RecommendedCourseProps {
   image: string | StaticImageData;
   title: string;
   body: string;
+  isCourseComing: boolean;
   isCourseAvailable: boolean;
   handleClick: () => void;
 }
@@ -17,14 +18,20 @@ const RecommendedCourse: React.FC<RecommendedCourseProps> = ({
   image,
   title,
   body,
+  isCourseComing,
   isCourseAvailable,
   handleClick,
 }) => {
   return (
-    <div className="border-[1px] border-[#AC1D7E] h-[550px] w-[325px] mb-20 p-5 flex flex-col gap-4">
+    <div className="border-[1px] border-[#AC1D7E]  w-[325px] mb-20 p-5 flex flex-col gap-4 relative">
       {isCourseAvailable && (
         <div className="py-1 px-1 border-[1.5px] w-[110px] border-[#AC1D7E] text-[10px] font-bold text-[#AC1D7E]">
           {availableCourses}
+        </div>
+      )}
+      {isCourseComing && (
+        <div className="py-1  border-[1px] w-[90px] bg-green-500 border-white rounded-[100px] text-[10px] font-extrabold text-white absolute top-7 left-7 justify-center flex items-center">
+          Coming Soon
         </div>
       )}
       <div>
@@ -39,7 +46,9 @@ const RecommendedCourse: React.FC<RecommendedCourseProps> = ({
       <span className="text-[14px] font-extrabold overflow-hidden">
         {title}
       </span>
-      <span className="text-[12px] font-normal overflow-hidden">{body}</span>
+      <span className="text-[12px] font-normal h-[140px] overflow-auto no-scrollbar">
+        {body}
+      </span>
       <div className="flex items-center gap-2">
         <Image
           src="/images/Certificate.svg"

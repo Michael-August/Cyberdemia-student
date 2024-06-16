@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image'; // Importing Image from next/image
 import React from 'react';
 
 import LandingPageNavbar from './LandingPageNavbar';
@@ -7,21 +8,27 @@ const WebNavbar: React.FC = () => {
   return (
     <div className="w-[100vw] text-white z-[10000]">
       <div className="w-full flex items-center justify-center gap-1 md:gap-[10px] py-[13px] px-4 xl:px-0 bg-cp-primary text-white shadow-md z-[10000] h-[60px]">
-        <img
+        <Image
           src="/icons/notification1.png"
+          alt="Notification Icon" // Adding alt text
+          width={27} // Provide width
+          height={27} // Provide height
           className="w-[1.65625rem] lg:w-[2rem]"
         />
         <div className="intro text-center">
           <span className="text-xs lg:text-sm font-extrabold">
             We are excited to announce the launch of Cyber Security &
-            Infrastructure Engineering / SOC Management courser.
+            Infrastructure Engineering / SOC Management course.
           </span>
           <span className="text-xs ml-2 lg:text-sm font-medium">
             View Course Details
           </span>
         </div>
-        <img
+        <Image
           src="/icons/ArrowLeft.png"
+          alt="Arrow Icon" // Adding alt text
+          width={18} // Provide width
+          height={18} // Provide height
           className="w-[1.140625rem] lg:w-[1.5rem]"
         />
       </div>
@@ -30,7 +37,7 @@ const WebNavbar: React.FC = () => {
         <Link href="/">
           <Image
             src="/images/logo.svg"
-            alt="Description of image"
+            alt="Logo"
             width={130}
             height={130}
           />
