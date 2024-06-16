@@ -1,23 +1,23 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { FaRegCircleCheck } from "react-icons/fa6";
-import ReactPlayer from "react-player";
+'use client';
+import React, { useEffect, useState } from 'react';
+import { FaRegCircleCheck } from 'react-icons/fa6';
+import ReactPlayer from 'react-player';
 
-import Announcement from "@/components/coursePlayer/tabs/Announcement";
-import Qforum from "@/components/coursePlayer/tabs/Qforum";
-import Resources from "@/components/coursePlayer/tabs/Resources";
-import CourseOverview from "@/components/home/tabs/CourseOverview";
-import { Tab, Tabs } from "@/components/ui/Tab";
+import Announcement from '@/components/coursePlayer/tabs/Announcement';
+import Qforum from '@/components/coursePlayer/tabs/Qforum';
+import Resources from '@/components/coursePlayer/tabs/Resources';
+import CourseOverview from '@/components/home/tabs/CourseOverview';
+import { Tab, Tabs } from '@/components/ui/Tab';
 
-import { useLayoutContext } from "../../../../../../context/LayoutContext";
+import { useLayoutContext } from '../../../../../../context/LayoutContext';
 
 const Page: React.FC = () => {
   const { dispatch } = useLayoutContext();
   const [coursePlayer, setCoursePlayer] = useState(true);
 
   useEffect(() => {
-    dispatch({ type: "SET_NAVBAR", navbarType: "dashboardNavbar" });
-    dispatch({ type: "SET_SIDEBAR", sidebarType: "courseSideBar" });
+    dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
+    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'courseSideBar' });
   }, [dispatch]);
 
   const toggleVideoPlayer = () => {
@@ -32,7 +32,7 @@ const Page: React.FC = () => {
             url="https://www.youtube.com/watch?v=NWnBxQjssvQ"
             className="react-player"
             controls={true}
-            style={{ pointerEvents: "auto" }}
+            style={{ pointerEvents: 'auto' }}
           />
         </div>
       ) : (

@@ -36,7 +36,7 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({
           alt="Description of image"
           width={100}
           height={100}
-          className="w-[50px] md:w-[100px]"
+          className="w-[153.01px] md:w-[182.71px]"
         />
       </Link>
       <div className="flex items-center gap-6">
