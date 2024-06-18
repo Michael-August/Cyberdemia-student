@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { GoArrowRight } from 'react-icons/go';
 
@@ -23,11 +24,13 @@ function CustomCourse() {
           the training and courses form.
         </span>
       </div>
-      <div className="flex justify-end">
-        <div className="bg-cp-secondary text-white w-[93px] py-2 flex justify-center items-center text-[13px] gap-2 ">
-          Apply
-          <GoArrowRight size={19} />
-        </div>
+      <div className="flex justify-end cursor-pointer">
+        <Link href="/student/home/requestform">
+          <div className="bg-cp-secondary text-white w-[93px] py-2 flex justify-center items-center text-[13px] gap-2 ">
+            Apply
+            <GoArrowRight size={19} />
+          </div>
+        </Link>
       </div>
     </div>
   );

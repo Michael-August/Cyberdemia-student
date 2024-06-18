@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import React from 'react';
 
 import LandingPageNavbar from './LandingPageNavbar';
@@ -7,7 +8,10 @@ const WebNavbar: React.FC = () => {
   return (
     <div className="w-[100vw] text-white z-[10000]">
       <div className="w-full flex items-center justify-center gap-1 md:gap-[10px] py-[13px] px-4 xl:px-0 bg-cp-primary text-white shadow-md z-[10000] h-[60px]">
-        <img
+        <Image
+          width={32}
+          height={32}
+          alt="notification"
           src="/icons/notification1.png"
           className="w-[1.65625rem] lg:w-[2rem]"
         />
@@ -20,9 +24,12 @@ const WebNavbar: React.FC = () => {
             View Course Details
           </span>
         </div>
-        <img
+        <Image
+          width={32}
+          height={32}
           src="/icons/ArrowLeft.png"
           className="w-[1.140625rem] lg:w-[1.5rem]"
+          alt="arrow"
         />
       </div>
       <LandingPageNavbar />
