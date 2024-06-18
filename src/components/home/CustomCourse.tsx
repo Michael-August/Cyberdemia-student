@@ -4,6 +4,8 @@ import React from 'react';
 import { GoArrowRight } from 'react-icons/go';
 
 function CustomCourse() {
+  // const router = useRouter();
+  // const handleClick = () => router.push('home/requestForm');
   return (
     <div className="h-[194px] w-[370px] border-[1.5px] border-[#AC1D7E] p-2 flex flex-col gap-4">
       <div className="flex items-center gap-3">

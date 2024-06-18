@@ -18,7 +18,7 @@ const WebNavbar: React.FC = () => {
         <div className="intro text-center">
           <span className="text-xs lg:text-sm font-extrabold">
             We are excited to announce the launch of Cyber Security &
-            Infrastructure Engineering / SOC Management courser.
+            Infrastructure Engineering / SOC Management course.
           </span>
           <span className="text-xs ml-2 lg:text-sm font-medium">
             View Course Details
@@ -28,8 +28,8 @@ const WebNavbar: React.FC = () => {
           width={32}
           height={32}
           src="/icons/ArrowLeft.png"
+          alt="Arrow Icon"
           className="w-[1.140625rem] lg:w-[1.5rem]"
-          alt="arrow"
         />
       </div>
       <LandingPageNavbar />
@@ -37,7 +37,7 @@ const WebNavbar: React.FC = () => {
         <Link href="/">
           <Image
             src="/images/logo.svg"
-            alt="Description of image"
+            alt="Logo"
             width={130}
             height={130}
           />

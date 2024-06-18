@@ -1,11 +1,19 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import CustomCourse from '@/components/home/CustomCourse';
 import RecomendedCourse from '@/components/home/RecomendedCourse';
 import ResumeLearning from '@/components/home/ResumeLearning';
+
+import { useLayoutContext } from '../../../../../context/LayoutContext';
 const Home = () => {
+  const { dispatch } = useLayoutContext();
+
+  useEffect(() => {
+    dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
+    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
+  }, [dispatch]);
   const router = useRouter();
   return (
     <div className="flex flex-col gap-8  h-[100%] px-4 md:px-0">
@@ -45,6 +53,7 @@ const Home = () => {
           body="Lorem ipsum dolor sit amet consectetur. Ut porttitor et viverra malesuada fringilla. Dictum vitae mi nunc a tellus. Faucibus ac id pellentesque interdum. Vestibulum convallis velit feugiat aliquam pellentesque etiam. In posuere purus aliquet dolor pretium eget dictum."
           handleClick={() => router.push('home/dhjfhjdfh')}
           isCourseAvailable={true}
+          isCourseComing={false}
         />
         <RecomendedCourse
           availableCourses="3 Courses Available"
@@ -53,6 +62,7 @@ const Home = () => {
           body="Lorem ipsum dolor sit amet consectetur. Ut porttitor et viverra malesuada fringilla. Dictum vitae mi nunc a tellus. Faucibus ac id pellentesque interdum. Vestibulum convallis velit feugiat aliquam pellentesque etiam. In posuere purus aliquet dolor pretium eget dictum."
           handleClick={() => router.push('home/shfdhf')}
           isCourseAvailable={true}
+          isCourseComing={false}
         />
       </div>
     </div>

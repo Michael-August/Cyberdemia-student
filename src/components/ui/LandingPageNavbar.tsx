@@ -30,7 +30,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base xl:text-sm text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               Why CyberDemia
             </Link>
@@ -38,7 +38,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               Courses
             </Link>
@@ -46,7 +46,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               Cyber for Schools
             </Link>
@@ -54,7 +54,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               FAQs
             </Link>
@@ -62,7 +62,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               News and Updates
             </Link>
@@ -70,7 +70,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               Become an Instructor
             </Link>
@@ -78,7 +78,7 @@ function LandingPageNavbar() {
           <div className="link-item border-solid text-center border-[#AC1D7E] p-2">
             <Link
               className="text-base text-[#AC1D7E] font-[700] no-underline"
-              href={''}
+              href=""
             >
               Log in
             </Link>
@@ -86,7 +86,7 @@ function LandingPageNavbar() {
           <div className="link-item bg-[#2BDE48] text-center p-2">
             <Link
               className="text-base text-white font-[700] no-underline"
-              href={''}
+              href=""
             >
               Apply Now
             </Link>
@@ -123,7 +123,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               Why CyberDemia
             </Link>
@@ -131,7 +131,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               Courses
             </Link>
@@ -139,7 +139,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               Cyber for Schools
             </Link>
@@ -147,7 +147,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               FAQs
             </Link>
@@ -155,7 +155,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               News and Updates
             </Link>
@@ -163,7 +163,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-base text-[#000000CC] font-normal no-underline"
-              href={''}
+              href=""
             >
               Become an Instructor
             </Link>
@@ -171,7 +171,7 @@ function LandingPageNavbar() {
           <div className="link-item border-solid text-center border-[#AC1D7E] p-2">
             <Link
               className="text-base text-[#AC1D7E] font-[700] no-underline"
-              href={''}
+              href=""
             >
               Log in
             </Link>
@@ -179,7 +179,7 @@ function LandingPageNavbar() {
           <div className="link-item bg-[#2BDE48] text-center p-2">
             <Link
               className="text-base text-white font-[700] no-underline"
-              href={''}
+              href=""
             >
               Apply Now
             </Link>

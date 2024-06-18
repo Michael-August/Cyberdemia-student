@@ -20,7 +20,7 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
+const DefaultSidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const isSmallScreen = useMediaQuery('(max-width:768px)');
 
   const sidebarLinks = [
@@ -76,4 +76,4 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export default Sidebar;
+export default DefaultSidebar;

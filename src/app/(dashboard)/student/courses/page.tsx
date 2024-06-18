@@ -1,31 +1,30 @@
 'use client';
-import React from 'react';
-import ReactPlayer from 'react-player';
+import React, { useEffect } from 'react';
 
-// import { useLayoutContext } from '../../../../../context/LayoutContext';
+import Completed from '@/components/courses/tabs/Completed';
+import InProgess from '@/components/courses/tabs/InProgess';
+import { Tab, Tabs } from '@/components/ui/Tab';
 
-const page = () => {
-  // const { dispatch } = useLayoutContext();
-  // useEffect(() => {
-  //   dispatch({ type: "SET_NAVBAR", navbarType: "webNavbar" });
-  //   dispatch({ type: "SET_SIDEBAR", sidebarType: "none" });
+import { useLayoutContext } from '../../../../../context/LayoutContext';
 
-  //   return () => {
-  //     dispatch({ type: "SET_NAVBAR", navbarType: "none" });
-  //     dispatch({ type: "SET_SIDEBAR", sidebarType: "none" });
-  //   };
-  // }, [dispatch]);
+const Page = () => {
+  const { dispatch } = useLayoutContext();
+  useEffect(() => {
+    dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
+    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
+  }, [dispatch]);
   return (
-    <div className="w-full grid gap-10">
-      <div>
-        <ReactPlayer
-          url="https://www.youtube.com/watch?v=NWnBxQjssvQ"
-          className="react-player"
-          controls
-        />
-      </div>
+    <div className="mt-5">
+      <Tabs>
+        <Tab title="In Progress">
+          <InProgess />
+        </Tab>
+        <Tab title="Completed">
+          <Completed />
+        </Tab>
+      </Tabs>
     </div>
   );
 };
 
-export default page;
+export default Page;
