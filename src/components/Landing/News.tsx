@@ -56,7 +56,7 @@ export const SingleNews = ({
   detail: string;
 }) => {
   return (
-    <div className="border h-fit border-solid border-cp-secondary p-5">
+    <div className="border w-[334px] h-fit border-solid flex-shrink-0 border-cp-secondary p-5">
       <Image width={333} height={180} className="w-full" src={image} alt="" />
       <div className="details mb-6">
         <div className="head mt-4 mb-6">
@@ -64,7 +64,7 @@ export const SingleNews = ({
             {title}
           </span>
         </div>
-        <span className="md:hidden lg:block w-[334px]">{detail}</span>
+        <span className="md:hidden lg:block">{detail}</span>
       </div>
       <div className="flex justify-end">
         <button className="py-5 px-[30px] flex items-center gap-2 bg-transparent border border-solid border-cp-secondary text-cp-secondary">
@@ -95,7 +95,7 @@ export const MobileNews = ({
           </span>
         </div>
       </div>
-      <span className="w-[263px] block">{detail}</span>
+      <span className="block">{detail}</span>
       <div className="flex justify-end mt-4">
         <button className="p-2 flex items-center gap-2 bg-transparent border border-solid border-cp-secondary text-cp-secondary">
           Read more
