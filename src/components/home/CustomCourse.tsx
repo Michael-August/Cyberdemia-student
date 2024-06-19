@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { GoArrowRight } from 'react-icons/go';
