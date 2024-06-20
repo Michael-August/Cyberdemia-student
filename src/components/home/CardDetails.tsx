@@ -59,8 +59,8 @@ function CardDetails() {
           <span>4 PDFs, 2 external links</span>
         </div>
       </div>
-      <div onClick={() => router.push('home/dhjfhjdfh/ksks')}>
-        <div className="bg-cp-secondary text-white w-[150px] py-2 flex justify-center items-center text-[13px] gap-2">
+      <div onClick={() => router.push('/student/home/checkout')}>
+        <div className="bg-cp-secondary cursor-pointer text-white w-[150px] py-2 flex justify-center items-center text-[13px] gap-2">
           Enroll now
           <GoArrowRight size={19} className="animate-pulse" />
         </div>

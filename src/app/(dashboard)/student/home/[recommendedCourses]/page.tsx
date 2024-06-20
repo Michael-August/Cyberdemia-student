@@ -1,11 +1,19 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import RecomendedCourse from '@/components/home/RecomendedCourse';
 import { NavigationCrumbs } from '@/components/NavigationCrumbs';
+
+import { useLayoutContext } from '../../../../../../context/LayoutContext';
 function RecomendedCourses() {
   const router = useRouter();
+  const { dispatch } = useLayoutContext();
+
+  useEffect(() => {
+    dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
+    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
+  }, [dispatch]);
 
   return (
     <div className=" px-5  flex gap-10 flex-col">

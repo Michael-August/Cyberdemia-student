@@ -1,12 +1,10 @@
 import React from 'react';
 
-function Comment() {
+function Comment({ title }: any) {
   return (
     <div className="flex items-center justify-center md:justify-start">
       <div className="bg-[#F5E4F0] h-max w-max p-3 flex flex-col gap-3 ">
-        <h1 className="text-[13px] font-bold text-gray-600">
-          Have a questions to ask?
-        </h1>
+        <h1 className="text-[13px] font-bold text-gray-600">{title}</h1>
         <div className="flex gap-3 items-start">
           <div className="bg-[#5E5E5E] h-10 w-10 rounded-full text-[22px] font-bold text-white flex items-center justify-center ">
             J
