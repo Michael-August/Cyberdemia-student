@@ -1,4 +1,4 @@
-import Image from 'next/image'; // Importing Image from next/image
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -10,19 +10,19 @@ function LandingPageNavbar() {
       <div className="w-screen flex items-center justify-between py-[10px] px-4 xl:px-20 2xl:px-52 border-b border-0 border-solid border-[#AA167666]">
         <div className="logo">
           <Image
+            width={182.71}
+            height={48.71}
             src="/images/logo.png"
             alt="Cyberdemia Logo"
-            width={157}
-            height={50} // Provide dimensions for better layout stability
             className="w-[157px] lg:w-[11.375rem]"
           />
         </div>
         <div className="lg:hidden" onClick={() => setExpandNavBar(true)}>
           <Image
-            src="/icons/hamburger.png"
-            alt="show menu"
             width={32}
             height={32}
+            src="/icons/hamburger.png"
+            alt="show menu"
             className="w-8"
           />
         </div>
@@ -102,19 +102,19 @@ function LandingPageNavbar() {
           onClick={() => setExpandNavBar(false)}
         >
           <Image
-            src="/icons/close.png"
-            alt="close"
             width={32}
             height={32}
+            src="/icons/close.png"
+            alt="close"
             className="text-right w-8"
           />
         </div>
         <div className="logo mb-10 flex items-center flex-col">
           <Image
+            width={157.36}
+            height={42.36}
             src="/images/logo.png"
             alt="Cyberdemia Logo"
-            width={157}
-            height={50}
             className="w-[157px]"
           />
         </div>
