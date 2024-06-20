@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import CardDetails from '@/components/home/CardDetails';
 import CourseDetails from '@/components/home/CourseDetails';
@@ -10,7 +10,15 @@ import Resources from '@/components/home/tabs/Resources';
 import { NavigationCrumbs } from '@/components/NavigationCrumbs';
 import { Tab, Tabs } from '@/components/ui/Tab';
 
-function page() {
+import { useLayoutContext } from '../../../../../../../context/LayoutContext';
+
+function Page() {
+  const { dispatch } = useLayoutContext();
+
+  useEffect(() => {
+    dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
+    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
+  }, [dispatch]);
   return (
     <div className="flex flex-col md:gap-10 px-2 md:px-0">
       <NavigationCrumbs />
@@ -38,4 +46,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
