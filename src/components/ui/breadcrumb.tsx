@@ -12,7 +12,7 @@ const Breadcrumb = ({
         (breadcrumb: { url: string; name: string }, index: number) => (
           <>
             {index !== breadcrumbsArray.length - 1 ? (
-              <Link href={breadcrumb.url}>
+              <Link key={breadcrumb.name} href={breadcrumb.url}>
                 <span className="text-[#0350C2B2] text-base">
                   {breadcrumb.name}
                 </span>
