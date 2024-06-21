@@ -1,48 +1,60 @@
-import Image from 'next/image';
-import { IoArrowForward } from 'react-icons/io5';
+import Image from "next/image";
+import { IoArrowForward } from "react-icons/io5";
 
 const NewsUpdates = [
   {
     id: 1,
-    image: '/images/tech-banner.png',
-    title: 'New Course on Cyber Threat Intelligence',
+    image: "/images/tech-banner.png",
+    title: "New Course on Cyber Threat Intelligence",
     detail:
-      'This course provides essential cybersecurity training for enthusiasts transitioning into the field, emphasizing CIA principles and continuous protection of information and systems for business objectives...',
+      "This course provides essential cybersecurity training for enthusiasts transitioning into the field, emphasizing CIA principles and continuous protection of information and systems for business objectives...",
   },
 ];
 
 const NewsAndUpdates = () => {
   return (
-    <div>
-      <div className="mt-7 hidden lg:block">
-        <div className="">
-          <div className="flex gap-5 overflow-x-scroll">
-            {NewsUpdates.map((news) => (
-              <SingleNews
-                image={news.image}
-                title={news.title}
-                detail={news.detail}
-                key={news.id}
-              />
-            ))}
+    <>
+      <div className="news mt-20 md:mt-32">
+        <div className="mb-6 md:mb-10 text-[#000000CC] text-2xl md:text-[2rem] font-semibold md:leading-[2.75rem]">
+          <span>News & Updates</span>
+        </div>
+        <span className="intro text-base md:text-lg text-[#000000B2]">
+          Promote a culture in which employees, staffs, and students share the
+          responsibility of defending the school against cyber-incident with
+          holistic cybersecurity strategy.
+        </span>
+        <div>
+          <div className="mt-7 hidden lg:block">
+            <div className="">
+              <div className="flex gap-5 overflow-x-scroll">
+                {NewsUpdates.map((news) => (
+                  <SingleNews
+                    image={news.image}
+                    title={news.title}
+                    detail={news.detail}
+                    key={news.id}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 block lg:hidden">
+            <div className="flex">
+              <div className="w-full flex gap-5 overflow-x-scroll">
+                {NewsUpdates.map((news) => (
+                  <MobileNews
+                    image={news.image}
+                    title={news.title}
+                    detail={news.detail}
+                    key={news.id}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div className="mt-4 block lg:hidden">
-        <div className="flex">
-          <div className="w-full flex gap-5 overflow-x-scroll">
-            {NewsUpdates.map((news) => (
-              <MobileNews
-                image={news.image}
-                title={news.title}
-                detail={news.detail}
-                key={news.id}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
