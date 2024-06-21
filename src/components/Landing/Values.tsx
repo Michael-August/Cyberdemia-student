@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Values = () => {
   return (
-    <div>
+    <div className="values mt-20 md:mt-32">
       <div className="secion-title relative mb-6 md:mb-10 text-[#000000CC] text-2xl md:text-[2rem] font-semibold md:leading-[2.75rem]">
         <span>Our Value Proposition</span>
       </div>

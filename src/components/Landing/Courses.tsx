@@ -3,7 +3,7 @@ import { IoArrowDown } from 'react-icons/io5';
 
 const Courses = () => {
   return (
-    <div>
+    <div className="courses mt-20 md:mt-32">
       <div className="secion-title relative mb-6 md:mb-10 text-[#000000CC] text-2xl md:text-[2rem] font-semibold md:leading-[2.75rem]">
         <span>Our cybersecurity Courses</span>
       </div>
