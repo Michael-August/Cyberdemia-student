@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Why = () => {
   return (
@@ -10,8 +10,8 @@ const Why = () => {
       <div className="paragraph">
         <div className="first mb-7">
           <span className="text-base md:text-lg text-[#000000CC]">
-            CyberDemia is a product from{" "}
-            <span className="text-cp-secondary font-semibold">CyberPlural</span>{" "}
+            CyberDemia is a product from{' '}
+            <span className="text-cp-secondary font-semibold">CyberPlural</span>{' '}
             that focuses on CyberSecurity Education and Awareness
           </span>
         </div>

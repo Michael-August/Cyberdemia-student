@@ -1,13 +1,13 @@
-import Image from "next/image";
-import { IoArrowForward } from "react-icons/io5";
+import Image from 'next/image';
+import { IoArrowForward } from 'react-icons/io5';
 
 const NewsUpdates = [
   {
     id: 1,
-    image: "/images/tech-banner.png",
-    title: "New Course on Cyber Threat Intelligence",
+    image: '/images/tech-banner.png',
+    title: 'New Course on Cyber Threat Intelligence',
     detail:
-      "This course provides essential cybersecurity training for enthusiasts transitioning into the field, emphasizing CIA principles and continuous protection of information and systems for business objectives...",
+      'This course provides essential cybersecurity training for enthusiasts transitioning into the field, emphasizing CIA principles and continuous protection of information and systems for business objectives...',
   },
 ];
 

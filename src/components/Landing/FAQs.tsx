@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { IoChevronDown, IoChevronUp } from "react-icons/io5";
+import { useState } from 'react';
+import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 
-import { faqsArray } from "../../../utils/constants/faqs";
+import { faqsArray } from '../../../utils/constants/faqs';
 
 const FAQs = () => {
   const [faqs, setFaqs] = useState(faqsArray);
@@ -46,7 +46,7 @@ const FAQs = () => {
                 />
               )}
             </div>
-            <div className={`answer mt-8 ${faq.expanded ? "expanded" : ""}`}>
+            <div className={`answer mt-8 ${faq.expanded ? 'expanded' : ''}`}>
               <span className="text-base md:text-lg font-normal text-[#000000B2]">
                 {faq.answer}
               </span>

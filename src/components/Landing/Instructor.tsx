@@ -1,6 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import { IoArrowForward } from "react-icons/io5";
+import Image from 'next/image';
+import React from 'react';
+import { IoArrowForward } from 'react-icons/io5';
 
 const Instructor = () => {
   return (
