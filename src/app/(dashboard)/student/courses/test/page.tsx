@@ -5,6 +5,7 @@ import IntroCard from '@/components/courses/test/IntroCard';
 import Regulatons from '@/components/courses/test/Regulatons';
 
 import { useLayoutContext } from '../../../../../../context/LayoutContext';
+import { useRouter } from 'next/navigation';
 
 function Page() {
   const { dispatch } = useLayoutContext();
@@ -12,6 +13,10 @@ function Page() {
 
   const nextPage = () => {
     setRender(!render);
+  };
+  const Router = useRouter();
+  const handleNext = () => {
+    Router.push('test/testid');
   };
 
   useEffect(() => {
@@ -43,6 +48,7 @@ function Page() {
           time={'20 Minutes'}
           date={'60 Questions'}
           button={'Take Test'}
+          handleNext={handleNext}
         />
       )}
     </div>
