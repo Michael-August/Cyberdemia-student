@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
+
 import { IoMdArrowForward } from 'react-icons/io';
 
-// Define the Props interface
 interface RegulationsProps {
   image: string;
   title: string;
@@ -10,6 +10,7 @@ interface RegulationsProps {
   time: string;
   date: string;
   button: string;
+  handleNext: () => void;
 }
 
 const Regulations: React.FC<RegulationsProps> = ({
@@ -19,6 +20,7 @@ const Regulations: React.FC<RegulationsProps> = ({
   time,
   date,
   button,
+  handleNext,
 }) => {
   return (
     <div className="flex w-full flex-col justify-center items-center">
@@ -46,7 +48,10 @@ const Regulations: React.FC<RegulationsProps> = ({
           </ul>
         </div>
         <div className="flex items-center justify-center mt-10">
-          <div className="flex text-[10px] items-center justify-center bg-cp-secondary w-full p-1 text-white gap-1">
+          <div
+            className="flex text-[10px] items-center justify-center bg-cp-secondary w-full p-1 text-white gap-1n cursor-pointer"
+            onClick={handleNext}
+          >
             {button}
             <IoMdArrowForward size={18} />
           </div>
