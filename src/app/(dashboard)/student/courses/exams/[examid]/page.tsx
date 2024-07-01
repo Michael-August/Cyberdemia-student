@@ -1,10 +1,12 @@
 'use client';
-import React, { useEffect } from 'react';
-import Questions from '@/components/courses/test/testid/Questions';
-import { useLayoutContext } from '../../../../../../../context/LayoutContext';
-import QuestionBar from '@/components/courses/test/testid/QuestionBar';
 import { useRouter } from 'next/navigation';
-function page() {
+import React, { useEffect } from 'react';
+
+import QuestionBar from '@/components/courses/test/testid/QuestionBar';
+import Questions from '@/components/courses/test/testid/Questions';
+
+import { useLayoutContext } from '../../../../../../../context/LayoutContext';
+function Page() {
   const { dispatch } = useLayoutContext();
   useEffect(() => {
     dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
@@ -36,4 +38,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
