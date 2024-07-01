@@ -4,7 +4,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
 import Comment from '../Comment';
 import CommentedSection from '../CommentedSection';
-
+import Replies from '../Replies';
 const comments = [
   {
     id: 1,
@@ -137,41 +137,53 @@ function Qforum() {
   const handleShowLess = () => {
     setVisibleCount(10);
   };
+  const [reply, setReply] = useState(true);
+  const handleReply = () => {
+    setReply(!reply);
+  };
 
   return (
-    <div className="pb-40 flex flex-col gap-5 px-2">
-      <Comment />
+    <div>
+      {reply === true ? (
+        <div className="pb-40 flex flex-col gap-5 px-2">
+          <Comment title={'Have a questions to ask?'} />
 
-      {comments.slice(0, visibleCount).map((comment) => (
-        <CommentedSection
-          key={comment.id}
-          logo={comment.initial}
-          name={comment.name}
-          time={comment.daysAgo}
-          comment={comment.comment}
-          replies={comment.replies}
-          likes={comment.likes}
-        />
-      ))}
+          {comments.slice(0, visibleCount).map((comment) => (
+            <CommentedSection
+              key={comment.id}
+              logo={comment.initial}
+              name={comment.name}
+              time={comment.daysAgo}
+              comment={comment.comment}
+              replies={comment.replies}
+              likes={comment.likes}
+              isReply={true}
+              handleReply={handleReply}
+            />
+          ))}
 
-      {visibleCount < comments.length ? (
-        <div className="flex justify-center">
-          <button
-            className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
-            onClick={handleShowMore}
-          >
-            Show more <MdKeyboardArrowDown size={16} />
-          </button>
+          {visibleCount < comments.length ? (
+            <div className="flex justify-center">
+              <button
+                className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
+                onClick={handleShowMore}
+              >
+                Show more <MdKeyboardArrowDown size={16} />
+              </button>
+            </div>
+          ) : (
+            <div className="flex justify-center">
+              <button
+                className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
+                onClick={handleShowLess}
+              >
+                Show Less <MdKeyboardArrowUp size={16} />
+              </button>
+            </div>
+          )}
         </div>
       ) : (
-        <div className="flex justify-center">
-          <button
-            className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
-            onClick={handleShowLess}
-          >
-            Show Less <MdKeyboardArrowUp size={16} />
-          </button>
-        </div>
+        <Replies handleReply={handleReply} />
       )}
     </div>
   );

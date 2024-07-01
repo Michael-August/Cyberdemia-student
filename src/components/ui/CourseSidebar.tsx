@@ -1,3 +1,4 @@
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { GoArrowLeft } from 'react-icons/go';
 import { IoMdStopwatch } from 'react-icons/io';
@@ -20,6 +21,9 @@ interface SidebarProps {
 }
 
 const CourseSidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
+  const Router = useRouter();
+  const handleClick = () => Router.push('test');
+  const handleClick2 = () => Router.push('exams');
   console.log(onClose);
   return (
     <div
@@ -130,10 +134,13 @@ const CourseSidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           </AccordionTrigger>
           <AccordionContent>
             <div className="grid">
-              <div className="h-max w-full p-3 py-3  flex flex-col gap-1  justify-between text-gray-600 hover:bg-pink-100  text-[10px] font-medium ">
+              <div
+                className="h-max w-full p-3 py-3  flex flex-col gap-1  justify-between text-gray-600 hover:bg-pink-100  text-[10px] font-medium  cursor-pointer "
+                onClick={handleClick}
+              >
                 <div className="flex items-center justify-between w-full">
                   <div className="flex gap-2 items-center ">
-                    <IoMdStopwatch size={22} className="text-gray-800" />
+                    <IoMdStopwatch size={22} className="text-gray-800 " />
                     <p className="text-gray-700 text-[13px]">Test</p>
                   </div>
                 </div>
@@ -141,7 +148,10 @@ const CourseSidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                   10 mins <p>20 Questions</p>
                 </div>
               </div>
-              <div className="h-max w-full p-3 py-3  flex flex-col gap-1  justify-between text-gray-600 hover:bg-pink-100  text-[10px] font-medium ">
+              <div
+                className="h-max w-full p-3 py-3  flex flex-col gap-1  justify-between text-gray-600 hover:bg-pink-100  text-[10px] font-medium cursor-pointer "
+                onClick={handleClick2}
+              >
                 <div className="flex items-center justify-between w-full">
                   <div className="flex gap-2 items-center ">
                     <PiCertificate size={22} className="text-gray-800" />

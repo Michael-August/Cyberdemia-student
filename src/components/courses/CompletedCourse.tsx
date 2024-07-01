@@ -120,26 +120,36 @@ function CompletedCourse() {
                     <Image
                       src="/images/star2.svg"
                       alt="Inactive Star"
+                      width={25}
+                      height={25}
                       className="star inactive cursor-pointer"
                     />
                     <Image
                       src="/images/star2.svg"
+                      alt="Inactive Star"
+                      width={25}
+                      height={25}
+                      className="star inactive cursor-pointer"
+                    />
+                    <Image
+                      src="/images/star2.svg"
+                      alt="Inactive Star"
+                      width={25}
+                      height={25}
+                      className="star inactive cursor-pointer"
+                    />
+                    <Image
+                      src="/images/star2.svg"
+                      width={25}
+                      height={25}
                       alt="Inactive Star"
                       className="star inactive cursor-pointer"
                     />
                     <Image
                       src="/images/star2.svg"
                       alt="Inactive Star"
-                      className="star inactive cursor-pointer"
-                    />
-                    <Image
-                      src="/images/star2.svg"
-                      alt="Inactive Star"
-                      className="star inactive cursor-pointer"
-                    />
-                    <Image
-                      src="/images/star2.svg"
-                      alt="Inactive Star"
+                      width={25}
+                      height={25}
                       className="star inactive cursor-pointer"
                     />
                   </div>
