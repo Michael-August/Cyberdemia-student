@@ -1,5 +1,5 @@
 'use client';
-import React, { ReactNode,useEffect } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 
 import { useLayoutContext } from '../../../context/LayoutContext';
 
