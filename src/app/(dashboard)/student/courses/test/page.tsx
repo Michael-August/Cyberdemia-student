@@ -1,11 +1,11 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 import IntroCard from '@/components/courses/test/IntroCard';
 import Regulatons from '@/components/courses/test/Regulatons';
 
 import { useLayoutContext } from '../../../../../../context/LayoutContext';
-import { useRouter } from 'next/navigation';
 
 function Page() {
   const { dispatch } = useLayoutContext();
@@ -25,7 +25,7 @@ function Page() {
   }, [dispatch]);
 
   return (
-    <div className="flex flex-row m-10 mt-40 md:mt-10">
+    <div className="flex m-10 mt-40 md:mt-10 overflow-y-hidden">
       {render === true ? (
         <IntroCard
           title={'Test'}

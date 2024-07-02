@@ -20,18 +20,22 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-const CourseSidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
+const CourseSidebar: React.FC<SidebarProps> = ({ isOpen }) => {
   const Router = useRouter();
   const handleClick = () => Router.push('test');
   const handleClick2 = () => Router.push('exams');
-  console.log(onClose);
+  const handleClick3 = () => Router.push('/student/home');
+
   return (
     <div
       className={`bg-cp-primary w-[220px] py-3 text-white shadow-md z-[10000] h-full fixed top-10 left-0 bottom-0 transform transition-transform duration-300 ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       } md:translate-x-0`}
     >
-      <div className="bg-white w-full h-max p-3 py-4 flex justify-start items-center gap-2 text-black text-[16px]">
+      <div
+        className="bg-white w-full h-max p-3 py-4 flex justify-start items-center gap-2 text-black text-[16px] cursor-pointer hover:bg-cp-secondary hover:text-white"
+        onClick={handleClick3}
+      >
         <GoArrowLeft size={26} />
         Home
       </div>

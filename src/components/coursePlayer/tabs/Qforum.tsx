@@ -163,7 +163,7 @@ function Qforum() {
           ))}
 
           {visibleCount < comments.length ? (
-            <div className="flex justify-center">
+            <div className="flex  w-full items-center justify-center ml-20 md:ml-0">
               <button
                 className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
                 onClick={handleShowMore}
@@ -172,7 +172,7 @@ function Qforum() {
               </button>
             </div>
           ) : (
-            <div className="flex justify-center">
+            <div className="flex justify-center w-full items-center ml-20 md:ml-0">
               <button
                 className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
                 onClick={handleShowLess}

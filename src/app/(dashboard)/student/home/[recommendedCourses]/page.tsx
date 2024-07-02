@@ -16,12 +16,13 @@ function RecomendedCourses() {
   }, [dispatch]);
 
   return (
-    <div className=" px-5  flex gap-10 flex-col">
+    <div className=" px-5  flex gap-5 mt-10 md:mt-0 md:gap-10 flex-col w-[100%]">
       <NavigationCrumbs />
       <span className="text-14px font-extrabold">
         Cyber Security Technical Training
       </span>
-      <div className="grid grid-rows md:grid-cols-3 ">
+
+      <div className="md:grid overflow-x-auto md:w-max flex gap-5  md:grid-cols-3 ">
         <RecomendedCourse
           availableCourses="7 Courses Available"
           image={'/images/card3.svg'}
@@ -70,7 +71,7 @@ function RecomendedCourses() {
         />
       </div>
       <span className="text-14px font-extrabold">Coming Soon</span>
-      <div className="grid grid-rows md:grid-cols-3 ">
+      <div className="md:grid w-[100%] md:w-max flex gap-5 overflow-x-auto flex-no-wrap md:grid-cols-3">
         <RecomendedCourse
           availableCourses="7 Courses Available"
           image={'/images/card3.svg'}

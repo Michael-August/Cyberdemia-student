@@ -1,11 +1,11 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 import IntroCard from '@/components/courses/test/IntroCard';
 import Regulatons from '@/components/courses/test/Regulatons';
 
 import { useLayoutContext } from '../../../../../../context/LayoutContext';
-import { useRouter } from 'next/navigation';
 
 function Page() {
   const { dispatch } = useLayoutContext();
@@ -16,7 +16,7 @@ function Page() {
   };
   const Router = useRouter();
   const handleNext = () => {
-    Router.push('exams/examid');
+    Router.push('exams/[examid]');
   };
 
   useEffect(() => {

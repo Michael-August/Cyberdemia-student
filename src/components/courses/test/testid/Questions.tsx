@@ -1,20 +1,16 @@
+import Image from 'next/image';
 import React, { useState } from 'react';
+import { IoWarningOutline } from 'react-icons/io5';
 import { LuClock4 } from 'react-icons/lu';
 import { MdArrowForward, MdOutlineArrowBack } from 'react-icons/md';
-import Image from 'next/image';
-import { IoWarningOutline } from 'react-icons/io5';
-import { useRouter } from 'next/navigation';
+
 import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { GoArrowRight } from 'react-icons/go';
 interface QuestionsProps {
   showImage: boolean;
   time: string;

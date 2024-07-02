@@ -16,13 +16,13 @@ const Home = () => {
   }, [dispatch]);
   const router = useRouter();
   return (
-    <div className="flex flex-col gap-8  h-[100%] px-4 md:px-0">
+    <div className="flex flex-col gap-8 overflow-x-hidden mt-12 md:mt-5  h-[100%] px-4 md:px-0">
       <div className="flex flex-col gap-2 ">
-        <span className="text-[16px] font-extrabold text-[#AC1D7E]">
+        <span className="text-[14px] font-extrabold text-[#AC1D7E]">
           In Progress
         </span>
         <div className="">
-          <div className="w-[103px] h-[8px] bg-[#AC1D7E]"></div>
+          <div className="w-[108px] h-[7px] bg-[#AC1D7E]"></div>
           <hr
             style={{
               height: '1px',
@@ -45,7 +45,7 @@ const Home = () => {
       <span className="text-[16px] font-extrabold">
         Top Recommended Courses
       </span>
-      <div className="flex  gap-6">
+      <div className="flex flex-col md:flex-row  gap-6">
         <RecomendedCourse
           availableCourses="7 Courses Available"
           image={'/images/card1.svg'}

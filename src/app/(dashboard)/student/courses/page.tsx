@@ -14,7 +14,7 @@ const Page = () => {
     dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
   }, [dispatch]);
   return (
-    <div className="mt-5">
+    <div className="flex flex-col gap-8 overflow-x-hidden mt-12 md:mt-5  h-[100%] px-4 md:px-0">
       <Tabs>
         <Tab title="In Progress">
           <InProgess />

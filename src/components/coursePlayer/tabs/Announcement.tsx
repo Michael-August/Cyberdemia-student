@@ -140,7 +140,7 @@ function Announcement() {
   };
   return (
     <div>
-      <div className="flex flex-col gap-5">
+      <div className="px-2 flex flex-col gap-5">
         <div className="flex gap-3 items-center">
           <Image
             src="/images/instructor.svg"
@@ -163,7 +163,7 @@ function Announcement() {
           <h1 className="text-[14px] font-extrabold">
             Title of the announcement will be entered here!
           </h1>
-          <span className="text-[12px] font-normal text-gray-600 w-[80%] flex flex-col gap-10">
+          <span className="text-[12px] font-normal text-gray-600 md:w-[80%] flex flex-col gap-10">
             Lorem ipsum dolor sit amet consectetur. Ut porttitor et viverra
             malesuada fringilla. Dictum vitae mi nunc a tellus. Faucibus ac id
             pellentesque interdum. Vestibulum convallis velit feugiat aliquam
@@ -201,11 +201,15 @@ function Announcement() {
               comment={comment.comment}
               replies={comment.replies}
               likes={comment.likes}
+              isReply={false}
+              handleReply={function (): void {
+                throw new Error('Function not implemented.');
+              }}
             />
           ))}
 
           {visibleCount < comments.length ? (
-            <div className="flex justify-center">
+            <div className="flex  w-full justify-center ml-20 md:ml-0 items-center">
               <button
                 className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
                 onClick={handleShowMore}
@@ -214,9 +218,9 @@ function Announcement() {
               </button>
             </div>
           ) : (
-            <div className="flex justify-center">
+            <div className="flex w-full   justify-center items-center">
               <button
-                className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
+                className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center md:mr-40"
                 onClick={handleShowLess}
               >
                 Show Less <MdKeyboardArrowUp size={16} />

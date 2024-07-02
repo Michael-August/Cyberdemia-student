@@ -35,7 +35,7 @@ const CommentedSection: React.FC<CommentedSectionProps> = ({
             <p className="text-[10px] text-gray-500">{time}</p>
           </div>
         </div>
-        <div className="flex flex-col gap-2 w-[75%] text-[14px] text-gray-600">
+        <div className="flex flex-col gap-2 md:w-[75%] text-[14px] text-gray-600">
           {comment}
           <div className="flex gap-2">
             {isReply && (
