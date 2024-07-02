@@ -3,8 +3,8 @@ import React from 'react';
 
 function CourseOverview() {
   return (
-    <div className="md:w-[55%] flex flex-col gap-7 pb-20 pt-8 px-2 md:px-0">
-      <div className="flex flex-col gap-5 text-[12px] text-gray-600">
+    <div className="w-full  md:w-[55%] flex flex-col gap-7 pb-20 pt-8 px-2 md:px-0">
+      <div className="flex flex-col gap-5 text-[12px] text-gray-600 ">
         <span>
           orem ipsum dolor sit amet consectetur. Ut porttitor et viverra
           malesuada fringilla. Dictum vitae mi nunc a tellus. Faucibus ac id

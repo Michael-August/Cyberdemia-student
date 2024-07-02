@@ -60,10 +60,10 @@ function CardDetails() {
         </div>
       </div>
       <div onClick={() => router.push('/student/home/checkout')}>
-        <div className="bg-cp-secondary cursor-pointer text-white w-[150px] py-2 flex justify-center items-center text-[13px] gap-2">
+        <button className="bg-cp-secondary hover:bg-pink-700 cursor-pointer text-white w-[150px] py-2 flex justify-center items-center text-[13px] gap-2">
           Enroll now
           <GoArrowRight size={19} className="animate-pulse" />
-        </div>
+        </button>
       </div>
     </div>
   );

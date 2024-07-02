@@ -35,7 +35,7 @@ const DefaultSidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     {
       img: isSmallScreen ? MdChat : TbCreditCard,
       link: '/student/payments',
-      text: isSmallScreen ? 'Communication' : 'Payments',
+      text: isSmallScreen ? 'Payments' : 'Payments',
     },
     { img: CgProfile, link: '/student/profile', text: 'Profile' },
     { img: PiHeadsetBold, link: '/student/support', text: 'Help & Support' },
@@ -44,7 +44,7 @@ const DefaultSidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   return (
     <>
       <div
-        className={`bg-cp-primary w-[220px] text-white shadow-md z-[1000] h-full fixed top-10 left-0 bottom-0 transform transition-transform duration-300 ${
+        className={`bg-cp-primary  w-[220px] text-white shadow-md z-[1000] h-full fixed top-10 left-0 bottom-0 transform transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0`}
       >
@@ -60,10 +60,10 @@ const DefaultSidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             <h1 className="text-[12px] capitalize text-gray-300">John Doe</h1>
           </div>
         </div>
-        <div className="mt-10">
+        <div className="mt-10 ">
           {sidebarLinks.map((link, index) => (
             <Link key={index} href={link.link}>
-              <div onClick={onClose}>
+              <div onClick={onClose} className="hover:bg-cp-secondary py-0">
                 <SideItems img={link.img} link={link.link}>
                   {link.text}
                 </SideItems>

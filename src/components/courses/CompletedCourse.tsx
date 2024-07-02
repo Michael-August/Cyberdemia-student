@@ -60,7 +60,7 @@ function CompletedCourse() {
         <div className="flex justify-end gap-4">
           <Dialog>
             <DialogTrigger asChild>
-              <div className="border  cursor-pointer border-black py-2 px-4 md:px-2 w-[90%] md:w-auto text-black text-[12px] flex justify-center items-center gap-2">
+              <button className="border hover:bg-cp-secondary hover:text-white cursor-pointer border-black py-2 px-4 md:px-2 w-[60%] md:w-auto text-black text-[12px] flex justify-center items-center gap-2">
                 Rate Course
                 <Image
                   src="/images/starImage.svg"
@@ -69,23 +69,23 @@ function CompletedCourse() {
                   height={15}
                   className="cursor-pointer"
                 />
-              </div>
+              </button>
             </DialogTrigger>
             <DialogContent className="w-max p-8">
               <DialogHeader>
-                <DialogTitle className="flex gap-5">
+                <DialogTitle className="flex flex-col md:flex-row gap-5">
                   <Image
                     src="/images/completedCourses.svg"
                     alt="Completed Courses"
                     width={200}
                     height={100}
-                    className="cursor-pointer"
+                    className="cursor-pointer responsive-image"
                   />
-                  <div className="mr-20 flex flex-col gap-5 mt-2">
+                  <div className="flex flex-col gap-5 mt-2 justify-start items-start">
                     <span className="text-[17px] font-bold  ">
                       Cyber Security Defense Analyst
                     </span>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 ">
                       <Image
                         src="/images/CheckCircle.svg"
                         alt="Check Circle"
@@ -155,32 +155,32 @@ function CompletedCourse() {
                   </div>
                 </div>
               </div>
-              <DialogFooter className="flex gap-3">
+              <DialogFooter className="flex flex-col md:flex-row gap-3">
                 <div className=" text-[10px] text-gray-400">
                   Your feedback will help us make the <br /> platform better for
                   the community. Thanks.
                 </div>
-                <div className=" flex gap-4">
+                <div className=" flex flex-col md:flex-row gap-4 ">
                   <DialogClose asChild>
-                    <div className="border  cursor-pointer border-cp-secondary py-2 px-4 md:px-2 w-[90%] md:w-auto text-black text-[12px] flex justify-center items-center gap-2 ">
+                    <button className="border  cursor-pointer border-cp-secondary hover:bg-cp-secondary hover:text-white  py-2 px-4 md:px-2 w-[100%] md:w-auto text-black text-[12px] flex justify-center items-center gap-2 ">
                       cancel
-                    </div>
+                    </button>
                   </DialogClose>
-                  <div className="bg-cp-secondary cursor-pointer py-2 px-4 md:px-2 w-[90%] md:w-auto text-white text-[12px] flex justify-center items-center gap-2">
+                  <button className="bg-cp-secondary hover:bg-pink-600 cursor-pointer py-2 px-4 md:px-2 w-[100%] md:w-auto text-white text-[12px] flex justify-center items-center gap-2">
                     Submit
                     <GoArrowRight size={20} />
-                  </div>
+                  </button>
                 </div>
               </DialogFooter>
             </DialogContent>
           </Dialog>
-          <div
-            className="bg-cp-secondary cursor-pointer py-2 px-4 md:px-2 w-[90%] md:w-auto text-white text-[12px] flex justify-center items-center gap-2"
+          <button
+            className="bg-cp-secondary hover:bg-pink-600 cursor-pointer py-2 px-4 md:px-2 w-[90%] md:w-auto text-white text-[12px] flex justify-center items-center gap-2"
             onClick={handleClick}
           >
             View Certificate
             <GoArrowRight size={20} />
-          </div>
+          </button>
         </div>
       </div>
     </div>

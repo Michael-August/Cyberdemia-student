@@ -14,7 +14,7 @@ const Page = () => {
   });
 
   return (
-    <div className="px-5 flex gap-10 flex-col">
+    <div className="px-5 mt-14 mb-5 md:mt-0 md:mb-0 flex gap-10 flex-col">
       <NavigationCrumbs />
       <Certificate ref={componentRef} />
       <div className="flex gap-5 mt-10">

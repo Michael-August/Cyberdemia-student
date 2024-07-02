@@ -17,9 +17,9 @@ function Comment({ title }: any) {
           />
         </div>
         <div className="flex justify-end">
-          <div className="bg-cp-secondary w-max h-max p-2 text-[10px] text-white">
+          <button className="bg-cp-secondary w-max h-max p-2 text-[10px] text-white cursor-pointer hover:bg-pink-800">
             Submit
-          </div>
+          </button>
         </div>
       </div>
     </div>
