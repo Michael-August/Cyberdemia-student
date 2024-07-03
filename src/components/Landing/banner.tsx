@@ -16,16 +16,16 @@ const Banner = () => {
           </span>
         </div>
 
-        <span className="text-base md:text-lg font-normal leading-[1.5625rem] text-[#000000CC]">
+        <span className="text-xs md:text-sm font-normal leading-[1.5625rem] text-[#000000CC]">
           Training is essential for prepping the cybersecurity work force of
           tomorrow.
         </span>
         <div className="buttons flex gap-5 items-center mt-8 md:mt-12">
-          <button className="apply py-[0.9375rem] px-[0.2rem] md:px-[1.875rem] md:py-5 text-base font-bold flex items-center gap-2 text-white bg-[#2BDE48]">
+          <button className="apply py-[0.9375rem] px-[0.2rem] md:px-[1.875rem] md:py-5 text-xs font-bold flex items-center gap-2 transition-all text-white bg-[#2BDE48] hover:bg-[#33b048]">
             Apply Now
             <IoArrowForward size={22} />
           </button>
-          <button className="courses py-[0.9375rem] px-[1.25rem] md:px-[1.875rem] md:py-5 text-base font-bold border border-solid border-cp-secondary text-cp-secondary">
+          <button className="courses py-[0.9375rem] px-[1.25rem] md:px-[1.875rem] hover:text-white transition-all hover:bg-cp-secondary md:py-5 text-xs font-bold border border-solid border-cp-secondary text-cp-secondary">
             See Courses
           </button>
         </div>

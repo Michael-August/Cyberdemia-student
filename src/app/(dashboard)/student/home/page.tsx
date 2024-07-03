@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-8 overflow-x-hidden mt-12 md:mt-5  h-[100%] px-4 md:px-0">
       <div className="flex flex-col gap-2 ">
-        <span className="text-[14px] font-extrabold text-[#AC1D7E]">
+        <span className="text-sm font-extrabold text-[#AC1D7E]">
           In Progress
         </span>
         <div className="">
@@ -38,13 +38,11 @@ const Home = () => {
       <hr
         style={{ height: '1px', backgroundColor: '#AC1D7E', border: 'none' }}
       />
-      <span className="text-[16px] font-extrabold">
+      <span className="text-base font-extrabold">
         Request for custom course
       </span>
       <CustomCourse />
-      <span className="text-[16px] font-extrabold">
-        Top Recommended Courses
-      </span>
+      <span className="text-base font-extrabold">Top Recommended Courses</span>
       <div className="flex flex-col md:flex-row  gap-6">
         <RecomendedCourse
           availableCourses="7 Courses Available"

@@ -7,7 +7,7 @@ import LandingPageNavbar from './LandingPageNavbar';
 const WebNavbar: React.FC = () => {
   return (
     <div className="w-[100vw] text-white z-[10000]">
-      <div className="w-full flex items-center justify-center gap-1 md:gap-[10px] py-[13px] px-4 xl:px-0 bg-cp-primary text-white shadow-md z-[10000] h-[60px]">
+      <div className="w-full cursor-pointer hover:bg-cp-secondary transition-all flex items-center justify-center gap-1 md:gap-[10px] py-[13px] px-4 xl:px-0 bg-cp-primary text-white shadow-md z-[10000] h-[60px]">
         <Image
           width={32}
           height={32}

@@ -19,7 +19,7 @@ const FAQs = () => {
   };
   return (
     <div className="mt-20 md:mt-40">
-      <div className="mb-6 md:mb-10 text-[#000000CC] text-2xl md:text-[2rem] flex items-center justify-center font-semibold md:leading-[2.75rem]">
+      <div className="mb-6 md:mb-10 text-[#000000CC] text-base flex items-center justify-center font-semibold">
         <span>FAQs</span>
       </div>
       <div>
@@ -29,7 +29,7 @@ const FAQs = () => {
             className="question md:py-8 py-5 border-t border-solid border-cp-secondary"
           >
             <div className="question-head flex items-center justify-between">
-              <span className="text-base md:text-lg font-semibold text-[#000000]">
+              <span className="text-sm font-semibold text-[#000000]">
                 {faq.question}
               </span>
               {faq.expanded ? (
@@ -47,7 +47,7 @@ const FAQs = () => {
               )}
             </div>
             <div className={`answer mt-8 ${faq.expanded ? 'expanded' : ''}`}>
-              <span className="text-base md:text-lg font-normal text-[#000000B2]">
+              <span className="text-xs font-normal text-[#000000B2]">
                 {faq.answer}
               </span>
             </div>

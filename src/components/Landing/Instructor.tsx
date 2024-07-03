@@ -11,17 +11,17 @@ const Instructor = () => {
 
       <div className="details w-full lg:w-[52.75rem]">
         <div className="title mb-4">
-          <span className="text-2xl md:text-[2rem] font-semibold text-[#000000CC]">
+          <span className="text-base font-semibold text-[#000000CC]">
             Are you a school owner, teacher or student who wants to create
             awareness on Cybersecurity in your School?
           </span>
         </div>
-        <span className="text-base md:text-lg text-[#000000B2]">
+        <span className="text-sm text-[#000000B2]">
           Our team will curate a Cybersecurity awareness course that will suite
           your students and teachers then organize hands-on classes based on
           your schedule.
         </span>
-        <button className="flex items-center text-base md:text-lg justify-center font-semibold gap-2 py-4 px-5 md:py-5 md:px-[1.875rem] bg-[#2BDE48] text-white w-full mt-8">
+        <button className="flex items-center text-sm md:text-lg justify-center font-semibold gap-2 py-4 px-5 md:py-5 md:px-[1.875rem] transition-all hover:bg-[#32b949] bg-[#2BDE48] text-white w-full mt-8">
           Request for Training
           <IoArrowForward size={22} />
         </button>
