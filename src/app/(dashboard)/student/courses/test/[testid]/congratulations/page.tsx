@@ -22,16 +22,16 @@ function Page() {
           <span>marks.</span>
         </div>
       </div>
-      <div className="text-[12px] px-10 text-center md:text-start text-gray-600 md:w-[20%]">
+      <div className="text-[12px] text-center  text-gray-600 md:w-[20%]">
         You did great on your test. You can continue taking your course and keep
         learning!
       </div>
-      <div
+      <button
         className="bg-cp-secondary cursor-pointer py-2 px-6 md:px-2 w-max md:w-[25%] text-white text-[12px] flex justify-center items-center gap-2"
         onClick={handleSubmit}
       >
         Continue with course
-      </div>
+      </button>
     </div>
   );
 }

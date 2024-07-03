@@ -25,7 +25,7 @@ function Page() {
   }, [dispatch]);
 
   return (
-    <div className="flex flex-row m-10 mt-40 md:mt-10">
+    <div className="flex m-10 mt-40 md:mt-10 overflow-y-hidden">
       {render === true ? (
         <IntroCard
           title={'Test'}

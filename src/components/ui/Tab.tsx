@@ -37,7 +37,7 @@ export const Tabs: React.FC<TabsProps> = ({ children }) => {
                   <div className="tab-icon">{child.props.icon}</div>
                 )}
                 <div
-                  className={`tab-title text-14px  font-extrabold ${index === activeTab ? 'text-cp-secondary' : 'text-gray-600'}`}
+                  className={`tab-title text-sm  font-extrabold ${index === activeTab ? 'text-cp-secondary' : 'text-gray-600'}`}
                 >
                   {child.props.title}
                 </div>

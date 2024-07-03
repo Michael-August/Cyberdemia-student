@@ -7,7 +7,7 @@ const Certificate = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <div
       ref={ref}
-      className="flex items-center w-max shadow"
+      className="flex items-center w-max shadow "
       style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}
     >
       <div>

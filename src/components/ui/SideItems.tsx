@@ -16,7 +16,7 @@ const SideItems: React.FC<SideItemsProps> = ({ img: Icon, link, children }) => {
 
   return (
     <div
-      className={`py-3 items-center w-full hover:bg-sa-light font-bold cursor-pointer p-5 mb-2 flex gap-5 ${
+      className={`py-4 items-center w-full hover:bg-sa-light font-bold cursor-pointer p-5  flex gap-5 ${
         isLinkActive(link) ? 'bg-white text-cp-primary' : 'text-white'
       }`}
     >

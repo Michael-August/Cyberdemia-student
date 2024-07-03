@@ -4,14 +4,14 @@ import { IoArrowDown } from 'react-icons/io5';
 const Courses = () => {
   return (
     <div className="courses mt-20 md:mt-32">
-      <div className="secion-title relative mb-6 md:mb-10 text-[#000000CC] text-2xl md:text-[2rem] font-semibold md:leading-[2.75rem]">
+      <div className="secion-title relative mb-6 md:mb-10 text-[#000000CC] text-base font-semibold">
         <span>Our cybersecurity Courses</span>
       </div>
 
       <div className="course-thumbnails w-full flex md:flex-wrap flex-col md:flex-row gap-8 items-center justify-center">
         <div className="thumbnail w-full md:w-[25.9375rem] p-5 border border-solid border-cp-secondary">
           <div className="course-count px-2 py-1 border w-fit border-solid border-black mb-4">
-            <span className="text-sm font-semibold">7 courses available</span>
+            <span className="text-xs font-semibold">7 courses available</span>
           </div>
           <div className="cover-img mb-4">
             <Image
@@ -23,12 +23,12 @@ const Courses = () => {
           </div>
           <div className="details mb-7">
             <div className="heading mb-4">
-              <span className="text-base md:text-[1.375rem] font-semibold">
+              <span className="text-xs  font-semibold">
                 Cyber Security Technical Training
               </span>
             </div>
             <div className="paragraph">
-              <span className="text-sm md:text-base text-[#000000B2]">
+              <span className="text-xs md:text-xs text-[#000000B2]">
                 Your in-house team will learn to approach cybersecurity
                 offensively and defensively through real-world examples and
                 exercises, hands-on labs and expert instruction.
@@ -43,11 +43,11 @@ const Courses = () => {
                 src="/images/certificate-outline.svg"
                 alt=""
               />
-              <span className="text-base font-medium text-[#000000CC]">
+              <span className="text-xs font-medium text-[#000000CC]">
                 Earn Certificate on Completion
               </span>
             </div>
-            <button className="flex items-center justify-center text-sm md:text-base gap-2 p-[0.625rem] md:px-[1.875rem] md:py-5 bg-cp-secondary text-white">
+            <button className="flex hover:bg-cp-primary transition-all items-center justify-center text-xs md:text-xs gap-2 p-[0.625rem] md:px-[1.875rem] md:py-5 bg-cp-secondary text-white">
               Explore Courses
               <IoArrowDown size={22} />
             </button>
@@ -55,7 +55,7 @@ const Courses = () => {
         </div>
         <div className="thumbnail w-full md:w-[25.9375rem] p-5 border border-solid border-cp-secondary">
           <div className="course-count px-2 py-1 border w-fit border-solid border-black mb-4">
-            <span className="text-sm font-semibold">3 courses available</span>
+            <span className="text-xs font-semibold">3 courses available</span>
           </div>
           <div className="cover-img mb-4">
             <Image
@@ -67,12 +67,12 @@ const Courses = () => {
           </div>
           <div className="details mb-7">
             <div className="heading mb-4">
-              <span className="text-base md:text-[1.375rem] font-semibold">
+              <span className="text-xs  font-semibold">
                 Cyber Security Awareness
               </span>
             </div>
             <div className="paragraph">
-              <span className="text-sm md:text-base text-[#000000B2]">
+              <span className="text-xs md:text-xs text-[#000000B2]">
                 Once users embrace cybersecurity awareness training, they become
                 part of a security culture within your organization. Users keep
                 cybersecurity at the top of their...
@@ -87,11 +87,11 @@ const Courses = () => {
                 src="/images/certificate-outline.svg"
                 alt=""
               />
-              <span className="text-base font-medium text-[#000000CC]">
+              <span className="text-xs font-medium text-[#000000CC]">
                 Earn Certificate on Completion
               </span>
             </div>
-            <button className="flex items-center justify-center text-sm md:text-base gap-2 p-[0.625rem] md:px-[1.875rem] md:py-5 bg-cp-secondary text-white">
+            <button className="flex items-center hover:bg-cp-primary transition-all justify-center text-xs md:text-xs gap-2 p-[0.625rem] md:px-[1.875rem] md:py-5 bg-cp-secondary text-white">
               Explore Courses
               <IoArrowDown size={22} />
             </button>

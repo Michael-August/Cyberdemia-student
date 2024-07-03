@@ -25,9 +25,9 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div className="md:w-full grid gap-10">
+    <div className=" md:w-full grid gap-10 mt-8 md:mt-0 overflow-x-hidden">
       {coursePlayer ? (
-        <div className="md:w-full flex flex-col gap-7">
+        <div className="w-[58%] md:w-full flex flex-col gap-7">
           <ReactPlayer
             url="https://www.youtube.com/watch?v=NWnBxQjssvQ"
             className="react-player"
@@ -36,8 +36,8 @@ const Page: React.FC = () => {
           />
         </div>
       ) : (
-        <div className="w-full h-max py-8 grid bg-[#3D3D3D] gap-5 px-8">
-          <div className="grid text-[10px] text-gray-300 w-[80%] gap-3">
+        <div className=" h-max py-8 grid bg-[#3D3D3D] gap-5 px-8">
+          <div className="grid text-[10px] text-gray-300  md:w-[80%] gap-3">
             <h1 className="text-[14px] font-bold text-white">
               Read Section Title will be written here
             </h1>
@@ -92,16 +92,16 @@ const Page: React.FC = () => {
           </div>
         </div>
       )}
-      <div className="md:w-full flex gap-10 items-center">
+      <div className="md:w-full flex gap-10 items-center px-2 ">
         <button onClick={toggleVideoPlayer} className="btn-toggle">
           Toggle Video Player
         </button>
-        <div className="bg-[#DCF2FF] border-[1px] border-[#246938] text-[#246938] text-[12px] w-max h-max p-3 rounded-lg flex gap-2 items-center ml-8">
+        <button className="bg-[#DCF2FF] hover:bg-green-200 border-[1px] border-[#246938] text-[#246938] text-[12px] w-max h-max p-3 rounded-lg flex gap-2 items-center ml-8">
           Mark as completed
           <FaRegCircleCheck size={18} color="#246938" />
-        </div>
+        </button>
       </div>
-      <div className="">
+      <div className="px-3 w-[55%] md:w-full">
         <Tabs>
           <Tab title="Course overview">
             <CourseOverview />

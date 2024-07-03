@@ -16,7 +16,7 @@ function Page() {
   };
   const Router = useRouter();
   const handleNext = () => {
-    Router.push('exams/examid');
+    Router.push('exams/[examid]');
   };
 
   useEffect(() => {

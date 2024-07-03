@@ -27,13 +27,13 @@ function CustomCourse() {
         </span>
       </div>
       <div className="flex justify-end">
-        <div
-          className="bg-cp-secondary text-white w-[93px] py-2 flex justify-center items-center text-[13px] cursor-pointer gap-2 "
+        <button
+          className="bg-cp-secondary hover:bg-pink-700 text-white w-[93px] py-2 flex justify-center items-center text-[13px] cursor-pointer gap-2 "
           onClick={handleClick}
         >
           Apply
           <GoArrowRight size={19} />
-        </div>
+        </button>
       </div>
     </div>
   );

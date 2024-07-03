@@ -23,7 +23,7 @@ const RecommendedCourse: React.FC<RecommendedCourseProps> = ({
   handleClick,
 }) => {
   return (
-    <div className="border-[1px] border-[#AC1D7E]  w-[325px] mb-20 p-5 flex flex-col gap-4 relative">
+    <div className="border-[1px]  border-[#AC1D7E]    md:w-[325px] mb-20 p-5 flex flex-col gap-4 relative">
       {isCourseAvailable && (
         <div className="py-1 px-1 border-[1.5px] w-[110px] border-[#AC1D7E] text-[10px] font-bold text-[#AC1D7E]">
           {availableCourses}
@@ -43,9 +43,10 @@ const RecommendedCourse: React.FC<RecommendedCourseProps> = ({
           className="cursor-pointer"
         />
       </div>
-      <span className="text-[14px] font-extrabold overflow-hidden">
+      <span className="text-[14px] w-[300px] font-extrabold overflow-hidden">
         {title}
       </span>
+      {/* <div className="hidden md:flex md:flex-col">  */}
       <span className="text-[12px] font-normal h-[140px] overflow-auto no-scrollbar">
         {body}
       </span>
@@ -59,10 +60,12 @@ const RecommendedCourse: React.FC<RecommendedCourseProps> = ({
         />
         <div className="text-[14px] font-extrabold">Earn Certificates</div>
       </div>
+      {/* </div> */}
       <div className="flex justify-end cursor-pointer">
         <div onClick={handleClick}>
-          <div className="bg-cp-secondary text-white w-[150px] py-3 flex justify-center items-center text-[13px] gap-2">
-            Explore Courses
+          <div className="bg-cp-secondary hover:bg-pink-700 text-white md:w-[150px] px-2 w-max py-2 md:py-3 flex justify-center items-center text-[11px] md:text-[13px] gap-2">
+            <span className="hidden md:block">Explore Courses</span>
+            <span className="md:hidden">View Courses</span>
             <GoArrowRight size={19} className="animate-pulse" />
           </div>
         </div>

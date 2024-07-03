@@ -13,7 +13,7 @@ const Page = () => {
     dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
   }, [dispatch]);
   return (
-    <div className="profile">
+    <div className="profile mt-12 md:mt-5 px-4 md:px-0">
       <Profile />
     </div>
   );

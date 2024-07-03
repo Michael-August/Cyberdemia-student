@@ -20,7 +20,7 @@ function Page() {
     dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
   }, [dispatch]);
   return (
-    <div className="flex flex-col md:gap-10 px-2 md:px-0">
+    <div className="flex flex-col md:gap-10 px-2 md:px-0 mt-10 md:mt-0">
       <NavigationCrumbs />
       <div className="flex flex-col px-5 md:flex-row w-full gap-10">
         <CourseDetails />

@@ -29,7 +29,9 @@
 .fade-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 300ms, transform 300ms;
+  transition:
+    opacity 300ms,
+    transform 300ms;
 }
 
 .fade-exit {
@@ -40,7 +42,9 @@
 .fade-exit-active {
   opacity: 0;
   transform: translateY(-10px);
-  transition: opacity 300ms, transform 300ms;
+  transition:
+    opacity 300ms,
+    transform 300ms;
 }
 
 .react-player {
@@ -57,6 +61,56 @@ body {
   scroll-behavior: smooth;
   box-sizing: border-box;
   /* overflow-x: hidden; */
+}
+.certificate-image {
+  width: 170px; /* Default width */
+  height: 300px; /* Default height */
+}
+
+@media (max-width: 768px) {
+  .responsive-image {
+    width: 100;
+    height: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .responsive-image {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-image {
+    width: 100px;
+    height: 250px;
+  }
+}
+.responsive-image {
+  width: 200px; /* Default width */
+  height: 100px; /* Default height */
+}
+
+@media (max-width: 768px) {
+  .responsive-image {
+    width: 300px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .responsive-image {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-image {
+    width: 500px;
+    height: 250px;
+  }
 }
 .loader-container {
   display: flex;
@@ -122,21 +176,27 @@ body {
   display: none;
 }
 .no-scrollbar {
-  scrollbar-width: none; 
+  scrollbar-width: none;
 }
 .question-input-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 8px; 
+  gap: 8px;
 }
 .certificate-bg {
-  background-image: url('/images/certificateBackground.svg');
-  background-size: cover; 
+  background-image: url("/images/certificateBackground.svg");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;  /* Adjust as needed */
-  width: 530px;  /* Match the width of the background image */
-  height: 428px;  /* Match the height of the background image */
+  background-position: center; /* Adjust as needed */
+  width: 530px; /* Match the width of the background image */
+  height: 428px; /* Match the height of the background image */
 }
+/* @media (max-width: 480px) {
+  .certificate-bg {
+    width: 500px;
+    height: 300px;
+  }
+} */
 
 .question-input-label {
   font-size: 12px;
@@ -146,7 +206,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .question-input-label {
-    width: 300px; 
+    width: 300px;
   }
 }
 
@@ -158,9 +218,9 @@ body {
 }
 
 .custom-textarea {
-  padding: 20px 10px 10px 10px; 
+  padding: 20px 10px 10px 10px;
   height: 100px;
-  
+
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -173,8 +233,8 @@ body {
   color: #999;
 }
 .custom-textarea:focus {
-  border-color: #a4c9f0; 
-  outline: none; 
+  border-color: #a4c9f0;
+  outline: none;
 }
 
 .custom-input {
@@ -249,75 +309,74 @@ body {
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-  
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-  
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-  
+
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-  
+
     --radius: 0.5rem;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-  
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-  
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-  
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-  
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-  
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-  
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-  
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
-    
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-  
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-  
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-  
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-  
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-  
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-  
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-  
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-  
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
 }
-
 
 .mobile-menu {
   transform: translateX(-100%);
@@ -335,12 +394,12 @@ body {
   margin-bottom: -10px;
   left: 0;
   height: 4px;
-  background-color: #AC1D7E;
-  width: 12%;
+  background-color: #ac1d7e;
+  width: 5%;
 }
 
 .tab.active {
-  color: #AC1D7E;
+  color: #ac1d7e;
   transition: all 0.3s ease-in;
 }
 
@@ -352,7 +411,7 @@ body {
   left: 0;
   width: 100%;
   height: 9px;
-  background-color: #AC1D7E;
+  background-color: #ac1d7e;
 }
 
 .answer {
@@ -368,7 +427,7 @@ body {
 }
 
 .footer {
-  background-image: url('/public/images/innerbg.png');
+  background-image: url("/public/images/innerbg.png");
 }
 
 @keyframes rotate {
@@ -388,7 +447,7 @@ body {
     @apply bg-background text-foreground;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
