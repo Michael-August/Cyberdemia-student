@@ -19,7 +19,9 @@ const Training = ({
             {title}
           </span>
         </div>
-        <span className="hidden lg:block text-xs text-[#000000B2]">{detail}</span>
+        <span className="hidden lg:block text-xs text-[#000000B2]">
+          {detail}
+        </span>
       </div>
       <div className="flex justify-end">
         <button className="p-2 flex items-center text-sm hover:bg-cp-primary transition-all gap-2 bg-cp-secondary text-white">

@@ -55,36 +55,38 @@ const Trainings = () => {
               <span>Coming Soon</span>
             </div>
           </div>
-          {tab === 'available-tech' && <div>
-            <div className="tab-contents hidden xs:block">
-              <div className="available-tech">
-                <div className="w-full flex gap-5 overflow-x-scroll">
-                  {TechnicalTrainings.map((techTrain) => (
-                    <Training
-                      image={techTrain.image}
-                      title={techTrain.title}
-                      detail={techTrain.detail}
-                      key={techTrain.id}
-                    />
-                  ))}
+          {tab === 'available-tech' && (
+            <div>
+              <div className="tab-contents hidden xs:block">
+                <div className="available-tech">
+                  <div className="w-full flex gap-5 overflow-x-scroll">
+                    {TechnicalTrainings.map((techTrain) => (
+                      <Training
+                        image={techTrain.image}
+                        title={techTrain.title}
+                        detail={techTrain.detail}
+                        key={techTrain.id}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="tab-contents block xs:hidden">
+                <div className="available flex">
+                  <div className="w-full flex gap-5 overflow-x-scroll">
+                    {TechnicalTrainings.map((techTrain) => (
+                      <Training
+                        image={techTrain.image}
+                        title={techTrain.title}
+                        detail={techTrain.detail}
+                        key={techTrain.id}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="tab-contents block xs:hidden">
-              <div className="available flex">
-                <div className="w-full flex gap-5 overflow-x-scroll">
-                  {TechnicalTrainings.map((techTrain) => (
-                    <Training
-                      image={techTrain.image}
-                      title={techTrain.title}
-                      detail={techTrain.detail}
-                      key={techTrain.id}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>}
+          )}
         </div>
       </div>
     </>

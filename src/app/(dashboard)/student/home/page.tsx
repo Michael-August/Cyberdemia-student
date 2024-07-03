@@ -42,9 +42,7 @@ const Home = () => {
         Request for custom course
       </span>
       <CustomCourse />
-      <span className="text-base font-extrabold">
-        Top Recommended Courses
-      </span>
+      <span className="text-base font-extrabold">Top Recommended Courses</span>
       <div className="flex flex-col md:flex-row  gap-6">
         <RecomendedCourse
           availableCourses="7 Courses Available"

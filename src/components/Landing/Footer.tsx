@@ -36,9 +36,7 @@ const Footer = () => {
           </div>
           <div className="group flex flex-col gap-3">
             <span className="heading text-sm font-semibold">Our Offices</span>
-            <span className="text-xs">
-              4, Sefadu Close Wuse II, Abuja FCT.
-            </span>
+            <span className="text-xs">4, Sefadu Close Wuse II, Abuja FCT.</span>
             <span className="text-xs">
               212, Haramani Plaza, Shettima Monguno Crescent, Utako.
             </span>

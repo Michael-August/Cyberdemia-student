@@ -84,10 +84,7 @@ function LandingPageNavbar() {
             </Link>
           </div>
           <div className="link-item bg-[#2BDE48] text-center p-2">
-            <Link
-              className="text-xs text-white font-[700]"
-              href=""
-            >
+            <Link className="text-xs text-white font-[700]" href="">
               Apply Now
             </Link>
           </div>
@@ -171,7 +168,7 @@ function LandingPageNavbar() {
           <div className="link-item border-solid text-center border-[#AC1D7E] p-2">
             <Link
               className="text-xs text-[#AC1D7E] font-[700] hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="/signin"
             >
               Log in
             </Link>
@@ -179,7 +176,7 @@ function LandingPageNavbar() {
           <div className="link-item bg-[#2BDE48] text-center p-2">
             <Link
               className="text-xs text-white font-[700] hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="/signup"
             >
               Apply Now
             </Link>
