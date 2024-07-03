@@ -1,17 +1,17 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
-import SignupForm from "./Signup-form";
+import SignupForm from './Signup-form';
 
 const Signup = () => {
   return (
     <div className="flex flex-col sm:flex-row h-screen m-10">
       <div className="hidden sm:flex flex-col justify-center items-center gap-5 sm:w-1/2">
         <Image
-          src={"/images/loginImage.svg"}
+          src={'/images/loginImage.svg'}
           width={600}
           height={600}
-          alt={"signup image"}
+          alt={'signup image'}
         />
 
         <h1 className="text-3xl font-extrabold text-center px-[10rem]">

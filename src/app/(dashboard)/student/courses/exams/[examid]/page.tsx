@@ -1,10 +1,8 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
-
 import QuestionBar from '@/components/courses/test/testid/QuestionBar';
 import Questions from '@/components/courses/test/testid/Questions';
-
 import { useLayoutContext } from '../../../../../../../context/LayoutContext';
 function Page() {
   const { dispatch } = useLayoutContext();

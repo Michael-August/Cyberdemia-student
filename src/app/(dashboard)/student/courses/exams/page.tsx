@@ -1,10 +1,8 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-
 import IntroCard from '@/components/courses/test/IntroCard';
 import Regulatons from '@/components/courses/test/Regulatons';
-
 import { useLayoutContext } from '../../../../../../context/LayoutContext';
 
 function Page() {

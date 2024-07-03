@@ -30,7 +30,7 @@ const Page = () => {
           <IoIosShareAlt size={20} />
         </div>
       </div>
-      <div className="w-1/2 text-[13px] text-gray-600">
+      <div className="w-1/2 text-[12px] text-gray-600">
         This certificate above verifies that John Doe successfully completed the
         course Cyber Security Defense Analyst on 24th May, 2024 as taught by
         CyberDemia. The certificate indicates the entire course was completed as
