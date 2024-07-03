@@ -59,8 +59,8 @@ const testimonials: any[] = [
 
 const Testimonials = () => {
   return (
-    <>
-      <div className="secion-title relative mb-6 md:mb-10 text-[#000000CC] text-2xl md:text-[2rem] font-semibold md:leading-[2.75rem]">
+    <div className='mt-20 md:mt-32'>
+      <div className="secion-title relative mb-6 md:mb-10 text-[#000000CC] text-base font-semibold">
         <span>See what our students say</span>
       </div>
       <div className="testimonies flex flex-wrap items-center justify-center gap-5">
@@ -75,7 +75,7 @@ const Testimonials = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

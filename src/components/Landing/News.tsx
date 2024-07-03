@@ -15,10 +15,10 @@ const NewsAndUpdates = () => {
   return (
     <>
       <div className="news mt-20 md:mt-32">
-        <div className="mb-6 md:mb-10 text-[#000000CC] text-2xl md:text-[2rem] font-semibold md:leading-[2.75rem]">
+        <div className="mb-6 md:mb-10 text-[#000000CC] text-base font-semibold">
           <span>News & Updates</span>
         </div>
-        <span className="intro text-base md:text-lg text-[#000000B2]">
+        <span className="intro text-sm text-[#000000B2]">
           Promote a culture in which employees, staffs, and students share the
           responsibility of defending the school against cyber-incident with
           holistic cybersecurity strategy.
@@ -72,14 +72,14 @@ export const SingleNews = ({
       <Image width={333} height={180} className="w-full" src={image} alt="" />
       <div className="details mb-6">
         <div className="head mt-4 mb-6">
-          <span className="text-lg font-semibold text-[#000000CC]">
+          <span className="text-sm font-semibold text-[#000000CC]">
             {title}
           </span>
         </div>
-        <span className="md:hidden lg:block">{detail}</span>
+        <span className="md:hidden text-xs lg:block">{detail}</span>
       </div>
       <div className="flex justify-end">
-        <button className="py-5 px-[30px] flex items-center gap-2 bg-transparent border border-solid border-cp-secondary text-cp-secondary">
+        <button className="py-5 px-[30px] hover:text-white hover:bg-cp-secondary transition-all text-sm flex items-center gap-2 bg-transparent border border-solid border-cp-secondary text-cp-secondary">
           Read more
           <IoArrowForward size={22} />
         </button>
@@ -102,14 +102,14 @@ export const MobileNews = ({
       <Image width={333} height={180} className="w-full" src={image} alt="" />
       <div className="details mb-6">
         <div className="head mt-4 mb-6">
-          <span className="text-lg font-semibold text-[#000000CC]">
+          <span className="text-sm font-semibold text-[#000000CC]">
             {title}
           </span>
         </div>
       </div>
-      <span className="block">{detail}</span>
+      <span className="block text-xs">{detail}</span>
       <div className="flex justify-end mt-4">
-        <button className="p-2 flex items-center gap-2 bg-transparent border border-solid border-cp-secondary text-cp-secondary">
+        <button className="p-2 flex text-sm items-center hover:text-white hover:bg-cp-secondary transition-all gap-2 bg-transparent border border-solid border-cp-secondary text-cp-secondary">
           Read more
           <IoArrowForward size={22} />
         </button>

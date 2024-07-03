@@ -38,11 +38,11 @@ const Home = () => {
       <hr
         style={{ height: '1px', backgroundColor: '#AC1D7E', border: 'none' }}
       />
-      <span className="text-[16px] font-extrabold">
+      <span className="text-base font-extrabold">
         Request for custom course
       </span>
       <CustomCourse />
-      <span className="text-[16px] font-extrabold">
+      <span className="text-base font-extrabold">
         Top Recommended Courses
       </span>
       <div className="flex flex-col md:flex-row  gap-6">

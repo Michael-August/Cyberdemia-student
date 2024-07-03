@@ -15,14 +15,14 @@ const Training = ({
       <Image width={333} height={180} className="w-full" src={image} alt="" />
       <div className="details mb-6">
         <div className="head mt-4 mb-6">
-          <span className="text-lg font-semibold text-[#000000CC]">
+          <span className="text-xs font-semibold text-[#000000CC]">
             {title}
           </span>
         </div>
-        <span className="hidden lg:block">{detail}</span>
+        <span className="hidden lg:block text-xs text-[#000000B2]">{detail}</span>
       </div>
       <div className="flex justify-end">
-        <button className="p-2 flex items-center gap-2 bg-cp-secondary text-white">
+        <button className="p-2 flex items-center text-sm hover:bg-cp-primary transition-all gap-2 bg-cp-secondary text-white">
           View Course
           <IoArrowForward size={22} />
         </button>
