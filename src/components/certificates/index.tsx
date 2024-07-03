@@ -1,14 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
 import { IoArrowForward } from 'react-icons/io5';
 
 import { Button } from '../button';
 import { Tab, Tabs } from '../ui/Tab';
 
 const Certificates = () => {
-
   return (
     <div>
       <Tabs>
