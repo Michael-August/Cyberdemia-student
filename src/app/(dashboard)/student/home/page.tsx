@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-8 overflow-x-hidden mt-12 md:mt-5  h-[100%] px-4 md:px-0">
       <div className="flex flex-col gap-2 ">
-        <span className="text-[14px] font-extrabold text-[#AC1D7E]">
+        <span className="text-sm font-extrabold text-[#AC1D7E]">
           In Progress
         </span>
         <div className="">

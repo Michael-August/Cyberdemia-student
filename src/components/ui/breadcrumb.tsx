@@ -11,16 +11,16 @@ const Breadcrumb = ({
       {breadcrumbsArray.map(
         (breadcrumb: { url: string; name: string }, index: number) => (
           <>
-            {index !== breadcrumbsArray.length ? (
+            {index !== breadcrumbsArray.length - 1 ? (
               <Link key={breadcrumb.name} href={breadcrumb.url}>
-                <span className="text-[#0350C2B2] text-[12px]">
-                  {index > 1 && breadcrumb.name}
+                <span className="text-[#0350C2B2] text-sm">
+                  {breadcrumb.name}
                 </span>
               </Link>
             ) : (
-              <span className="text-base">{breadcrumb.name}</span>
+              <span className="text-sm">{breadcrumb.name}</span>
             )}
-            {index > 1 && index < breadcrumbsArray.length - 1 && (
+            {index < breadcrumbsArray.length - 1 && (
               <IoChevronForward size={14} className="text-[#0350C2B2]" />
             )}
           </>
