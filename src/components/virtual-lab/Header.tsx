@@ -4,10 +4,10 @@ const Header = () => {
   return (
     <>
       <div>
-        <h1 className="text-3xl font-extrabold  py-10 text-center sm:text-start">
+        <h1 className="text-16px font-extrabold  text-center sm:text-start">
           Welcome to Virtual Labs
         </h1>
-        <p className="text-black text-justify  sm:text-justify sm:px-0 px-5">
+        <p className="text-black text-justify text-sm pt-5 sm:text-justify sm:px-0 px-3">
           Lorem ipsum dolor sit amet consectetur. Ut porttitor et viverra
           malesuada fringilla. Dictum vitae mi nunc a tellus. Faucibus ac id
           pellentesque interdum. Vestibulum convallis velit feugiat aliquam

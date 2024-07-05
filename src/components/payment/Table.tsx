@@ -85,13 +85,13 @@ const Table: React.FC = () => {
       name: 'Action',
       cell: (row) => (
         <div className="flex justify-end cursor-pointer">
-          <div
+          <button
             className="bg-cp-secondary text-white w-[150px] py-3 flex justify-center hover:bg-cp-secondaryDarker items-center text-[13px] gap-2"
             onClick={() => setSelectedCourse(row)}
           >
             View Course
             <GoArrowRight size={19} />
-          </div>
+          </button>
         </div>
       ),
       ignoreRowClick: true,
