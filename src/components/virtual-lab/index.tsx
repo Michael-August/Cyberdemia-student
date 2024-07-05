@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
+import ReactPlayer from 'react-player';
 
 import { coursesData } from '../../../utils/datas';
 import Header from './Header';
 import StandardCard from './StandardCard';
-import ReactPlayer from 'react-player';
 
 const Index = () => {
   return (
