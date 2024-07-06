@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 function LandingPageNavbar() {
   const [expandNavBar, setExpandNavBar] = useState(false);
 
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <>
@@ -78,17 +78,17 @@ function LandingPageNavbar() {
               Become an Instructor
             </Link>
           </div>
-          <div onClick={() => router.push('/signin')} className="link-item border-solid text-center text-[#AC1D7E] transition-all border-[#AC1D7E] p-2 cursor-pointer hover:bg-cp-secondary hover:text-white">
-            <span
-              className="text-xs font-[700]"
-            >
-              Log in
-            </span>
+          <div
+            onClick={() => router.push('/signin')}
+            className="link-item border-solid text-center text-[#AC1D7E] transition-all border-[#AC1D7E] p-2 cursor-pointer hover:bg-cp-secondary hover:text-white"
+          >
+            <span className="text-xs font-[700]">Log in</span>
           </div>
-          <div onClick={() => router.push('/signup')} className="link-item bg-[#2BDE48] text-center p-2 cursor-pointer transition-all hover:bg-[#21712e]">
-            <span className="text-xs text-white font-[700]">
-              Apply Now
-            </span>
+          <div
+            onClick={() => router.push('/signup')}
+            className="link-item bg-[#2BDE48] text-center p-2 cursor-pointer transition-all hover:bg-[#21712e]"
+          >
+            <span className="text-xs text-white font-[700]">Apply Now</span>
           </div>
         </div>
       </div>
