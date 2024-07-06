@@ -21,11 +21,11 @@ const Join = () => {
           </span>
         </div>
         <div className="buttons flex flex-wrap md:gap-6 gap-3 w-full">
-          <button className="md:py-5 md:px-[1.875rem] px-5 py-[0.9375rem] flex items-center gap-2 text-cp-secondary bg-white font-bold text-sm">
+          <button className="md:py-5 md:px-[1.875rem] px-5 py-[0.9375rem] flex items-center gap-2 hover:bg-cp-secondary hover:text-white transition-all text-cp-secondary bg-white font-bold text-sm">
             Enroll Now
             <IoArrowForward size={22} className="text-cp-secondary" />
           </button>
-          <button className="md:py-5 md:px-[1.875rem] px-5 py-[0.9375rem] flex items-center gap-2 text-cp-secondary bg-white font-bold text-sm">
+          <button className="md:py-5 md:px-[1.875rem] px-5 py-[0.9375rem] flex items-center gap-2 hover:bg-cp-secondary hover:text-white transition-all text-cp-secondary bg-white font-bold text-sm">
             Become an Instructor
             <IoArrowForward size={22} className="text-cp-secondary" />
           </button>

@@ -8,7 +8,7 @@ const Courses = () => {
         <span>Our cybersecurity Courses</span>
       </div>
 
-      <div className="course-thumbnails w-full flex md:flex-wrap flex-col md:flex-row gap-8 items-center justify-center">
+      <div className="course-thumbnails w-full flex md:flex-wrap flex-col md:flex-row gap-8">
         <div className="thumbnail w-full md:w-[25.9375rem] p-5 border border-solid border-cp-secondary">
           <div className="course-count px-2 py-1 border w-fit border-solid border-black mb-4">
             <span className="text-xs font-semibold">7 courses available</span>
