@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 
 import LayoutContextProvider from '@/components/Landing/LayoutContextProvider';
-
 const Banner = dynamic(() => import('@/components/Landing/banner'));
 const Why = dynamic(() => import('@/components/Landing/Why'));
 const Values = dynamic(() => import('@/components/Landing/Values'));
