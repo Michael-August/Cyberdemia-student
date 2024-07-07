@@ -14,12 +14,30 @@ const Footer = () => {
           />
           <span className="text-sm">A product of CyberPlural</span>
 
-          <div className="socials mt-7">
+          <div className="socials flex gap-5 items-center mt-7">
             <Image
               width={23.2}
               height={23.2}
-              src="/images/socials.png"
-              alt=""
+              src="/icons/xlogo.svg"
+              alt="x logo"
+            />
+            <Image
+              width={23.2}
+              height={23.2}
+              src="/icons/iglogo.svg"
+              alt="instagram logo"
+            />
+            <Image
+              width={23.2}
+              height={23.2}
+              src="/icons/inlogo.svg"
+              alt="linkedin logo"
+            />
+            <Image
+              width={23.2}
+              height={23.2}
+              src="/icons/fblogo.svg"
+              alt="facebook logo"
             />
           </div>
         </div>

@@ -1,14 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 function LandingPageNavbar() {
   const [expandNavBar, setExpandNavBar] = useState(false);
 
+  const router = useRouter();
+
   return (
     <>
       <div className="w-screen flex items-center justify-between py-[10px] px-4 xl:px-20 2xl:px-52 border-b border-0 border-solid border-[#AA167666]">
-        <div className="logo">
+        <div className="logo cursor-pointer" onClick={() => router.push('/')}>
           <Image
             width={182.71}
             height={48.71}
@@ -75,18 +78,17 @@ function LandingPageNavbar() {
               Become an Instructor
             </Link>
           </div>
-          <div className="link-item border-solid text-center border-[#AC1D7E] p-2">
-            <Link
-              className="text-xs text-[#AC1D7E] font-[700] hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
-            >
-              Log in
-            </Link>
+          <div
+            onClick={() => router.push('/signin')}
+            className="link-item border-solid text-center text-[#AC1D7E] transition-all border-[#AC1D7E] p-2 cursor-pointer hover:bg-cp-secondary hover:text-white"
+          >
+            <span className="text-xs font-[700]">Log in</span>
           </div>
-          <div className="link-item bg-[#2BDE48] text-center p-2">
-            <Link className="text-xs text-white font-[700]" href="">
-              Apply Now
-            </Link>
+          <div
+            onClick={() => router.push('/signup')}
+            className="link-item bg-[#2BDE48] text-center p-2 cursor-pointer transition-all hover:bg-[#21712e]"
+          >
+            <span className="text-xs text-white font-[700]">Apply Now</span>
           </div>
         </div>
       </div>

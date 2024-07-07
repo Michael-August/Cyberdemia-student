@@ -84,7 +84,7 @@ const Certificates = () => {
                                         Resume Learning
                                         <IoArrowForward size={22} />
                                     </Button> */}
-                  <Button className="!bg-cp-secondary !text-white flex items-center gap-3 text-sm mt-3">
+                  <Button className="!bg-cp-secondary !text-white transition-all hover:!bg-white hover:!text-cp-secondary flex items-center gap-3 text-sm mt-3">
                     View Certificate
                     <IoArrowForward size={22} />
                   </Button>
