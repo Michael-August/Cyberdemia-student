@@ -1,25 +1,28 @@
 'use client';
 import React from 'react';
+import ReactPlayer from 'react-player';
 
 import { coursesData } from '../../../utils/datas';
 import Header from './Header';
 import StandardCard from './StandardCard';
-import VideoCard from './VideoCard';
 
 const Index = () => {
   return (
     <div>
       <Header />
-      <VideoCard
-        videoSrc="/video/Tim Godfrey ft Travis Greene - Nara (Official Video).mp4"
-        poster="/images/Certificate.svg"
-        title="Watch a video tutorial on how to use Virtual Labs."
-      />
+      <div className="w-[58%] pt-[2rem] sm:w-full flex flex-col gap-7">
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=NWnBxQjssvQ"
+          className="react-player"
+          controls={true}
+          style={{ pointerEvents: 'auto' }}
+        />
+      </div>
       <div>
-        <h1 className="text-2xl font-extrabold  py-10 text-center sm:text-start">
+        <h1 className="text-[16px] font-extrabold  py-10 text-center sm:text-start">
           Courses with Virtual Labs included
         </h1>
-        <div className="flex justify-between items-center gap-5  overflow-x-scroll">
+        <div className="flex justify-between items-center gap-2  overflow-x-scroll">
           {coursesData?.map((course, index) => (
             <StandardCard
               key={index}
@@ -29,9 +32,7 @@ const Index = () => {
               description={course.description}
               buttonText={course.buttonText}
               isComingSoon={course.isComingSoon}
-              handleViewCourse={() => {
-                console.log('you clicked me');
-              }}
+              handleViewCourse={() => {}}
             />
           ))}
         </div>

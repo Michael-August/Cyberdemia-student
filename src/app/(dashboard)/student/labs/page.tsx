@@ -11,9 +11,9 @@ const Page = () => {
     dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
   }, [dispatch]);
   return (
-    <>
+    <div className=" px-4 md:px-0 sm:mt-[3rem]">
       <VirtualLab />
-    </>
+    </div>
   );
 };
 

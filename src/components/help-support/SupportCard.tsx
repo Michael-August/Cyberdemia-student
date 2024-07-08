@@ -8,7 +8,7 @@ const SupportCard = ({
 }) => {
   return (
     <Link href={support.link}>
-      <div className="border border-solid border-cp-secondary flex flex-col items-center justify-center gap-3 p-6 w-full md:w-[14.875rem] cursor-pointer">
+      <div className="border border-solid border-cp-secondary hover:bg-cp-primary hover:text-white transition-all flex flex-col items-center justify-center gap-3 p-6 w-full md:w-[14.875rem] cursor-pointer">
         <Image
           className="mb-4"
           src={support.icon}
@@ -17,9 +17,7 @@ const SupportCard = ({
           alt="support icon"
         />
         <div className="title">
-          <span className="text-base font-semibold text-[#000000CC]">
-            {support.title}
-          </span>
+          <span className="text-base font-semibold">{support.title}</span>
         </div>
         <div className="info text-center">
           <span className="text-sm">{support.info}</span>

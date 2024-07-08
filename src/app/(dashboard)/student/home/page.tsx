@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-8 overflow-x-hidden mt-12 md:mt-5  h-[100%] px-4 md:px-0">
       <div className="flex flex-col gap-2 ">
-        <span className="text-[14px] font-extrabold text-[#AC1D7E]">
+        <span className="text-sm font-extrabold text-[#AC1D7E]">
           In Progress
         </span>
         <div className="">
@@ -38,6 +38,7 @@ const Home = () => {
       <hr
         style={{ height: '1px', backgroundColor: '#AC1D7E', border: 'none' }}
       />
+<<<<<<< HEAD
       <div className="flex flex-col gap-3">
         <span className="text-[16px] font-extrabold">
           Request for custom course
@@ -68,6 +69,32 @@ const Home = () => {
             isCourseComing={false}
           />
         </div>
+=======
+      <span className="text-base font-extrabold">
+        Request for custom course
+      </span>
+      <CustomCourse />
+      <span className="text-base font-extrabold">Top Recommended Courses</span>
+      <div className="flex flex-col md:flex-row  gap-6">
+        <RecomendedCourse
+          availableCourses="7 Courses Available"
+          image={'/images/card1.svg'}
+          title="Cyber Security Technical Training"
+          body="Lorem ipsum dolor sit amet consectetur. Ut porttitor et viverra malesuada fringilla. Dictum vitae mi nunc a tellus. Faucibus ac id pellentesque interdum. Vestibulum convallis velit feugiat aliquam pellentesque etiam. In posuere purus aliquet dolor pretium eget dictum."
+          handleClick={() => router.push('home/dhjfhjdfh')}
+          isCourseAvailable={true}
+          isCourseComing={false}
+        />
+        <RecomendedCourse
+          availableCourses="3 Courses Available"
+          image={'/images/card2.svg'}
+          title="Cyber Security Awareness "
+          body="Lorem ipsum dolor sit amet consectetur. Ut porttitor et viverra malesuada fringilla. Dictum vitae mi nunc a tellus. Faucibus ac id pellentesque interdum. Vestibulum convallis velit feugiat aliquam pellentesque etiam. In posuere purus aliquet dolor pretium eget dictum."
+          handleClick={() => router.push('home/shfdhf')}
+          isCourseAvailable={true}
+          isCourseComing={false}
+        />
+>>>>>>> 6d10b93ebc0593037f5ba1f70babc2443efd8c5d
       </div>
     </div>
   );

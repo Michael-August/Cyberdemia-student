@@ -26,8 +26,8 @@ const Profile = () => {
             </span>
           </div>
           <div className="name-email flex flex-col gap-1">
-            <span className="text-2xl md:text-[28px] font-bold">John Doe</span>
-            <span className="text-base text-[#000000CC]">
+            <span className="text-base font-bold">John Doe</span>
+            <span className="text-xs text-[#000000CC]">
               johndoe1234@gmail.com
             </span>
           </div>
@@ -35,7 +35,7 @@ const Profile = () => {
         <input type="file" name="" hidden id="profile-image" />
         <Label
           htmlFor="profile-image"
-          className="w-fit h-10 px-4 cursor-pointer py-2 !bg-cp-secondary !text-white flex items-center gap-1"
+          className="w-fit h-10 px-4 cursor-pointer py-2 text-xs !bg-cp-secondary !text-white flex items-center gap-1"
         >
           Upload Image
           <Image src="/icons/camera.png" width={24} height={24} alt="camera" />
@@ -47,13 +47,13 @@ const Profile = () => {
           className={`tab relative cursor-pointer ${tab === 'edit' ? 'active' : ''}`}
           onClick={() => switchTab('edit')}
         >
-          <span className="heading text-base font-bold">Edit Profile</span>
+          <span className="heading text-sm font-bold">Edit Profile</span>
         </div>
         <div
           className={`tab relative cursor-pointer ${tab === 'password' ? 'active' : ''}`}
           onClick={() => switchTab('password')}
         >
-          <span className="heading text-base font-bold">Reset Password</span>
+          <span className="heading text-sm font-bold">Reset Password</span>
         </div>
       </div>
 

@@ -14,46 +14,62 @@ const Footer = () => {
           />
           <span className="text-sm">A product of CyberPlural</span>
 
-          <div className="socials mt-7">
+          <div className="socials flex gap-5 items-center mt-7">
             <Image
               width={23.2}
               height={23.2}
-              src="/images/socials.png"
-              alt=""
+              src="/icons/xlogo.svg"
+              alt="x logo"
+            />
+            <Image
+              width={23.2}
+              height={23.2}
+              src="/icons/iglogo.svg"
+              alt="instagram logo"
+            />
+            <Image
+              width={23.2}
+              height={23.2}
+              src="/icons/inlogo.svg"
+              alt="linkedin logo"
+            />
+            <Image
+              width={23.2}
+              height={23.2}
+              src="/icons/fblogo.svg"
+              alt="facebook logo"
             />
           </div>
         </div>
         <div className="moreinfo flex flex-col md:flex-row md:items-center gap-10 xl:gap-20">
           <div className="group flex flex-col gap-3">
-            <span className="heading text-base font-semibold">Quick Links</span>
-            <span className="text-base">Become an Instructor</span>
-            <span className="text-base">Become a Student</span>
+            <span className="heading text-sm font-semibold">Quick Links</span>
+            <span className="text-xs">Become an Instructor</span>
+            <span className="text-xs">Become a Student</span>
           </div>
           <div className="group flex flex-col gap-3">
-            <span className="heading text-base font-semibold">Contact us</span>
-            <span className="text-base">+234 8000 000 000</span>
-            <span className="text-base">+234 8000 000 000</span>
+            <span className="heading text-sm font-semibold">Contact us</span>
+            <span className="text-xs">+234 8000 000 000</span>
+            <span className="text-xs">+234 8000 000 000</span>
           </div>
           <div className="group flex flex-col gap-3">
-            <span className="heading text-base font-semibold">Our Offices</span>
-            <span className="text-base">
-              4, Sefadu Close Wuse II, Abuja FCT.
-            </span>
-            <span className="text-base">
+            <span className="heading text-sm font-semibold">Our Offices</span>
+            <span className="text-xs">4, Sefadu Close Wuse II, Abuja FCT.</span>
+            <span className="text-xs">
               212, Haramani Plaza, Shettima Monguno Crescent, Utako.
             </span>
           </div>
         </div>
       </div>
       <div className="bootom mt-5 flex md:flex-row flex-col gap-5 md:gap-0 items-center justify-between">
-        <span className="text-base font-medium">
+        <span className="text-xs font-medium">
           © 2024 CyberDemia All Rights Reserved.
         </span>
         <div className="policy-conditions flex">
-          <span className="border-r border-solid border-white pr-4">
+          <span className="border-r text-sm border-solid border-white pr-4">
             Privacy Policy
           </span>
-          <span className="ml-4">Terms & Condition</span>
+          <span className="ml-4 text-sm">Terms & Condition</span>
         </div>
       </div>
     </div>

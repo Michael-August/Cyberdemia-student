@@ -31,11 +31,11 @@ const ProfileForm = () => {
       >
         <div className="w-full flex flex-col md:flex-row gap-5">
           <div className="w-full flex flex-col gap-3">
-            <Label className="text-sm text-[#000000CC]" htmlFor="firstname">
+            <Label className="text-xs text-[#000000CC]" htmlFor="firstname">
               First Name
             </Label>
             <Input
-              className="w-full !p-3 focus:!outline-none focus:!ring-0 border !border-solid !border-[#00000033] !bg-[#F5F5F5]"
+              className="w-full !p-3 focus:!outline-none focus:!ring-0 border text-xs !border-solid !border-[#00000033] !bg-[#F5F5F5]"
               placeholder="First Name"
               autoComplete="off"
               type="text"
@@ -45,7 +45,7 @@ const ProfileForm = () => {
               })}
             />
             {errors.firstname && (
-              <p className="text-red-500 py-2 text-sm">
+              <p className="text-red-500 py-2 text-xs">
                 {errors.firstname.message}
               </p>
             )}
@@ -53,7 +53,7 @@ const ProfileForm = () => {
           <div className="w-full flex flex-col gap-3">
             <Label htmlFor="lastname">Last Name</Label>
             <Input
-              className="w-full !p-3 focus:!outline-none focus:!ring-0 border !border-solid !border-[#00000033] !bg-[#F5F5F5]"
+              className="w-full !p-3 text-xs focus:!outline-none focus:!ring-0 border !border-solid !border-[#00000033] !bg-[#F5F5F5]"
               placeholder="Last Name"
               autoComplete="off"
               type="text"
@@ -63,7 +63,7 @@ const ProfileForm = () => {
               })}
             />
             {errors.lastname && (
-              <p className="text-red-500 py-2 text-sm">
+              <p className="text-red-500 py-2 text-xs">
                 {errors.lastname.message}
               </p>
             )}
@@ -72,11 +72,11 @@ const ProfileForm = () => {
 
         <div className="w-full flex flex-col md:flex-row gap-5">
           <div className="w-full flex flex-col gap-3">
-            <Label className="text-sm text-[#000000CC]" htmlFor="phone">
+            <Label className="text-xs text-[#000000CC]" htmlFor="phone">
               Phone Number
             </Label>
             <Input
-              className="w-full !p-3 focus:!outline-none focus:!ring-0 border !border-solid !border-[#00000033] !bg-[#F5F5F5]"
+              className="w-full text-xs !p-3 focus:!outline-none focus:!ring-0 border !border-solid !border-[#00000033] !bg-[#F5F5F5]"
               placeholder="Enter Phone number"
               autoComplete="off"
               type="text"
@@ -86,7 +86,7 @@ const ProfileForm = () => {
               })}
             />
             {errors.phoneNumber && (
-              <p className="text-red-500 py-2 text-sm">
+              <p className="text-red-500 py-2 text-xs">
                 {errors.phoneNumber.message}
               </p>
             )}
@@ -95,11 +95,11 @@ const ProfileForm = () => {
         </div>
 
         <div className="w-full flex flex-col gap-3">
-          <Label className="text-sm text-[#000000CC]" htmlFor="bio">
+          <Label className="text-xs text-[#000000CC]" htmlFor="bio">
             Bio
           </Label>
           <Textarea
-            className="w-full !p-3 !focus:outline-none !focus:ring-0 !border border-solid !border-[#00000033] bg-[#F5F5F5]"
+            className="w-full text-xs !p-3 !focus:outline-none !focus:ring-0 !border border-solid !border-[#00000033] bg-[#F5F5F5]"
             placeholder="Enter text (250 characters)"
             autoComplete="off"
             id="bio"
@@ -108,10 +108,10 @@ const ProfileForm = () => {
             })}
           />
           {errors.bio && (
-            <p className="text-red-500 py-2 text-sm">{errors.bio.message}</p>
+            <p className="text-red-500 py-2 text-xs">{errors.bio.message}</p>
           )}
         </div>
-        <Button className="!bg-cp-secondary !text-white mt-5">
+        <Button className="!bg-cp-secondary text-sm mb-5 !text-white mt-5">
           Save changes
         </Button>
       </form>
