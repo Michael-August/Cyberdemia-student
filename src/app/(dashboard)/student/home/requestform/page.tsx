@@ -1,22 +1,22 @@
-'use client';
-import { useRouter } from 'next/navigation';
-import React from 'react';
+"use client";
+import { useRouter } from "next/navigation";
+import React from "react";
 
-import { NavigationCrumbs } from '@/components/NavigationCrumbs';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { NavigationCrumbs } from "@/components/NavigationCrumbs";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 
 const Page = () => {
   const router = useRouter();
-  const handleClick = () => router.push('confirmation');
+  const handleClick = () => router.push("confirmation");
   return (
-    <div className="flex flex-col gap-10 px-4 md:px-0 overflow-y-auto pb-40">
+    <div className="flex flex-col gap-10 px-4 mt-8 md:mt-0 md:px-0 overflow-y-auto pb-40">
       <NavigationCrumbs />
       <div className=" md:w-[50%] ml-2">
         <h1 className="text-[16px] font-extrabold mb-3 ">

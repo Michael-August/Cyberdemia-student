@@ -1,35 +1,35 @@
-import { useRouter } from 'next/navigation';
-import React from 'react';
-import { GoArrowLeft } from 'react-icons/go';
-import { IoMdStopwatch } from 'react-icons/io';
-import { IoCubeOutline } from 'react-icons/io5';
-import { PiBookOpenTextLight } from 'react-icons/pi';
-import { PiCertificate } from 'react-icons/pi';
-import { RxReader } from 'react-icons/rx';
+import { useRouter } from "next/navigation";
+import React from "react";
+import { GoArrowLeft } from "react-icons/go";
+import { IoMdStopwatch } from "react-icons/io";
+import { IoCubeOutline } from "react-icons/io5";
+import { PiBookOpenTextLight } from "react-icons/pi";
+import { PiCertificate } from "react-icons/pi";
+import { RxReader } from "react-icons/rx";
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from "@/components/ui/accordion";
 
-import AccordionContents from '../coursePlayer/AccordionContent';
+import AccordionContents from "../coursePlayer/AccordionContent";
 interface SidebarProps {
   isOpen: boolean;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 const CourseSidebar: React.FC<SidebarProps> = ({ isOpen }) => {
   const Router = useRouter();
-  const handleClick = () => Router.push('test');
-  const handleClick2 = () => Router.push('exams');
-  const handleClick3 = () => Router.push('/student/home');
+  const handleClick = () => Router.push("test");
+  const handleClick2 = () => Router.push("exams");
+  const handleClick3 = () => Router.push("/student/home");
 
   return (
     <div
       className={`bg-cp-primary w-[220px] py-3 text-white shadow-md z-[10000] h-full fixed top-10 left-0 bottom-0 transform transition-transform duration-300 ${
-        isOpen ? 'translate-x-0' : '-translate-x-full'
+        isOpen ? "translate-x-0" : "-translate-x-full"
       } md:translate-x-0`}
     >
       <div
@@ -160,7 +160,7 @@ const CourseSidebar: React.FC<SidebarProps> = ({ isOpen }) => {
                   <div className="flex gap-2 items-center ">
                     <PiCertificate size={22} className="text-gray-800" />
                     <p className="text-gray-700 text-[13px]">
-                      Certificate Exams{' '}
+                      Certificate Exams{" "}
                     </p>
                   </div>
                 </div>
