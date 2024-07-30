@@ -17,7 +17,7 @@ import {
 import AccordionContents from '../coursePlayer/AccordionContent';
 interface SidebarProps {
   isOpen: boolean;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 const CourseSidebar: React.FC<SidebarProps> = ({ isOpen }) => {
