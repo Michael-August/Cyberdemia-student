@@ -1,11 +1,11 @@
-"use client";
-import React, { useRef } from "react";
-import { IoIosShareAlt } from "react-icons/io";
-import { RiDownload2Line } from "react-icons/ri";
-import { useReactToPrint } from "react-to-print";
+'use client';
+import React, { useRef } from 'react';
+import { IoIosShareAlt } from 'react-icons/io';
+import { RiDownload2Line } from 'react-icons/ri';
+import { useReactToPrint } from 'react-to-print';
 
-import Certificate from "@/components/courses/Certificate";
-import { NavigationCrumbs } from "@/components/NavigationCrumbs";
+import Certificate from '@/components/courses/Certificate';
+import { NavigationCrumbs } from '@/components/NavigationCrumbs';
 
 const Page = () => {
   const componentRef = useRef<HTMLDivElement>(null);

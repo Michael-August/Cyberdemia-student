@@ -1,6 +1,6 @@
-"use client";
-import Image from "next/image";
-import React, { forwardRef } from "react";
+'use client';
+import Image from 'next/image';
+import React, { forwardRef } from 'react';
 
 // Define the Certificate component with forwardRef
 const Certificate = forwardRef<HTMLDivElement>((props, ref) => {
@@ -8,7 +8,7 @@ const Certificate = forwardRef<HTMLDivElement>((props, ref) => {
     <div
       ref={ref}
       className="flex items-center md:w-max shadow "
-      style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" }}
+      style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}
     >
       <div>
         <Image
@@ -37,7 +37,7 @@ const Certificate = forwardRef<HTMLDivElement>((props, ref) => {
             <div className="h-[1px] bg-cp-secondary w-[250px] md:w-[350px] -mt-1" />
           </div>
           <div className=" text-[10px] md:text-[11px] text-center font-bold">
-            has successfully completed the CyberDemia exam requirements and is{" "}
+            has successfully completed the CyberDemia exam requirements and is{' '}
             <br className="md:flex hidden" />
             recognized as
           </div>
@@ -94,6 +94,6 @@ const Certificate = forwardRef<HTMLDivElement>((props, ref) => {
 });
 
 // Set the displayName for the component
-Certificate.displayName = "Certificate";
+Certificate.displayName = 'Certificate';
 
 export default Certificate;
