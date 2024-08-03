@@ -1,8 +1,9 @@
-import useStickyNavbar from '@/hooks/useStickyNavBar';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
+
+import useStickyNavbar from '@/hooks/useStickyNavBar';
 
 function LandingPageNavbar() {
   const [expandNavBar, setExpandNavBar] = useState(false);
@@ -13,7 +14,9 @@ function LandingPageNavbar() {
 
   return (
     <>
-      <div className={`w-screen ${isSticky ? 'stick-up' : ''} transition-all flex items-center justify-between py-[10px] px-4 xl:px-20 2xl:px-52 border-b border-0 border-solid border-[#AA167666]`}>
+      <div
+        className={`w-screen ${isSticky ? 'stick-up' : ''} transition-all flex items-center justify-between py-[10px] px-4 xl:px-20 2xl:px-52 border-b border-0 border-solid border-[#AA167666]`}
+      >
         <div className="logo cursor-pointer" onClick={() => router.push('/')}>
           <Image
             width={182.71}
@@ -23,7 +26,10 @@ function LandingPageNavbar() {
             className="w-[157px] lg:w-[11.375rem]"
           />
         </div>
-        <div className="lg:hidden" onClick={() => setExpandNavBar(value => value = !value)}>
+        <div
+          className="lg:hidden"
+          onClick={() => setExpandNavBar((value) => (value = !value))}
+        >
           <Image
             width={32}
             height={32}
