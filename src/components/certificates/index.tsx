@@ -1,6 +1,5 @@
 'use client';
 
-
 import Completed from '../courses/tabs/Completed';
 import { Tab, Tabs } from '../ui/Tab';
 
