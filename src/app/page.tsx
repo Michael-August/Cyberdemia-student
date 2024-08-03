@@ -23,18 +23,42 @@ const Home = () => {
   return (
     <main className="px-4 lg:px-20 lg:mt-20 2xl:px-52 overflow-x-clip">
       <LayoutContextProvider>
-        <Banner />
-        <Why />
-        <Values />
-        <Courses />
-        <Trainings />
-        <AwarenessTraining />
-        <SchoolOutreach />
-        <Instructor />
-        <Testimonials />
-        <Join />
-        <FAQs />
-        <NewsAndUpdates />
+        <section id="banner">
+          <Banner />
+        </section>
+        <section id="why">
+          <Why />
+        </section>
+        <section id="values">
+          <Values />
+        </section>
+        <section id="courses">
+          <Courses />
+        </section>
+        <section id="trainings">
+          <Trainings />
+        </section>
+        <section id="awareness-training">
+          <AwarenessTraining />
+        </section>
+        <section id="school-outreach">
+          <SchoolOutreach />
+        </section>
+        <section id="instructor">
+          <Instructor />
+        </section>
+        <section id="testimonials">
+          <Testimonials />
+        </section>
+        <section id="join">
+          <Join />
+        </section>
+        <section id="faqs">
+          <FAQs />
+        </section>
+        <section id="news-and-updates">
+          <NewsAndUpdates />
+        </section>
         <Footer />
       </LayoutContextProvider>
     </main>
