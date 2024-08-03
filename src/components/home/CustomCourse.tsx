@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import React from 'react';
-import { GoArrowRight } from 'react-icons/go';
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React from "react";
+import { GoArrowRight } from "react-icons/go";
 
 function CustomCourse() {
   const router = useRouter();
-  const handleClick = () => router.push('home/requestForm');
+  const handleClick = () => router.push("/student/home/requestForm");
   return (
-    <div className="h-[194px] w-[370px] border-[1.5px] border-[#AC1D7E] p-2 flex flex-col gap-4">
+    <div className="h-[194px] w-full md:w-[370px] border-[1.5px] border-[#AC1D7E] p-2 flex flex-col gap-4">
       <div className="flex items-center gap-3">
         <Image
           src="/images/ShieldPlus.svg"

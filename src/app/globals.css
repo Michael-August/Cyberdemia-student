@@ -194,12 +194,26 @@ body {
   width: 530px; /* Match the width of the background image */
   height: 428px; /* Match the height of the background image */
 }
-/* @media (max-width: 480px) {
+@media (max-width: 480px) {
   .certificate-bg {
-    width: 500px;
-    height: 300px;
+    width: 290px;
+    height: 250px;
   }
-} */
+}
+.certificatefirst-bg {
+  /* background-image: url("/images/certificateBackground.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; Adjust as needed */
+  width: 170px; /* Match the width of the background image */
+  /* height: 428px; Match the height of the background image */
+}
+@media (max-width: 480px) {
+  .certificatefirst-bg {
+    width: 100px;
+    /* height: 250px; */
+  }
+}
 
  .stick-up {
   position: fixed;

@@ -1,22 +1,22 @@
-'use client';
-import { useRouter } from 'next/navigation';
-import React from 'react';
+"use client";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 
-import { NavigationCrumbs } from '@/components/NavigationCrumbs';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+import { NavigationCrumbs } from "@/components/NavigationCrumbs";
+import { RadioGroup } from "@/components/ui/radio-group";
+import { useLayoutContext } from "../../../../../../context/LayoutContext";
 
 const Page = () => {
+  const { dispatch } = useLayoutContext();
   const router = useRouter();
-  const handleClick = () => router.push('confirmation');
+
+  useEffect(() => {
+    dispatch({ type: "SET_NAVBAR", navbarType: "dashboardNavbar" });
+    dispatch({ type: "SET_SIDEBAR", sidebarType: "defaultSidebar" });
+  }, [dispatch]);
+  const handleClick = () => router.push("confirmation");
   return (
-    <div className="flex flex-col gap-10 px-4 md:px-0 overflow-y-auto pb-40">
+    <div className="flex flex-col gap-10 px-4 mt-8 md:mt-0 md:px-0 overflow-y-auto pb-40">
       <NavigationCrumbs />
       <div className=" md:w-[50%] ml-2">
         <h1 className="text-[16px] font-extrabold mb-3 ">
@@ -68,7 +68,7 @@ const Page = () => {
               <h1 className="question-input-label ">Question 2</h1>
               <RadioGroup defaultValue="option-one">
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="option-one" id="option-one" />
+                  <input value="option-one" id="option-two" type="radio" />
                   <label
                     htmlFor="option-one"
                     className="text-[12px] text-gray-600"
@@ -77,7 +77,7 @@ const Page = () => {
                   </label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="option-two" id="option-two" />
+                  <input value="option-two" id="option-two" type="radio" />
                   <label
                     htmlFor="option-two"
                     className="text-[12px] text-gray-600"
@@ -91,19 +91,14 @@ const Page = () => {
         </div>
         <div className=" flex flex-col gap-3">
           <h1 className="question-input-label ">Level of expertise</h1>
-          <Select>
-            <SelectTrigger className="md:w-[33%] bg-[#f5f5f5] py-8 text-[12px] text-gray-600 w-full h-[55px] scroll-m-0 md;h-auto ">
-              <SelectValue
-                placeholder="select level"
-                className="text-[12px] text-gray-600"
-              />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
-            </SelectContent>
-          </Select>
+          <select className="md:w-[33%] bg-[#f5f5f5] p-3 text-[12px] text-gray-600 w-full h-[55px] scroll-m-0 md:h-auto">
+            <option value="" disabled selected>
+              Select level
+            </option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="system">System</option>
+          </select>
         </div>
         <div className="flex flex-col gap-5 mt-8">
           <h1 className="text-[14px] font-extrabold">
@@ -124,19 +119,19 @@ const Page = () => {
           <h1 className="question-input-label ">Question 2</h1>
           <RadioGroup defaultValue="option-one">
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option-one" id="option-one" />
+              <input type="radio" value="option-one" id="option-one" />
               <label htmlFor="option-one" className="text-[12px] text-gray-600">
                 Option 1
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option-two" id="option-two" />
+              <input type="radio" value="option-two" id="option-two" />
               <label htmlFor="option-two" className="text-[12px] text-gray-600">
                 Option 2
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option-three" id="option-three" />
+              <input type="radio" value="option-three" id="option-three" />
               <label
                 htmlFor="option-three"
                 className="text-[12px] text-gray-600"
@@ -145,7 +140,7 @@ const Page = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option-four" id="option-four" />
+              <input type="radio" value="option-four" id="option-four" />
               <label
                 htmlFor="option-four"
                 className="text-[12px] text-gray-600"
@@ -154,7 +149,7 @@ const Page = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option-five" id="option-five" />
+              <input type="radio" value="option-five" id="option-five" />
               <label
                 htmlFor="option-five"
                 className="text-[12px] text-gray-600"
