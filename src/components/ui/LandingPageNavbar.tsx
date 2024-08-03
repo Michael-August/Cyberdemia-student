@@ -1,3 +1,4 @@
+import useStickyNavbar from '@/hooks/useStickyNavBar';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -8,9 +9,11 @@ function LandingPageNavbar() {
 
   const router = useRouter();
 
+  const isSticky = useStickyNavbar();
+
   return (
     <>
-      <div className="w-screen flex items-center justify-between py-[10px] px-4 xl:px-20 2xl:px-52 border-b border-0 border-solid border-[#AA167666]">
+      <div className={`w-screen ${isSticky ? 'stick-up' : ''} transition-all flex items-center justify-between py-[10px] px-4 xl:px-20 2xl:px-52 border-b border-0 border-solid border-[#AA167666]`}>
         <div className="logo cursor-pointer" onClick={() => router.push('/')}>
           <Image
             width={182.71}
@@ -20,20 +23,20 @@ function LandingPageNavbar() {
             className="w-[157px] lg:w-[11.375rem]"
           />
         </div>
-        <div className="lg:hidden" onClick={() => setExpandNavBar(true)}>
+        <div className="lg:hidden" onClick={() => setExpandNavBar(value => value = !value)}>
           <Image
             width={32}
             height={32}
             src="/icons/hamburger.png"
             alt="show menu"
-            className="w-8"
+            className="w-8 cursor-pointer"
           />
         </div>
         <div className="hidden nav-links lg:flex items-center gap-4">
           <div className="link-item">
             <Link
               className="text-xs text-[#000000CC] font-normal hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="#why"
             >
               Why CyberDemia
             </Link>
@@ -41,7 +44,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-xs text-[#000000CC] font-normal hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="#courses"
             >
               Courses
             </Link>
@@ -49,7 +52,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-xs text-[#000000CC] font-normal hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="#school-outreach"
             >
               Cyber for Schools
             </Link>
@@ -57,7 +60,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-xs text-[#000000CC] font-normal hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="#faqs"
             >
               FAQs
             </Link>
@@ -65,7 +68,7 @@ function LandingPageNavbar() {
           <div className="link-item">
             <Link
               className="text-xs text-[#000000CC] font-normal hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="#news-and-updates"
             >
               News and Updates
             </Link>
@@ -105,7 +108,7 @@ function LandingPageNavbar() {
             height={32}
             src="/icons/close.png"
             alt="close"
-            className="text-right w-8"
+            className="text-right w-8 cursor-pointer"
           />
         </div>
         <div className="logo mb-10 flex items-center flex-col">
@@ -121,46 +124,52 @@ function LandingPageNavbar() {
         <div className="flex flex-col nav-links items-center gap-10">
           <div className="link-item">
             <Link
+              onClick={() => setExpandNavBar(false)}
               className="text-xs text-[#000000CC] font-normal hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="#why"
             >
               Why CyberDemia
             </Link>
           </div>
           <div className="link-item">
             <Link
+              onClick={() => setExpandNavBar(false)}
               className="text-xs text-[#000000CC] font-normal hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="#courses"
             >
               Courses
             </Link>
           </div>
           <div className="link-item">
             <Link
+              onClick={() => setExpandNavBar(false)}
               className="text-xs text-[#000000CC] font-normal hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="#school-outreach"
             >
               Cyber for Schools
             </Link>
           </div>
           <div className="link-item">
             <Link
+              onClick={() => setExpandNavBar(false)}
               className="text-xs text-[#000000CC] font-normal hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="#faqs"
             >
               FAQs
             </Link>
           </div>
           <div className="link-item">
             <Link
+              onClick={() => setExpandNavBar(false)}
               className="text-xs text-[#000000CC] font-normal hover:text-cp-secondary transition-all  hover:font-semibold"
-              href=""
+              href="#news-and-updates"
             >
               News and Updates
             </Link>
           </div>
           <div className="link-item">
             <Link
+              onClick={() => setExpandNavBar(false)}
               className="text-xs text-[#000000CC] font-normal hover:text-cp-secondary transition-all  hover:font-semibold"
               href=""
             >

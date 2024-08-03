@@ -21,6 +21,9 @@
 ::-webkit-scrollbar {
   display: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 .fade-enter {
   opacity: 0;
   transform: translateY(-10px);
@@ -197,6 +200,13 @@ body {
     height: 300px;
   }
 } */
+
+ .stick-up {
+  position: fixed;
+  top: 0;
+  background: white;
+  z-index: 100;
+ }
 
 .question-input-label {
   font-size: 12px;
