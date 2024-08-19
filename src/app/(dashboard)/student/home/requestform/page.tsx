@@ -1,20 +1,21 @@
-"use client";
-import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+'use client';
+import { useRouter } from 'next/navigation';
+import React, { useEffect } from 'react';
 
-import { NavigationCrumbs } from "@/components/NavigationCrumbs";
-import { RadioGroup } from "@/components/ui/radio-group";
-import { useLayoutContext } from "../../../../../../context/LayoutContext";
+import { NavigationCrumbs } from '@/components/NavigationCrumbs';
+import { RadioGroup } from '@/components/ui/radio-group';
+
+import { useLayoutContext } from '../../../../../../context/LayoutContext';
 
 const Page = () => {
   const { dispatch } = useLayoutContext();
   const router = useRouter();
 
   useEffect(() => {
-    dispatch({ type: "SET_NAVBAR", navbarType: "dashboardNavbar" });
-    dispatch({ type: "SET_SIDEBAR", sidebarType: "defaultSidebar" });
+    dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
+    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
   }, [dispatch]);
-  const handleClick = () => router.push("confirmation");
+  const handleClick = () => router.push('confirmation');
   return (
     <div className="flex flex-col gap-10 px-4 mt-8 md:mt-0 md:px-0 overflow-y-auto pb-40">
       <NavigationCrumbs />
