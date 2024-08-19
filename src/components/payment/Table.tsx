@@ -17,12 +17,12 @@ interface TableRow {
 }
 
 const Table: React.FC = () => {
-  const [, setPage] = useState(1);
+  // const [, setPage] = useState(1);
   const [, setSelectedCourse] = useState({});
 
-  const handlePageChange = (page: number) => {
-    setPage(page);
-  };
+  // const handlePageChange = (page: number) => {
+  //   // setPage(page);
+  // };
 
   const customStyles = {
     headCells: {
@@ -121,7 +121,7 @@ const Table: React.FC = () => {
         columns={columns}
         data={Tabledatas}
         pagination
-        onChangePage={handlePageChange}
+        // onChangePage={handlePageChange}
       />
     </div>
   );
