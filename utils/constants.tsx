@@ -32,3 +32,5 @@ export const formatPrice = (price: number) => {
     minimumFractionDigits: 0,
   }).format(price);
 };
+
+export const baseUrl = 'https://cyberdemia-backend.onrender.com/api/v1';
