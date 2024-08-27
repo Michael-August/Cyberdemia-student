@@ -12,4 +12,5 @@ declare module 'next-auth' {
     user: Partial<User>;
     token: token;
   }
+  token: string;
 }

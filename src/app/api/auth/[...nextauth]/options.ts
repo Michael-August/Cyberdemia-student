@@ -58,12 +58,6 @@ export const authOptions: AuthOptions = {
       return token;
     },
     async session({ session, token }) {
-      session.user = {
-        token: {
-          accessToken: token.access,
-          refreshToken: token.refreshToken || "",
-        },
-      };
       session.token = token.access;
       await Promise.resolve();
       return session;
