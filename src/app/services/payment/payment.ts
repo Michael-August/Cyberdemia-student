@@ -1,10 +1,10 @@
-import { baseUrl } from "../../../../utils/constants";
-import { request } from "../../../../utils/request";
+import { baseUrl } from '../../../../utils/constants';
+import { request } from '../../../../utils/request';
 
 export const updateAiiProfile = async (token: string, aiiProfileData: any) => {
-  const res = await request("PUT", `${baseUrl}/v1/aii/profile`, {
+  const res = await request('PUT', `${baseUrl}/v1/aii/profile`, {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
     data: aiiProfileData,
@@ -14,9 +14,9 @@ export const updateAiiProfile = async (token: string, aiiProfileData: any) => {
 };
 
 export const applyForLabelingAii = async (token: string) => {
-  const res = await request("POST", `${baseUrl}/v1/aii/label/applications`, {
+  const res = await request('POST', `${baseUrl}/v1/aii/label/applications`, {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
   });
