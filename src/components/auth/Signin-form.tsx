@@ -1,15 +1,13 @@
 'use client';
-
-import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { Session } from 'next-auth';
-import { getSession, signIn } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 import React, { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { toast } from 'react-toastify';
 
-import { baseUrl } from '../../../utils/constants';
+import { request } from '@/hooks/request';
+
 import { Input } from '../inputs';
 import { Label } from '../label';
 import Loader from '../loader';
@@ -44,42 +42,37 @@ const SigninForm: React.FC = () => {
         password: data.password,
         redirect: false,
       });
+      console.log(res, 'response');
 
       if (res && res.ok) {
-        const user: Session | null | undefined = await getSession();
-        try {
-          const profileRes = await axios.get(`${baseUrl}/get-profile`, {
-            headers: {
-              Authorization: `Bearer ${user?.token}`,
-            },
-          });
-          if (profileRes && profileRes?.data) {
-            const { data: profileData } = profileRes;
-            const userProfile = {
-              fullName: profileData?.data.fullName,
-              firstName: profileData?.data.firstName,
-              lastName: profileData?.data.lastName,
-              state: profileData?.data.state,
-              gender: profileData?.data.gender,
-              country: profileData?.data.country,
-              age: profileData?.data.age,
-            };
-            sessionStorage.setItem('userProfile', JSON.stringify(userProfile));
+        const config = {
+          method: 'get',
+          url: '/get-profile',
+        };
+        const profileRes = await request(config);
 
-            toast.success('Login successful');
-            router.push('/student/home');
-          }
-        } catch (error: any) {
-          toast.error(error.response.data);
+        if (profileRes && profileRes?.data) {
+          const { data: profileData } = profileRes;
+          const userProfile = {
+            fullName: profileData?.data?.fullName,
+            firstName: profileData?.data?.firstName,
+            lastName: profileData?.data?.lastName,
+            state: profileData?.data?.state,
+            gender: profileData?.data?.gender,
+            country: profileData?.data?.country,
+            age: profileData?.data?.age,
+          };
+          sessionStorage.setItem('userProfile', JSON.stringify(userProfile));
+          toast.success('Login successful');
+          router.push('/student/home');
         }
       }
-      if (res && !res.ok) {
-        toast.error('Invalid email or password');
-      }
     } catch (error: any) {
-      toast.error('Invalid email or password');
+      console.log(error);
+      toast.error('try again');
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
