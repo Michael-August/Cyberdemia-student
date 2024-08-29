@@ -9,7 +9,7 @@ const client = axios.create({
 
 const shownErrors = new Set<string>();
 
-export const request = async (config: AxiosRequestConfig): Promise<any> => {
+export const useRequest = async (config: AxiosRequestConfig): Promise<any> => {
   const user: Session | null | undefined = await getSession();
   try {
     if (user) {

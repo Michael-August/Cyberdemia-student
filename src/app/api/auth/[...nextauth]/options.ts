@@ -1,4 +1,3 @@
-'use client';
 import type {
   GetServerSidePropsContext,
   NextApiRequest,
@@ -8,7 +7,8 @@ import { AuthOptions, User } from 'next-auth';
 import { getServerSession } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-import { request } from '@/hooks/request';
+import { baseUrl } from '../../../../../utils/constants';
+import { request } from '../../../../../utils/request';
 
 const credentialsProviderOptions: any = {
   name: 'Login',
@@ -27,12 +27,9 @@ const credentialsProviderOptions: any = {
 
     const { email, password } = credentials || { email: 'example@gmail.com' };
     try {
-      const config = {
-        method: 'post',
-        url: '/login',
+      const json = await request('POST', `${baseUrl}/login`, {
         data: { email, password },
-      };
-      const json = await request(config);
+      });
 
       if (json.status && json.data && json.data.token) {
         const user: User = {
