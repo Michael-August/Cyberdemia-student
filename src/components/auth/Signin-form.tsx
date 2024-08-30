@@ -1,16 +1,16 @@
-'use client';
-import { useRouter } from 'next/navigation';
-import { signIn } from 'next-auth/react';
-import React, { useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
-import { toast } from 'react-toastify';
+"use client";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import React, { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { toast } from "react-toastify";
 
-import { request } from '@/hooks/request';
+import { request } from "@/hooks/request";
 
-import { Input } from '../inputs';
-import { Label } from '../label';
-import Loader from '../loader';
+import { Input } from "../inputs";
+import { Label } from "../label";
+import Loader from "../loader";
 
 type FormValues = {
   email: string;
@@ -22,7 +22,7 @@ const SigninForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const handleforgetpass = () => {
-    console.log('Forgot password clicked');
+    console.log("Forgot password clicked");
   };
   const {
     register,
@@ -37,20 +37,18 @@ const SigninForm: React.FC = () => {
   const submitForm: SubmitHandler<FormValues> = async (data: any) => {
     setLoading(true);
     try {
-      const res = await signIn('credentials', {
+      const res = await signIn("credentials", {
         email: data.email,
         password: data.password,
         redirect: false,
       });
-      console.log(res, 'response');
 
       if (res && res.ok) {
         const config = {
-          method: 'get',
-          url: '/get-profile',
+          method: "get",
+          url: "/get-profile",
         };
         const profileRes = await request(config);
-
         if (profileRes && profileRes?.data) {
           const { data: profileData } = profileRes;
           const userProfile = {
@@ -62,17 +60,15 @@ const SigninForm: React.FC = () => {
             country: profileData?.data?.country,
             age: profileData?.data?.age,
           };
-          sessionStorage.setItem('userProfile', JSON.stringify(userProfile));
-          toast.success('Login successful');
-          router.push('/student/home');
+          sessionStorage.setItem("userProfile", JSON.stringify(userProfile));
+          router.push("/student/home");
+          toast.success("Login successful");
         }
       }
     } catch (error: any) {
-      console.log(error);
-      toast.error('try again');
-    } finally {
-      setLoading(false);
+      toast.error("try again");
     }
+    setLoading(false);
   };
 
   return (
@@ -93,11 +89,11 @@ const SigninForm: React.FC = () => {
                 id="email"
                 className="w-full p-2"
                 placeholder="Email Address"
-                {...register('email', {
-                  required: 'Email address is required',
+                {...register("email", {
+                  required: "Email address is required",
                   pattern: {
                     value: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,
-                    message: 'Invalid email address',
+                    message: "Invalid email address",
                   },
                 })}
               />
@@ -113,15 +109,15 @@ const SigninForm: React.FC = () => {
               <Label htmlFor="password">Password</Label>
               <div className="relative">
                 <Input
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   id="password"
                   placeholder="Password"
                   className="w-full p-2 border rounded-md"
-                  {...register('password', {
-                    required: 'Password is required',
+                  {...register("password", {
+                    required: "Password is required",
                     minLength: {
                       value: 6,
-                      message: 'Password must be at least 6 characters long',
+                      message: "Password must be at least 6 characters long",
                     },
                   })}
                 />
