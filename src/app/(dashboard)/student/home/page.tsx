@@ -7,14 +7,21 @@ import RecomendedCourse from '@/components/home/RecomendedCourse';
 import ResumeLearning from '@/components/home/ResumeLearning';
 
 import { useLayoutContext } from '../../../../../context/LayoutContext';
+import { useGetCourses } from '@/hooks/react-query/useCourses';
+import Loader from '@/components/ui/Loader';
 const Home = () => {
   const { dispatch } = useLayoutContext();
-
   useEffect(() => {
     dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
     dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
   }, [dispatch]);
   const router = useRouter();
+  const {data, isLoading} = useGetCourses()
+
+  console.log(data, 'data')
+  if (isLoading){
+    return <Loader/>
+  }
   return (
     <div className="flex flex-col gap-8 overflow-x-hidden mt-12 md:mt-5  h-[100%] px-4 md:px-0">
       <div className="flex flex-col gap-2 ">
