@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import Image from 'next/image';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
-import { Input } from "../inputs";
-import { Label } from "../label";
+import { Input } from '../inputs';
+import { Label } from '../label';
 
 type FormValues = {
   firstname: string;
@@ -30,9 +30,9 @@ const SignupForm: React.FC = () => {
     formState: { errors },
   } = useForm<FormValues>();
 
-  const genderOptions = ["Male", "Female", "Other"];
-  const countryOptions = ["Nigeria", "Canada", "Other"];
-  const hearAboutOptions = ["Facebook", "2go", "Other"];
+  const genderOptions = ['Male', 'Female', 'Other'];
+  const countryOptions = ['Nigeria', 'Canada', 'Other'];
+  const hearAboutOptions = ['Facebook', '2go', 'Other'];
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -42,17 +42,17 @@ const SignupForm: React.FC = () => {
     setShowConfirmPassword(!showConfirmPassword);
 
   const submitForm = (data: any) => {
-    console.log("Form submitted", data);
+    console.log('Form submitted', data);
   };
-  const password = watch("password");
+  const password = watch('password');
   return (
     <>
       <div className="flex flex-col justify-center sm:pt-10 items-start gap-10">
         <Image
-          src={"/images/cyberdemiaLogo.svg"}
+          src={'/images/cyberdemiaLogo.svg'}
           width={200}
           height={200}
-          alt={"cyberdemia logo"}
+          alt={'cyberdemia logo'}
         />
         <div>
           <h1 className="text-3xl font-bold">Sign Up</h1>
@@ -77,8 +77,8 @@ const SignupForm: React.FC = () => {
                 placeholder="First Name"
                 type="text"
                 id="firstname"
-                {...register("firstname", {
-                  required: "First name is required",
+                {...register('firstname', {
+                  required: 'First name is required',
                 })}
               />
               {errors.firstname && (
@@ -94,8 +94,8 @@ const SignupForm: React.FC = () => {
                 placeholder="Last Name"
                 type="text"
                 id="lastname"
-                {...register("lastname", {
-                  required: "Last name is required",
+                {...register('lastname', {
+                  required: 'Last name is required',
                 })}
               />
               {errors.lastname && (
@@ -115,11 +115,11 @@ const SignupForm: React.FC = () => {
                 id="email"
                 className="w-full p-2"
                 placeholder="Email Address"
-                {...register("email", {
-                  required: "Email address is required",
+                {...register('email', {
+                  required: 'Email address is required',
                   pattern: {
                     value: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,
-                    message: "Invalid email address",
+                    message: 'Invalid email address',
                   },
                 })}
               />
@@ -134,8 +134,8 @@ const SignupForm: React.FC = () => {
               <select
                 id="gender"
                 className="w-full p-2 border rounded-md"
-                {...register("gender", {
-                  required: "Gender is required",
+                {...register('gender', {
+                  required: 'Gender is required',
                 })}
               >
                 <option value="">Select Gender</option>
@@ -162,11 +162,11 @@ const SignupForm: React.FC = () => {
                 id="age"
                 placeholder="Age"
                 className="w-full p-2 border rounded-md"
-                {...register("age", {
-                  required: "Age is required",
+                {...register('age', {
+                  required: 'Age is required',
                   min: {
                     value: 1,
-                    message: "Age must be a positive number",
+                    message: 'Age must be a positive number',
                   },
                 })}
               />
@@ -184,8 +184,8 @@ const SignupForm: React.FC = () => {
                 placeholder="Phone Number"
                 type="text"
                 id="phoneNumbers"
-                {...register("phoneNumbers.0", {
-                  required: "Phone number is required",
+                {...register('phoneNumbers.0', {
+                  required: 'Phone number is required',
                 })}
               />
               {errors.phoneNumbers?.[0] && (
@@ -201,8 +201,8 @@ const SignupForm: React.FC = () => {
               <select
                 id="country"
                 className="w-full p-2 border rounded-md"
-                {...register("country", {
-                  required: "Country of residence is required",
+                {...register('country', {
+                  required: 'Country of residence is required',
                 })}
               >
                 {countryOptions?.map((option) => (
@@ -223,8 +223,8 @@ const SignupForm: React.FC = () => {
                 type="text"
                 id="state"
                 className="w-full p-2 border rounded-md"
-                {...register("state", {
-                  required: "State/Region of residence is required",
+                {...register('state', {
+                  required: 'State/Region of residence is required',
                 })}
               />
               {errors.state && (
@@ -244,8 +244,8 @@ const SignupForm: React.FC = () => {
                 <select
                   id="heardAboutUs"
                   className="w-full p-2 border rounded-md"
-                  {...register("heardAboutUs", {
-                    required: "How did you hear about CyberDemia is required",
+                  {...register('heardAboutUs', {
+                    required: 'How did you hear about CyberDemia is required',
                   })}
                 >
                   {hearAboutOptions?.map((option) => (
@@ -270,15 +270,15 @@ const SignupForm: React.FC = () => {
               <Label htmlFor="password">Password</Label>
               <div className="relative">
                 <Input
-                  type={showPassword ? "text" : "password"}
+                  type={showPassword ? 'text' : 'password'}
                   id="password"
                   placeholder="Password"
                   className="w-full p-2 border rounded-md"
-                  {...register("password", {
-                    required: "Password is required",
+                  {...register('password', {
+                    required: 'Password is required',
                     minLength: {
                       value: 6,
-                      message: "Password must be at least 6 characters long",
+                      message: 'Password must be at least 6 characters long',
                     },
                   })}
                 />
@@ -299,14 +299,14 @@ const SignupForm: React.FC = () => {
               <Label htmlFor="confirmpassword">Confirm Password</Label>
               <div className="relative">
                 <Input
-                  type={showConfirmPassword ? "text" : "password"}
+                  type={showConfirmPassword ? 'text' : 'password'}
                   placeholder="Confirm Password"
                   id="confirmpassword"
                   className="w-full p-2 border rounded-md"
-                  {...register("confirmpassword", {
-                    required: "Confirm Password is required",
+                  {...register('confirmpassword', {
+                    required: 'Confirm Password is required',
                     validate: (value: string) =>
-                      value === password || "Passwords do not match",
+                      value === password || 'Passwords do not match',
                   })}
                 />
                 <div

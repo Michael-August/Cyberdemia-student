@@ -1,8 +1,9 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { Session } from "next-auth";
-import { getSession } from "next-auth/react";
-import { toast } from "react-toastify";
-import { baseUrl } from "../../utils/constants";
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { Session } from 'next-auth';
+import { getSession } from 'next-auth/react';
+import { toast } from 'react-toastify';
+
+import { baseUrl } from '../../utils/constants';
 
 const client = axios.create({
   baseURL: baseUrl,
@@ -28,7 +29,7 @@ export const request = async (config: AxiosRequestConfig): Promise<any> => {
       const { status, data } = axiosError.response || {};
 
       // Generate a unique key for the error message
-      const errorKey = `${status}-${data?.message || "Network Error"}`;
+      const errorKey = `${status}-${data?.message || 'Network Error'}`;
 
       // Check if the error has been shown already
       if (!shownErrors.has(errorKey)) {
@@ -45,7 +46,7 @@ export const request = async (config: AxiosRequestConfig): Promise<any> => {
         }
         if (status && status >= 500) {
           toast.error(
-            "Oops! Something went wrong on our end. Please try again later."
+            'Oops! Something went wrong on our end. Please try again later.',
           );
         }
       }

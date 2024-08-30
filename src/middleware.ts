@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
-import { withAuth } from "next-auth/middleware";
+import { NextResponse } from 'next/server';
+import { withAuth } from 'next-auth/middleware';
 
 export default withAuth(
   // `withAuth` augments your `Request` with the user's token.
@@ -8,7 +8,7 @@ export default withAuth(
     const token = request.nextauth.token;
 
     if (!token && pathname.match(/student/)) {
-      return NextResponse.redirect(new URL("/signin", request.url));
+      return NextResponse.redirect(new URL('/signin', request.url));
     }
 
     if (token && pathname.match(/signin/)) {
@@ -19,9 +19,9 @@ export default withAuth(
     callbacks: {
       authorized: () => true,
     },
-  }
+  },
 );
 
 export const config = {
-  matcher: ["/student/:path*", "/signin"],
+  matcher: ['/student/:path*', '/signin'],
 };
