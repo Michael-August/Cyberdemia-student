@@ -1,5 +1,5 @@
 'use client';
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactNode, useState } from 'react';
 
 export default function QueryClientWrapper({
@@ -17,6 +17,7 @@ export default function QueryClientWrapper({
         },
       }),
   );
-  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
+  return (
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  );
 }
-

@@ -5,10 +5,10 @@ import React, { useEffect } from 'react';
 import CustomCourse from '@/components/home/CustomCourse';
 import RecomendedCourse from '@/components/home/RecomendedCourse';
 import ResumeLearning from '@/components/home/ResumeLearning';
+import Loader from '@/components/ui/Loader';
+import { useGetCourses } from '@/hooks/react-query/useCourses';
 
 import { useLayoutContext } from '../../../../../context/LayoutContext';
-import { useGetCourses } from '@/hooks/react-query/useCourses';
-import Loader from '@/components/ui/Loader';
 const Home = () => {
   const { dispatch } = useLayoutContext();
   useEffect(() => {
@@ -16,11 +16,11 @@ const Home = () => {
     dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
   }, [dispatch]);
   const router = useRouter();
-  const {data, isLoading} = useGetCourses()
+  const { data, isLoading } = useGetCourses();
 
-  console.log(data, 'data')
-  if (isLoading){
-    return <Loader/>
+  console.log(data, 'data');
+  if (isLoading) {
+    return <Loader />;
   }
   return (
     <div className="flex flex-col gap-8 overflow-x-hidden mt-12 md:mt-5  h-[100%] px-4 md:px-0">
