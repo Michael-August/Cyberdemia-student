@@ -1,16 +1,23 @@
-'use client';
+"use client";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
-import Image from 'next/image';
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
-
-import { Input } from '../inputs';
-import { Label } from '../label';
+import {
+  countryOptions,
+  genderOptions,
+  hearAboutOptions,
+} from "../../../utils/datas";
+import { Input } from "../inputs";
+import { Label } from "../label";
+import Loader from "../loader";
+import { useStudentSignUp } from "@/hooks/react-query/useAuth";
 
 type FormValues = {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   email: string;
   gender: string;
   age: number;
@@ -18,21 +25,20 @@ type FormValues = {
   state: string;
   heardAboutUs: string;
   password: string;
-  confirmpassword: string;
-  phoneNumbers: string[];
+  confirmPassword: string;
+  phoneNumber: string;
 };
 
 const SignupForm: React.FC = () => {
+  const router = useRouter();
+  const { mutate: studentReg, isLoading } = useStudentSignUp(router);
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm<FormValues>();
-
-  const genderOptions = ['Male', 'Female', 'Other'];
-  const countryOptions = ['Nigeria', 'Canada', 'Other'];
-  const hearAboutOptions = ['Facebook', '2go', 'Other'];
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -41,18 +47,21 @@ const SignupForm: React.FC = () => {
   const toggleConfirmPasswordVisibility = () =>
     setShowConfirmPassword(!showConfirmPassword);
 
-  const submitForm = (data: any) => {
-    console.log('Form submitted', data);
+  const submitForm = (data: FormValues) => {
+    studentReg(data);
+    localStorage.setItem("temp", JSON.stringify(data?.email));
   };
-  const password = watch('password');
+
+  const password = watch("password");
   return (
     <>
+      {isLoading && <Loader />}
       <div className="flex flex-col justify-center sm:pt-10 items-start gap-10">
         <Image
-          src={'/images/cyberdemiaLogo.svg'}
+          src={"/images/cyberdemiaLogo.svg"}
           width={200}
           height={200}
-          alt={'cyberdemia logo'}
+          alt={"cyberdemia logo"}
         />
         <div>
           <h1 className="text-3xl font-bold">Sign Up</h1>
@@ -71,36 +80,36 @@ const SignupForm: React.FC = () => {
           {/* First and Last Name */}
           <div className="grid grid-cols-1 py-2 sm:grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="firstname">First Name</Label>
+              <Label htmlFor="firstName">First Name</Label>
               <Input
                 className="w-full p-2"
                 placeholder="First Name"
                 type="text"
-                id="firstname"
-                {...register('firstname', {
-                  required: 'First name is required',
+                id="firstName"
+                {...register("firstName", {
+                  required: "First name is required",
                 })}
               />
-              {errors.firstname && (
+              {errors.firstName && (
                 <p className="text-red-500 py-2 text-sm">
-                  {errors.firstname.message}
+                  {errors.firstName.message}
                 </p>
               )}
             </div>
             <div>
-              <Label htmlFor="lastname">Last Name</Label>
+              <Label htmlFor="lastName">Last Name</Label>
               <Input
                 className="w-full p-2"
                 placeholder="Last Name"
                 type="text"
-                id="lastname"
-                {...register('lastname', {
-                  required: 'Last name is required',
+                id="lastName"
+                {...register("lastName", {
+                  required: "Last name is required",
                 })}
               />
-              {errors.lastname && (
+              {errors.lastName && (
                 <p className="text-red-500 py-2 text-sm">
-                  {errors.lastname.message}
+                  {errors.lastName.message}
                 </p>
               )}
             </div>
@@ -115,11 +124,11 @@ const SignupForm: React.FC = () => {
                 id="email"
                 className="w-full p-2"
                 placeholder="Email Address"
-                {...register('email', {
-                  required: 'Email address is required',
+                {...register("email", {
+                  required: "Email address is required",
                   pattern: {
                     value: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,
-                    message: 'Invalid email address',
+                    message: "Invalid email address",
                   },
                 })}
               />
@@ -134,8 +143,8 @@ const SignupForm: React.FC = () => {
               <select
                 id="gender"
                 className="w-full p-2 border rounded-md"
-                {...register('gender', {
-                  required: 'Gender is required',
+                {...register("gender", {
+                  required: "Gender is required",
                 })}
               >
                 <option value="">Select Gender</option>
@@ -158,15 +167,15 @@ const SignupForm: React.FC = () => {
             <div>
               <Label htmlFor="age">Age</Label>
               <Input
-                type="age"
+                type="number"
                 id="age"
                 placeholder="Age"
                 className="w-full p-2 border rounded-md"
-                {...register('age', {
-                  required: 'Age is required',
+                {...register("age", {
+                  required: "Age is required",
                   min: {
                     value: 1,
-                    message: 'Age must be a positive number',
+                    message: "Age must be a positive number",
                   },
                 })}
               />
@@ -178,19 +187,19 @@ const SignupForm: React.FC = () => {
             </div>
 
             <div>
-              <Label htmlFor="phoneNumbers">Phone Number</Label>
+              <Label htmlFor="phoneNumber">Phone Number</Label>
               <Input
                 className="w-full p-2 border rounded-md"
                 placeholder="Phone Number"
                 type="text"
-                id="phoneNumbers"
-                {...register('phoneNumbers.0', {
-                  required: 'Phone number is required',
+                id="phoneNumber"
+                {...register("phoneNumber", {
+                  required: "Phone number is required",
                 })}
               />
-              {errors.phoneNumbers?.[0] && (
+              {errors.phoneNumber && (
                 <p className="text-red-500 py-2 text-sm">
-                  {errors.phoneNumbers[0].message}
+                  {errors.phoneNumber.message}
                 </p>
               )}
             </div>
@@ -201,8 +210,8 @@ const SignupForm: React.FC = () => {
               <select
                 id="country"
                 className="w-full p-2 border rounded-md"
-                {...register('country', {
-                  required: 'Country of residence is required',
+                {...register("country", {
+                  required: "Country of residence is required",
                 })}
               >
                 {countryOptions?.map((option) => (
@@ -223,8 +232,8 @@ const SignupForm: React.FC = () => {
                 type="text"
                 id="state"
                 className="w-full p-2 border rounded-md"
-                {...register('state', {
-                  required: 'State/Region of residence is required',
+                {...register("state", {
+                  required: "State/Region of residence is required",
                 })}
               />
               {errors.state && (
@@ -243,9 +252,9 @@ const SignupForm: React.FC = () => {
                 </Label>
                 <select
                   id="heardAboutUs"
-                  className="w-full p-2 border rounded-md"
-                  {...register('heardAboutUs', {
-                    required: 'How did you hear about CyberDemia is required',
+                  className="w-full p-2 border rounded-md h-10"
+                  {...register("heardAboutUs", {
+                    required: "How did you hear about CyberDemia is required",
                   })}
                 >
                   {hearAboutOptions?.map((option) => (
@@ -270,15 +279,15 @@ const SignupForm: React.FC = () => {
               <Label htmlFor="password">Password</Label>
               <div className="relative">
                 <Input
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   id="password"
                   placeholder="Password"
                   className="w-full p-2 border rounded-md"
-                  {...register('password', {
-                    required: 'Password is required',
+                  {...register("password", {
+                    required: "Password is required",
                     minLength: {
                       value: 6,
-                      message: 'Password must be at least 6 characters long',
+                      message: "Password must be at least 6 characters long",
                     },
                   })}
                 />
@@ -296,17 +305,17 @@ const SignupForm: React.FC = () => {
               )}
             </div>
             <div>
-              <Label htmlFor="confirmpassword">Confirm Password</Label>
+              <Label htmlFor="confirmPassword">Confirm Password</Label>
               <div className="relative">
                 <Input
-                  type={showConfirmPassword ? 'text' : 'password'}
+                  type={showConfirmPassword ? "text" : "password"}
                   placeholder="Confirm Password"
-                  id="confirmpassword"
+                  id="confirmPassword"
                   className="w-full p-2 border rounded-md"
-                  {...register('confirmpassword', {
-                    required: 'Confirm Password is required',
+                  {...register("confirmPassword", {
+                    required: "Confirm Password is required",
                     validate: (value: string) =>
-                      value === password || 'Passwords do not match',
+                      value === password || "Passwords do not match",
                   })}
                 />
                 <div
@@ -316,9 +325,9 @@ const SignupForm: React.FC = () => {
                   {showConfirmPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
                 </div>
               </div>
-              {errors.confirmpassword && (
+              {errors.confirmPassword && (
                 <p className="text-red-500 py-2 text-sm">
-                  {errors.confirmpassword.message}
+                  {errors.confirmPassword.message}
                 </p>
               )}
             </div>

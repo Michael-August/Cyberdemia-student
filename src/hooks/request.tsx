@@ -46,18 +46,12 @@ export const request = async (config: AxiosRequestConfig): Promise<any> => {
           sessionStorage.clear();
         }
         if (status && status >= 400 && status < 500) {
-          toast.error(
-            'There was an issue with your request. Please check the information and try again.',
-          );
+          toast.error(data?.message || 'Error, try Again');
         }
         if (status && status >= 500) {
-          toast.error(
-            'Oops! Something went wrong on our end. Please try again later.',
-          );
+          toast.error(data?.message || 'Server Error, try Again');
         }
       }
-    } else {
-      // toast.error("An unexpected error occurred. Please try again later.");
     }
 
     throw error;

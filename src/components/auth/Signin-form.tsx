@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import React, { useState } from 'react';
@@ -52,21 +53,26 @@ const SigninForm: React.FC = () => {
         if (profileRes && profileRes?.data) {
           const { data: profileData } = profileRes;
           const userProfile = {
-            fullName: profileData?.data?.fullName,
-            firstName: profileData?.data?.firstName,
-            lastName: profileData?.data?.lastName,
-            state: profileData?.data?.state,
-            gender: profileData?.data?.gender,
-            country: profileData?.data?.country,
-            age: profileData?.data?.age,
+            fullName: profileData?.fullName,
+            firstName: profileData?.firstName,
+            lastName: profileData?.lastName,
+            state: profileData?.state,
+            gender: profileData?.gender,
+            country: profileData?.country,
+            age: profileData?.age,
+            email: profileData?.auth?.email,
           };
-          sessionStorage.setItem('userProfile', JSON.stringify(userProfile));
           router.push('/student/home');
+          sessionStorage.setItem('userProfile', JSON.stringify(userProfile));
           toast.success('Login successful');
         }
+      } else {
+        // Handle incorrect password or other login errors
+        toast.error('Incorrect email or password.');
       }
     } catch (error: any) {
-      toast.error('try again');
+      // Handle unexpected errors
+      toast.error('An unexpected error occurred. Please try again later.');
     }
     setLoading(false);
   };
@@ -134,14 +140,16 @@ const SigninForm: React.FC = () => {
                 </p>
               )}
             </div>
-            <div className="flex items-center justify-end">
-              <p
-                className="text-cp-primary cursor-pointer underline-offset-4 hover:underline"
-                onClick={handleforgetpass}
-              >
-                Forgot password?
-              </p>
-            </div>
+            <Link href="/forgot-password">
+              <div className="flex items-center justify-end">
+                <p
+                  className="text-cp-primary cursor-pointer underline-offset-4 hover:underline"
+                  onClick={handleforgetpass}
+                >
+                  Forgot password?
+                </p>
+              </div>
+            </Link>
           </div>
 
           <button

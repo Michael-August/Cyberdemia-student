@@ -5,6 +5,7 @@ import { signOut } from 'next-auth/react';
 import React, { useState } from 'react';
 import { IoNotificationsOutline } from 'react-icons/io5';
 import { RxCaretDown } from 'react-icons/rx';
+import { toast } from 'react-toastify';
 
 interface DashboardNavbarProps {
   setSidebarOpen: any;
@@ -23,6 +24,7 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({
     localStorage.clear();
     sessionStorage.clear();
     signOut();
+    toast.success('Logout successful');
   };
 
   const toggleDropdown = () => {
@@ -77,7 +79,9 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({
                   <p className="text-gray-200 font-semibold capitalize text-justify">
                     {data && JSON.parse(data).fullName}
                   </p>
-                  <p className="text-gray-400">JohnDoe@gmail.com</p>
+                  <p className="text-gray-400">
+                    {data && JSON.parse(data).email}
+                  </p>
                 </div>
                 <button
                   onClick={handleLogout}
