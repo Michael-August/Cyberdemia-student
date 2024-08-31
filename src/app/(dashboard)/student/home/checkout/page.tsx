@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import Checkout from "@/components/home/Checkout";
-import { NavigationCrumbs } from "@/components/NavigationCrumbs";
+import Checkout from '@/components/home/Checkout';
+import { NavigationCrumbs } from '@/components/NavigationCrumbs';
 
 const Page = () => {
   return (

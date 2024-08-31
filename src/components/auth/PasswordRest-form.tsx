@@ -1,13 +1,15 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { Input } from "../inputs";
-import { Label } from "../label";
-import { useStudentPasswordReset } from "@/hooks/react-query/useAuth";
-import Loader from "../loader";
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+
+import { useStudentPasswordReset } from '@/hooks/react-query/useAuth';
+
+import { Input } from '../inputs';
+import { Label } from '../label';
+import Loader from '../loader';
 
 type FormValues = {
   password: string;
@@ -43,7 +45,7 @@ const PasswordRestForm: React.FC = () => {
     PasswordReset(formattedData);
   };
 
-  const password = watch("password");
+  const password = watch('password');
 
   return (
     <>
@@ -63,11 +65,11 @@ const PasswordRestForm: React.FC = () => {
                 id="email"
                 className="w-full p-2"
                 placeholder="Email Address"
-                {...register("email", {
-                  required: "Email address is required",
+                {...register('email', {
+                  required: 'Email address is required',
                   pattern: {
                     value: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,
-                    message: "Invalid email address",
+                    message: 'Invalid email address',
                   },
                 })}
               />
@@ -87,11 +89,11 @@ const PasswordRestForm: React.FC = () => {
                 id="otpCode"
                 className="w-full p-2"
                 placeholder="Enter OTP"
-                {...register("otpCode", {
-                  required: "OTP is required",
+                {...register('otpCode', {
+                  required: 'OTP is required',
                   pattern: {
                     value: /^[0-9]{6}$/,
-                    message: "Invalid OTP",
+                    message: 'Invalid OTP',
                   },
                 })}
               />
@@ -106,15 +108,15 @@ const PasswordRestForm: React.FC = () => {
             <Label htmlFor="password">Password</Label>
             <div className="relative">
               <Input
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 id="password"
                 placeholder="Password"
                 className="w-full p-2 border rounded-md"
-                {...register("password", {
-                  required: "Password is required",
+                {...register('password', {
+                  required: 'Password is required',
                   minLength: {
                     value: 6,
-                    message: "Password must be at least 6 characters long",
+                    message: 'Password must be at least 6 characters long',
                   },
                 })}
               />
@@ -135,14 +137,14 @@ const PasswordRestForm: React.FC = () => {
             <Label htmlFor="confirmpassword">Confirm Password</Label>
             <div className="relative">
               <Input
-                type={showConfirmPassword ? "text" : "password"}
+                type={showConfirmPassword ? 'text' : 'password'}
                 placeholder="Confirm Password"
                 id="confirmpassword"
                 className="w-full p-2 border rounded-md"
-                {...register("confirmPassword", {
-                  required: "Confirm Password is required",
+                {...register('confirmPassword', {
+                  required: 'Confirm Password is required',
                   validate: (value) =>
-                    value === password || "Passwords do not match",
+                    value === password || 'Passwords do not match',
                 })}
               />
               <div

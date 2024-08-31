@@ -1,24 +1,22 @@
-"use client";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { title } from "process";
-import React from "react";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-import { usePaystackPayment } from "react-paystack";
+'use client';
+import { useRouter } from 'next/navigation';
+import React from 'react';
+import { GoArrowLeft } from 'react-icons/go';
+import { usePaystackPayment } from 'react-paystack';
 
 const Checkout = () => {
   const router = useRouter();
-  const data = sessionStorage.getItem("userProfile");
+  const data = sessionStorage.getItem('userProfile');
 
   // Paystack configuration
   const config = {
     reference: new Date().getTime().toString(),
-    title: "Cyber Security Fundamentals",
+    title: 'Cyber Security Fundamentals',
     firstname: data && JSON.parse(data).firstName,
     lastname: data && JSON.parse(data).lastName,
     email: data && JSON.parse(data).email,
     amount: 25000000, // Amount is in kobo, so 25000000 kobo = N250,000
-    publicKey: "pk_test_7863e2147cb741abfa6c7c02f37e0b7f3a6b76c4",
+    publicKey: 'pk_test_7863e2147cb741abfa6c7c02f37e0b7f3a6b76c4',
   };
 
   const onSuccess = (reference: any) => {
@@ -28,7 +26,7 @@ const Checkout = () => {
 
   const onClose = () => {
     // Handle when the payment dialog is closed
-    console.log("Payment closed");
+    console.log('Payment closed');
   };
 
   const initializePayment = usePaystackPayment(config);
@@ -82,9 +80,9 @@ const Checkout = () => {
               </div>
               <hr
                 style={{
-                  height: "1px",
-                  backgroundColor: "black",
-                  border: "none",
+                  height: '1px',
+                  backgroundColor: 'black',
+                  border: 'none',
                 }}
               />
               <div className="text-[14px] flex justify-between items-center">

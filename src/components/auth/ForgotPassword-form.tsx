@@ -1,11 +1,13 @@
-"use client";
+'use client';
 
-import React from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { Input } from "../inputs";
-import { Label } from "../label";
-import { useStudentForgetPassword } from "@/hooks/react-query/useAuth";
-import Loader from "../loader";
+import React from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+import { useStudentForgetPassword } from '@/hooks/react-query/useAuth';
+
+import { Input } from '../inputs';
+import { Label } from '../label';
+import Loader from '../loader';
 
 type FormValues = {
   email: string;
@@ -43,11 +45,11 @@ const ForgotPassword: React.FC = () => {
                 id="email"
                 className="w-full p-2"
                 placeholder="Email Address"
-                {...register("email", {
-                  required: "Email address is required",
+                {...register('email', {
+                  required: 'Email address is required',
                   pattern: {
                     value: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,
-                    message: "Invalid email address",
+                    message: 'Invalid email address',
                   },
                 })}
               />
