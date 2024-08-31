@@ -7,7 +7,7 @@ const Page = () => {
   return (
     <>
       <NavigationCrumbs />
-      <div className="flex items-center justify-start w-[100vw] h-[80vh]">
+      <div className="flex items-center  w-[100vw] h-auto my-10">
         <Checkout />
       </div>
     </>

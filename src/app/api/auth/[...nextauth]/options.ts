@@ -6,6 +6,7 @@ import type {
 import { AuthOptions, User } from 'next-auth';
 import { getServerSession } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import { toast } from 'react-toastify';
 
 import { baseUrl } from '../../../../../utils/constants';
 import { request } from '../../../../../utils/request';
@@ -41,8 +42,10 @@ const credentialsProviderOptions: any = {
         return user;
       }
     } catch (err) {
+      toast.error('Invalid email or password');
       return null;
     }
+    toast.error('Invalid email or password');
     return null;
   },
 };

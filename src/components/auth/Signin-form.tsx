@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import React, { useState } from 'react';
@@ -21,9 +22,6 @@ const SigninForm: React.FC = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
-  const handleforgetpass = () => {
-    console.log('Forgot password clicked');
-  };
   const {
     register,
     handleSubmit,
@@ -42,7 +40,6 @@ const SigninForm: React.FC = () => {
         password: data.password,
         redirect: false,
       });
-      console.log(res, 'response');
 
       if (res && res.ok) {
         const config = {
@@ -50,29 +47,31 @@ const SigninForm: React.FC = () => {
           url: '/get-profile',
         };
         const profileRes = await request(config);
-
         if (profileRes && profileRes?.data) {
           const { data: profileData } = profileRes;
           const userProfile = {
-            fullName: profileData?.data?.fullName,
-            firstName: profileData?.data?.firstName,
-            lastName: profileData?.data?.lastName,
-            state: profileData?.data?.state,
-            gender: profileData?.data?.gender,
-            country: profileData?.data?.country,
-            age: profileData?.data?.age,
+            fullName: profileData?.fullName,
+            firstName: profileData?.firstName,
+            lastName: profileData?.lastName,
+            state: profileData?.state,
+            gender: profileData?.gender,
+            country: profileData?.country,
+            age: profileData?.age,
+            email: profileData?.auth?.email,
           };
+          router.push('/student/home');
           sessionStorage.setItem('userProfile', JSON.stringify(userProfile));
           toast.success('Login successful');
-          router.push('/student/home');
         }
+      } else {
+        // Handle incorrect password or other login errors
+        toast.error('Incorrect email or password.');
       }
     } catch (error: any) {
-      console.log(error);
-      toast.error('try again');
-    } finally {
-      setLoading(false);
+      // Handle unexpected errors
+      toast.error('An unexpected error occurred. Please try again later.');
     }
+    setLoading(false);
   };
 
   return (
@@ -138,14 +137,13 @@ const SigninForm: React.FC = () => {
                 </p>
               )}
             </div>
-            <div className="flex items-center justify-end">
-              <p
-                className="text-cp-primary cursor-pointer underline-offset-4 hover:underline"
-                onClick={handleforgetpass}
-              >
-                Forgot password?
-              </p>
-            </div>
+            <Link href="/forgot-password">
+              <div className="flex items-center justify-end">
+                <p className="text-cp-primary cursor-pointer underline-offset-4 hover:underline">
+                  Forgot password?
+                </p>
+              </div>
+            </Link>
           </div>
 
           <button

@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import React from 'react';
 
-import PawordRestForm from './PasswordRest-form';
+import PasswordRestForm from './PasswordRest-form';
 
-const Signin = () => {
+const PasswordReset = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 m-10">
       <div className="col-span-1 hidden sm:block">
@@ -37,11 +37,11 @@ const Signin = () => {
               Doloribus, accusantium!
             </p>
           </div>
-          <PawordRestForm />
+          <PasswordRestForm />
         </div>
       </div>
     </div>
   );
 };
 
-export default Signin;
+export default PasswordReset;

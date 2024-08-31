@@ -1,38 +1,45 @@
 'use client';
-
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
+import { useStudentSignUp } from '@/hooks/react-query/useAuth';
+
+import {
+  countryOptions,
+  genderOptions,
+  hearAboutOptions,
+} from '../../../utils/datas';
 import { Input } from '../inputs';
 import { Label } from '../label';
+import Loader from '../loader';
 
 type FormValues = {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   email: string;
   gender: string;
   age: number;
-  countryofresidence: string;
-  sateofresidence: string;
-  howdidyouhearaboutus: string;
+  country: string;
+  state: string;
+  heardAboutUs: string;
   password: string;
-  confirmpassword: string;
-  phoneNumbers: string[];
+  confirmPassword: string;
+  phoneNumber: string;
 };
 
 const SignupForm: React.FC = () => {
+  const router = useRouter();
+  const { mutate: studentReg, isLoading } = useStudentSignUp(router);
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm<FormValues>();
-
-  const genderOptions = ['Male', 'Female', 'Other'];
-  const countryOptions = ['Nigeria', 'Canada', 'Other'];
-  const hearAboutOptions = ['Facebook', '2go', 'Other'];
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -41,12 +48,15 @@ const SignupForm: React.FC = () => {
   const toggleConfirmPasswordVisibility = () =>
     setShowConfirmPassword(!showConfirmPassword);
 
-  const submitForm = (data: any) => {
-    console.log('Form submitted', data);
+  const submitForm = (data: FormValues) => {
+    studentReg(data);
+    localStorage.setItem('temp', JSON.stringify(data?.email));
   };
+
   const password = watch('password');
   return (
     <>
+      {isLoading && <Loader />}
       <div className="flex flex-col justify-center sm:pt-10 items-start gap-10">
         <Image
           src={'/images/cyberdemiaLogo.svg'}
@@ -71,36 +81,36 @@ const SignupForm: React.FC = () => {
           {/* First and Last Name */}
           <div className="grid grid-cols-1 py-2 sm:grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="firstname">First Name</Label>
+              <Label htmlFor="firstName">First Name</Label>
               <Input
                 className="w-full p-2"
                 placeholder="First Name"
                 type="text"
-                id="firstname"
-                {...register('firstname', {
+                id="firstName"
+                {...register('firstName', {
                   required: 'First name is required',
                 })}
               />
-              {errors.firstname && (
+              {errors.firstName && (
                 <p className="text-red-500 py-2 text-sm">
-                  {errors.firstname.message}
+                  {errors.firstName.message}
                 </p>
               )}
             </div>
             <div>
-              <Label htmlFor="lastname">Last Name</Label>
+              <Label htmlFor="lastName">Last Name</Label>
               <Input
                 className="w-full p-2"
                 placeholder="Last Name"
                 type="text"
-                id="lastname"
-                {...register('lastname', {
+                id="lastName"
+                {...register('lastName', {
                   required: 'Last name is required',
                 })}
               />
-              {errors.lastname && (
+              {errors.lastName && (
                 <p className="text-red-500 py-2 text-sm">
-                  {errors.lastname.message}
+                  {errors.lastName.message}
                 </p>
               )}
             </div>
@@ -158,7 +168,7 @@ const SignupForm: React.FC = () => {
             <div>
               <Label htmlFor="age">Age</Label>
               <Input
-                type="age"
+                type="number"
                 id="age"
                 placeholder="Age"
                 className="w-full p-2 border rounded-md"
@@ -178,30 +188,30 @@ const SignupForm: React.FC = () => {
             </div>
 
             <div>
-              <Label htmlFor="phoneNumbers">Phone Number</Label>
+              <Label htmlFor="phoneNumber">Phone Number</Label>
               <Input
                 className="w-full p-2 border rounded-md"
                 placeholder="Phone Number"
                 type="text"
-                id="phoneNumbers"
-                {...register('phoneNumbers.0', {
+                id="phoneNumber"
+                {...register('phoneNumber', {
                   required: 'Phone number is required',
                 })}
               />
-              {errors.phoneNumbers?.[0] && (
+              {errors.phoneNumber && (
                 <p className="text-red-500 py-2 text-sm">
-                  {errors.phoneNumbers[0].message}
+                  {errors.phoneNumber.message}
                 </p>
               )}
             </div>
           </div>
           <div className="grid grid-cols-1 py-2 sm:grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="countryofresidence">Country of Residence</Label>
+              <Label htmlFor="country">Country of Residence</Label>
               <select
-                id="countryofresidence"
+                id="country"
                 className="w-full p-2 border rounded-md"
-                {...register('countryofresidence', {
+                {...register('country', {
                   required: 'Country of residence is required',
                 })}
               >
@@ -211,25 +221,25 @@ const SignupForm: React.FC = () => {
                   </option>
                 ))}
               </select>
-              {errors.countryofresidence && (
+              {errors.country && (
                 <p className="text-red-500 py-2 text-sm">
-                  {errors.countryofresidence.message}
+                  {errors.country.message}
                 </p>
               )}
             </div>
             <div>
-              <Label htmlFor="sateofresidence">State/Region of Residence</Label>
+              <Label htmlFor="state">State/Region of Residence</Label>
               <Input
                 type="text"
-                id="sateofresidence"
+                id="state"
                 className="w-full p-2 border rounded-md"
-                {...register('sateofresidence', {
+                {...register('state', {
                   required: 'State/Region of residence is required',
                 })}
               />
-              {errors.sateofresidence && (
+              {errors.state && (
                 <p className="text-red-500 py-2 text-sm">
-                  {errors.sateofresidence.message}
+                  {errors.state.message}
                 </p>
               )}
             </div>
@@ -238,13 +248,13 @@ const SignupForm: React.FC = () => {
           <div className="grid grid-cols-1 py-2 sm:grid-cols-2 gap-4">
             <div>
               <div>
-                <Label htmlFor="howdidyouhearaboutus">
+                <Label htmlFor="heardAboutUs">
                   How did you hear about CyberDemia?
                 </Label>
                 <select
-                  id="howdidyouhearaboutus"
-                  className="w-full p-2 border rounded-md"
-                  {...register('howdidyouhearaboutus', {
+                  id="heardAboutUs"
+                  className="w-full p-2 border rounded-md h-10"
+                  {...register('heardAboutUs', {
                     required: 'How did you hear about CyberDemia is required',
                   })}
                 >
@@ -254,9 +264,9 @@ const SignupForm: React.FC = () => {
                     </option>
                   ))}
                 </select>
-                {errors.howdidyouhearaboutus && (
+                {errors.heardAboutUs && (
                   <p className="text-red-500 py-2 text-sm">
-                    {errors.howdidyouhearaboutus.message}
+                    {errors.heardAboutUs.message}
                   </p>
                 )}
               </div>
@@ -296,14 +306,14 @@ const SignupForm: React.FC = () => {
               )}
             </div>
             <div>
-              <Label htmlFor="confirmpassword">Confirm Password</Label>
+              <Label htmlFor="confirmPassword">Confirm Password</Label>
               <div className="relative">
                 <Input
                   type={showConfirmPassword ? 'text' : 'password'}
                   placeholder="Confirm Password"
-                  id="confirmpassword"
+                  id="confirmPassword"
                   className="w-full p-2 border rounded-md"
-                  {...register('confirmpassword', {
+                  {...register('confirmPassword', {
                     required: 'Confirm Password is required',
                     validate: (value: string) =>
                       value === password || 'Passwords do not match',
@@ -316,9 +326,9 @@ const SignupForm: React.FC = () => {
                   {showConfirmPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
                 </div>
               </div>
-              {errors.confirmpassword && (
+              {errors.confirmPassword && (
                 <p className="text-red-500 py-2 text-sm">
-                  {errors.confirmpassword.message}
+                  {errors.confirmPassword.message}
                 </p>
               )}
             </div>
