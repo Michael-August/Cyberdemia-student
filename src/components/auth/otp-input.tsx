@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import * as React from "react";
+import { useRouter } from 'next/navigation';
+import * as React from 'react';
 
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@/components/ui/input-otp";
+} from '@/components/ui/input-otp';
+import { useStudentOTP } from '@/hooks/react-query/useAuth';
 
-import Loader from "../loader";
-import { useStudentOTP } from "@/hooks/react-query/useAuth";
+import Loader from '../loader';
 
 export function InputOTPControlled() {
   const router = useRouter();
-  const [value, setValue] = React.useState("");
-  localStorage.getItem("temp");
+  const [value, setValue] = React.useState('');
+  localStorage.getItem('temp');
   const { mutate: studentOtpCode, isLoading } = useStudentOTP(router);
 
   const handleOptChange = () => {
-    const storedData = localStorage.getItem("temp");
+    const storedData = localStorage.getItem('temp');
     const parsedData = storedData ? JSON.parse(storedData) : null;
 
     const data = {

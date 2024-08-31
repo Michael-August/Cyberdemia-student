@@ -2,10 +2,10 @@
 import Image from 'next/image';
 import React from 'react';
 
+import { useStudentOTPResend } from '@/hooks/react-query/useAuth';
 
 import Loader from '../loader';
 import { InputOTPControlled } from './otp-input';
-import { useStudentOTPResend } from '@/hooks/react-query/useAuth';
 
 const Otp = () => {
   const { mutate: studentOtpCodeRsend, isLoading } = useStudentOTPResend();
