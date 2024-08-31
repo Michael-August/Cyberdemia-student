@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import PaawordRestForm from '@/components/auth/Password-reset';
+import PasswordRestForm from "@/components/auth/Password-reset";
 
 const Page = () => {
   return (
     <div>
-      <PaawordRestForm />
+      <PasswordRestForm />
     </div>
   );
 };

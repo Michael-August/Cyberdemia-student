@@ -1,11 +1,9 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-
-import Loader from '@/components/ui/Loader';
-
-import { useLayoutContext } from '../../../context/LayoutContext';
-import { Navbar } from './useNavbar';
-import { Sidebar } from './useSidebar';
+"use client";
+import React, { useEffect, useState } from "react";
+import { useLayoutContext } from "../../../context/LayoutContext";
+import { Navbar } from "./useNavbar";
+import { Sidebar } from "./useSidebar";
+import Loader from "../loader";
 interface RootLayoutInnerProps {
   children: React.ReactNode;
 }
@@ -19,16 +17,16 @@ export function RootLayoutInner({ children }: RootLayoutInnerProps) {
     setClient(true);
   }, []);
 
-  let dynamicClass = '';
-  if (state.navbarType === 'dashboardNavbar') {
-    dynamicClass += 'md:mt-[80px] mt-4';
+  let dynamicClass = "";
+  if (state.navbarType === "dashboardNavbar") {
+    dynamicClass += "md:mt-[80px] mt-4";
   }
 
   if (
-    state.sidebarType === 'defaultSidebar' ||
-    state.sidebarType === 'courseSideBar'
+    state.sidebarType === "defaultSidebar" ||
+    state.sidebarType === "courseSideBar"
   ) {
-    dynamicClass += ' md:ml-[250px] md:mr-[30px]';
+    dynamicClass += " md:ml-[250px] md:mr-[30px]";
   }
 
   return (
