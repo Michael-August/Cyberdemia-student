@@ -13,6 +13,7 @@ const Page = () => {
     dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
     dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
   }, [dispatch]);
+
   return (
     <div className="flex flex-col gap-8 overflow-x-hidden mt-12 md:mt-5  h-[100%] px-4 md:px-0">
       <Tabs>

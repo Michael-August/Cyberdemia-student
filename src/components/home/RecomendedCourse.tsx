@@ -23,7 +23,7 @@ const RecommendedCourse: React.FC<RecommendedCourseProps> = ({
   handleClick,
 }) => {
   return (
-    <div className="border-[1px]  border-[#AC1D7E]    md:w-[325px] mb-20 p-5 flex flex-col gap-4 relative">
+    <div className="border-[1px]  border-[#AC1D7E] p-5 flex flex-col gap-2 relative h-auto">
       {isCourseAvailable && (
         <div className="py-1 px-1 border-[1.5px] w-[110px] border-[#AC1D7E] text-[10px] font-bold text-[#AC1D7E]">
           {availableCourses}
@@ -43,14 +43,14 @@ const RecommendedCourse: React.FC<RecommendedCourseProps> = ({
           className="cursor-pointer"
         />
       </div>
-      <span className="text-[14px] w-[300px] font-extrabold overflow-hidden">
+      <span className="text-[14px] font-extrabold overflow-hidden">
         {title}
       </span>
-      {/* <div className="hidden md:flex md:flex-col">  */}
-      <span className="text-[12px] font-normal h-[140px] overflow-auto no-scrollbar">
+
+      <span className="text-[12px] font-normal overflow-auto no-scrollbar">
         {body}
       </span>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 my-10">
         <Image
           src="/images/Certificate.svg"
           alt="Certificate Icon"
@@ -58,7 +58,7 @@ const RecommendedCourse: React.FC<RecommendedCourseProps> = ({
           height={50}
           className="cursor-pointer"
         />
-        <div className="text-[14px] font-extrabold">Earn Certificates</div>
+        <div className="text-[14px] font-extrabold ">Earn Certificates</div>
       </div>
       {/* </div> */}
       <div className="flex justify-end cursor-pointer">

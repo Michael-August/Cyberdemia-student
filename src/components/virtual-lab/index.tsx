@@ -1,10 +1,11 @@
-"use client";
-import React from "react";
-import ReactPlayer from "react-player";
-import { coursesData } from "../../../utils/datas";
-import Header from "./Header";
-import StandardCard from "./StandardCard";
-import { useRouter } from "next/navigation";
+'use client';
+import { useRouter } from 'next/navigation';
+import React from 'react';
+import ReactPlayer from 'react-player';
+
+import { coursesData } from '../../../utils/datas';
+import Header from './Header';
+import StandardCard from './StandardCard';
 
 const Index = () => {
   const router = useRouter();
@@ -16,7 +17,7 @@ const Index = () => {
           url="https://www.youtube.com/watch?v=NWnBxQjssvQ"
           className="react-player"
           controls={true}
-          style={{ pointerEvents: "auto" }}
+          style={{ pointerEvents: 'auto' }}
         />
       </div>
       <div>
