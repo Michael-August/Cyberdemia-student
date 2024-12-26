@@ -13,7 +13,6 @@ type FormValues = {
 };
 
 const ProfileForm = () => {
-
   const profileData = sessionStorage.getItem('userProfile');
   const parsedProfileData = profileData ? JSON.parse(profileData) : {};
 

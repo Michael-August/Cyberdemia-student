@@ -6,6 +6,7 @@ import { GoArrowRight } from 'react-icons/go';
 import { toast } from 'react-toastify';
 
 import { usePayCourseSubscription } from '@/hooks/react-query/useCourses';
+
 import Loader from '../loader';
 
 function CardDetails({ details }: any) {

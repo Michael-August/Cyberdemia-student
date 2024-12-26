@@ -1,19 +1,18 @@
-"use client";
-import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+'use client';
+import { useRouter } from 'next/navigation';
+import React, { useEffect } from 'react';
 
-import CustomCourse from "@/components/home/CustomCourse";
-import RecomendedCourse from "@/components/home/RecomendedCourse";
-import ResumeLearning from "@/components/home/ResumeLearning";
-import Loader from "@/components/loader";
-import { useGetCourses } from "@/hooks/react-query/useCourses";
+import RecomendedCourse from '@/components/home/RecomendedCourse';
+import ResumeLearning from '@/components/home/ResumeLearning';
+import Loader from '@/components/loader';
+import { useGetCourses } from '@/hooks/react-query/useCourses';
 
-import { useLayoutContext } from "../../../../../context/LayoutContext";
+import { useLayoutContext } from '../../../../../context/LayoutContext';
 const Home = () => {
   const { dispatch } = useLayoutContext();
   useEffect(() => {
-    dispatch({ type: "SET_NAVBAR", navbarType: "dashboardNavbar" });
-    dispatch({ type: "SET_SIDEBAR", sidebarType: "defaultSidebar" });
+    dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
+    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
   }, [dispatch]);
   const router = useRouter();
   const { data, refetch, isLoading } = useGetCourses();
@@ -33,9 +32,9 @@ const Home = () => {
             <div className="w-[108px] h-[7px] bg-[#AC1D7E]"></div>
             <hr
               style={{
-                height: "1px",
-                backgroundColor: "#AC1D7E",
-                border: "none",
+                height: '1px',
+                backgroundColor: '#AC1D7E',
+                border: 'none',
               }}
             />
           </div>
@@ -44,7 +43,7 @@ const Home = () => {
         <ResumeLearning />
 
         <hr
-          style={{ height: "1px", backgroundColor: "#AC1D7E", border: "none" }}
+          style={{ height: '1px', backgroundColor: '#AC1D7E', border: 'none' }}
         />
         {/* <div className="flex flex-col gap-3">
           <span className="text-[16px] font-extrabold">
@@ -62,7 +61,7 @@ const Home = () => {
               <RecomendedCourse
                 key={course?.id}
                 availableCourses={`${course?.totalLearning} Total sections are available`}
-                image={"/images/card1.svg"}
+                image={'/images/card1.svg'}
                 title={course?.title}
                 body={course?.subtitle}
                 handleClick={() => router.push(`home/${course?.id}`)}

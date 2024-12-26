@@ -60,7 +60,13 @@ const Profile = () => {
             </span>
           </div>
         </div>
-        <input onChange={handleImageChange} type="file" name="" hidden id="profile-image" />
+        <input
+          onChange={handleImageChange}
+          type="file"
+          name=""
+          hidden
+          id="profile-image"
+        />
         <Label
           htmlFor="profile-image"
           className="w-fit h-10 px-4 cursor-pointer py-2 text-xs !bg-cp-secondary !text-white flex items-center gap-1"
