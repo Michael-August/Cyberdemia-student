@@ -13,11 +13,22 @@ type FormValues = {
 };
 
 const ProfileForm = () => {
+
+  const profileData = sessionStorage.getItem('userProfile');
+  const parsedProfileData = profileData ? JSON.parse(profileData) : {};
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm<FormValues>({
+    defaultValues: {
+      firstname: parsedProfileData.firstName || '',
+      lastname: parsedProfileData.lastName || '',
+      phoneNumber: parsedProfileData.phoneNumber || '',
+      bio: parsedProfileData.bio || '',
+    },
+  });
 
   const submitForm = (data: any) => {
     console.log('Form submitted', data);

@@ -9,9 +9,24 @@ import ResetPasswordForm from './resetpasswordForm';
 
 const Profile = () => {
   const [tab, setTab] = useState('edit');
+  const [profileImage, setProfileImage] = useState<any>(null);
 
   const switchTab = (newTab: string) => {
     setTab(newTab);
+  };
+
+  const profileData = sessionStorage.getItem('userProfile');
+
+  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files && files[0]) {
+      const file = files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfileImage(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
@@ -21,18 +36,31 @@ const Profile = () => {
           {/* <Image className='hidden md:block rounded-[50%]' src="/images/profile-pic.png" width={150} height={150} alt='profile picture' />
                 <Image className='md:hidden rounded-[50%]' src="/images/profile-pic.png" width={102} height={102} alt='profile picture' /> */}
           <div className="w-[6.375rem] flex items-center justify-center h-[6.375rem] md:w-[9.25rem] md:h-[9.25rem] rounded-[50%] border border-solid">
-            <span className="text-[3.1875rem] md:text-[4.625rem] font-bold text-cp-secondary">
-              J
-            </span>
+            {!profileImage && (
+              <span className="text-[3.1875rem] md:text-[4.625rem] font-bold text-cp-secondary">
+                J
+              </span>
+            )}
+            {profileImage && (
+              <Image
+                src={profileImage}
+                alt={'Profile Image'}
+                className="w-[inherit] h-[inherit] rounded-[50%]"
+                width={0}
+                height={0}
+              />
+            )}
           </div>
           <div className="name-email flex flex-col gap-1">
-            <span className="text-base font-bold">John Doe</span>
+            <span className="text-base font-bold">
+              {profileData && JSON.parse(profileData).fullName}
+            </span>
             <span className="text-xs text-[#000000CC]">
-              johndoe1234@gmail.com
+              {profileData && JSON.parse(profileData).email}
             </span>
           </div>
         </div>
-        <input type="file" name="" hidden id="profile-image" />
+        <input onChange={handleImageChange} type="file" name="" hidden id="profile-image" />
         <Label
           htmlFor="profile-image"
           className="w-fit h-10 px-4 cursor-pointer py-2 text-xs !bg-cp-secondary !text-white flex items-center gap-1"
