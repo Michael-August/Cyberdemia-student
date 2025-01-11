@@ -144,3 +144,23 @@ export const useGetExam = (id: string) => {
 
   return query;
 };
+
+export const useMarkAsComplete = () => {
+  const query = useMutation(`markProgress`, async (data: any) => {
+    try {
+      const config = {
+        method: 'post',
+        url: `progress`,
+        data,
+      };
+      const responseData = await request(config);
+      return responseData?.data;
+    } catch (error: any) {
+      console.error(error);
+      toast.error(`${error?.response?.data?.message || error?.message}`);
+    }
+  });
+
+  return query;
+};
+

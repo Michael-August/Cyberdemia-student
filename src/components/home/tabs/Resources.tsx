@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
 function Resources({ resourceData }: any) {
-  console.log(resourceData, 'resourceData');
 
   return (
     <div className="md:w-[55%] flex flex-col gap-7 pb-20 pt-8 px-2 md:px-0">
@@ -21,10 +20,10 @@ function Resources({ resourceData }: any) {
           >
             <h3 className="font-bold">{resource.title}</h3>
             <p>
-              Type:{' '}
-              {resource.resourceType === 'downloadableFile'
-                ? 'Downloadable File'
-                : 'External Link'}
+              Type:
+              {resource.resourceType === "downloadableFile"
+                ? "Downloadable File"
+                : "External Link"}
             </p>
             <a
               href={resource.url}
@@ -32,9 +31,9 @@ function Resources({ resourceData }: any) {
               rel="noopener noreferrer"
               className="text-blue-500 underline"
             >
-              {resource.resourceType === 'downloadableFile'
-                ? 'Download'
-                : 'Visit Resource'}
+              {resource.resourceType === "downloadableFile"
+                ? "Download"
+                : "Visit Resource"}
             </a>
           </div>
         ))}
