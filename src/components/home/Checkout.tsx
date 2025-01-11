@@ -15,7 +15,7 @@ const Checkout = () => {
     firstname: data && JSON.parse(data).firstName,
     lastname: data && JSON.parse(data).lastName,
     email: data && JSON.parse(data).email,
-    amount: 25000000, // Amount is in kobo, so 25000000 kobo = N250,000
+    amount: 25000000,
     publicKey: 'pk_test_7863e2147cb741abfa6c7c02f37e0b7f3a6b76c4',
   };
 

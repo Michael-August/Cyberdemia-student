@@ -65,7 +65,7 @@ const Home = () => {
                 image={"/images/card1.svg"}
                 title={course?.title}
                 body={course?.subtitle}
-                handleClick={() => router.push(`home/${course?.id}`)}
+                handleClick={() => router.push(`courses/${course?.id}`)}
                 isCourseAvailable={true}
                 isCourseComing={false}
               />

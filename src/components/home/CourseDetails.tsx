@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import React from 'react';
-import { IoCheckmark } from 'react-icons/io5';
+import Image from "next/image";
+import React from "react";
+import { IoCheckmark } from "react-icons/io5";
 
 function CourseDetails({ details }: any) {
   return (
