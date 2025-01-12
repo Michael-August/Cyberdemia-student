@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { useQueryClient } from 'react-query';
 
 import { useUpdateProfile } from '@/hooks/react-query/useProfile';
 
@@ -6,7 +7,6 @@ import { Button } from '../button';
 import { Input } from '../inputs';
 import { Label } from '../label';
 import { Textarea } from '../ui/textarea';
-import { useQueryClient } from 'react-query';
 
 type FormValues = {
   firstname: string;

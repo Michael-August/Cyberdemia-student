@@ -27,7 +27,7 @@ export const useUpdateProfile = () => {
         url: `/update-profile`,
         data: data,
       };
-      const responseData = await request(config)
+      const responseData = await request(config);
       return responseData?.data;
     } catch (error: any) {
       console.error(error);

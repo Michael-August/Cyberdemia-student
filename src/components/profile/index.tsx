@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { useQueryClient } from 'react-query';
 
 import {
   useGetProfile,
@@ -11,7 +12,6 @@ import {
 import { Label } from '../label';
 import ProfileForm from './profileForm';
 import ResetPasswordForm from './resetpasswordForm';
-import { useQueryClient } from 'react-query';
 
 const Profile = () => {
   const [tab, setTab] = useState('edit');
