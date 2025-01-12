@@ -1,9 +1,12 @@
 import { useForm } from 'react-hook-form';
 
+import { useUpdateProfile } from '@/hooks/react-query/useProfile';
+
 import { Button } from '../button';
 import { Input } from '../inputs';
 import { Label } from '../label';
 import { Textarea } from '../ui/textarea';
+import { useQueryClient } from 'react-query';
 
 type FormValues = {
   firstname: string;
@@ -15,6 +18,10 @@ type FormValues = {
 const ProfileForm = () => {
   const profileData = sessionStorage.getItem('userProfile');
   const parsedProfileData = profileData ? JSON.parse(profileData) : {};
+
+  const queryClient = useQueryClient();
+
+  const { data: updateProfile } = useUpdateProfile();
 
   const {
     register,
@@ -30,7 +37,15 @@ const ProfileForm = () => {
   });
 
   const submitForm = (data: any) => {
-    console.log('Form submitted', data);
+    const formData = new FormData();
+    formData.append('firstName', data.firstname);
+    formData.append('lastName', data.lastname);
+    formData.append('phoneNumber', data.phoneNumber);
+    formData.append('bio', data.bio);
+
+    updateProfile(formData);
+    queryClient.invalidateQueries(['profile']);
+    // console.log('Form submitted', data);
   };
   return (
     <div className="form">

@@ -3,19 +3,28 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
+import {
+  useGetProfile,
+  useUploadProfilePicture,
+} from '@/hooks/react-query/useProfile';
+
 import { Label } from '../label';
 import ProfileForm from './profileForm';
 import ResetPasswordForm from './resetpasswordForm';
+import { useQueryClient } from 'react-query';
 
 const Profile = () => {
   const [tab, setTab] = useState('edit');
   const [profileImage, setProfileImage] = useState<any>(null);
 
+  const queryClient = useQueryClient();
+
+  const { mutateAsync: uploadImage } = useUploadProfilePicture();
+  const { data: profile } = useGetProfile();
+
   const switchTab = (newTab: string) => {
     setTab(newTab);
   };
-
-  const profileData = sessionStorage.getItem('userProfile');
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
@@ -26,6 +35,13 @@ const Profile = () => {
         setProfileImage(reader.result as string);
       };
       reader.readAsDataURL(file);
+    }
+
+    const formData = new FormData();
+    if (files) {
+      formData.append('file', files[0]);
+      uploadImage(formData);
+      queryClient.invalidateQueries(['profile']);
     }
   };
 
@@ -53,10 +69,11 @@ const Profile = () => {
           </div>
           <div className="name-email flex flex-col gap-1">
             <span className="text-base font-bold">
-              {profileData && JSON.parse(profileData).fullName}
+              {profile && profile?.data?.firstName}{' '}
+              {profile && profile?.data?.lastName}
             </span>
             <span className="text-xs text-[#000000CC]">
-              {profileData && JSON.parse(profileData).email}
+              {profile && profile?.data?.email}
             </span>
           </div>
         </div>
