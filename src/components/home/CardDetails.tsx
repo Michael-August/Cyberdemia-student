@@ -1,12 +1,12 @@
-"use client";
-import Image from "next/image";
-import React from "react";
-import { GoArrowRight } from "react-icons/go";
-import { toast } from "react-toastify";
+'use client';
+import Image from 'next/image';
+import React from 'react';
+import { GoArrowRight } from 'react-icons/go';
+import { toast } from 'react-toastify';
 
-import { usePayCourseSubscription } from "@/hooks/react-query/useCourses";
+import { usePayCourseSubscription } from '@/hooks/react-query/useCourses';
 
-import Loader from "../loader";
+import Loader from '../loader';
 
 function CardDetails({ details, resourceData }: any) {
   const { mutate, isLoading } = usePayCourseSubscription();
@@ -17,7 +17,7 @@ function CardDetails({ details, resourceData }: any) {
     const courseId = details?.id;
 
     if (!instructorId || !courseId) {
-      toast.error("Course or Instructor data is missing");
+      toast.error('Course or Instructor data is missing');
       return;
     }
 
@@ -34,13 +34,13 @@ function CardDetails({ details, resourceData }: any) {
           if (authorizationUrl) {
             window.location.href = authorizationUrl;
           } else {
-            toast.error("Failed to retrieve payment URL. Please try again.");
+            toast.error('Failed to retrieve payment URL. Please try again.');
           }
         },
         onError: () => {
-          toast.error("An error occurred while initiating the transaction.");
+          toast.error('An error occurred while initiating the transaction.');
         },
-      }
+      },
     );
   };
 
@@ -57,7 +57,7 @@ function CardDetails({ details, resourceData }: any) {
         />
         <div className="text-[12px] font-extrabold flex flex-row gap-2">
           <span>Course Instructor:</span>
-          <span>{details?.courseInstructor?.email || "N/A"}</span>
+          <span>{details?.courseInstructor?.email || 'N/A'}</span>
         </div>
       </div>
       <div className="flex gap-4 items-center">
@@ -105,7 +105,7 @@ function CardDetails({ details, resourceData }: any) {
           className="bg-cp-secondary hover:bg-pink-700 cursor-pointer text-white w-[150px] py-2 flex justify-center items-center text-[13px] gap-2"
           disabled={isLoading}
         >
-          {isLoading ? "Processing..." : "Enroll now"}
+          {isLoading ? 'Processing...' : 'Enroll now'}
           <GoArrowRight size={19} className="animate-pulse" />
         </button>
       </div>
