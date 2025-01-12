@@ -1,26 +1,26 @@
-"use client";
-import React, { useEffect } from "react";
+'use client';
+import React, { useEffect } from 'react';
 
-import CardDetails from "@/components/home/CardDetails";
-import CourseDetails from "@/components/home/CourseDetails";
-import CourseContent from "@/components/home/tabs/CourseContent";
-import CourseOverview from "@/components/home/tabs/CourseOverview";
-import Resources from "@/components/home/tabs/Resources";
-import Loader from "@/components/loader";
-import { NavigationCrumbs } from "@/components/NavigationCrumbs";
-import { Tab, Tabs } from "@/components/ui/Tab";
+import CardDetails from '@/components/home/CardDetails';
+import CourseDetails from '@/components/home/CourseDetails';
+import CourseContent from '@/components/home/tabs/CourseContent';
+import CourseOverview from '@/components/home/tabs/CourseOverview';
+import Resources from '@/components/home/tabs/Resources';
+import Loader from '@/components/loader';
+import { NavigationCrumbs } from '@/components/NavigationCrumbs';
+import { Tab, Tabs } from '@/components/ui/Tab';
 import {
   useGetCourseResource,
   useGetSingleCourse,
-} from "@/hooks/react-query/useCourses";
+} from '@/hooks/react-query/useCourses';
 
-import { useLayoutContext } from "../../../../../../context/LayoutContext";
+import { useLayoutContext } from '../../../../../../context/LayoutContext';
 
 function Page({ params }: { params: { singleCourse: string } }) {
   const { dispatch } = useLayoutContext();
   useEffect(() => {
-    dispatch({ type: "SET_NAVBAR", navbarType: "dashboardNavbar" });
-    dispatch({ type: "SET_SIDEBAR", sidebarType: "defaultSidebar" });
+    dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
+    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
   }, [dispatch]);
 
   const { data, refetch, isLoading } = useGetSingleCourse(params?.singleCourse);
@@ -42,7 +42,7 @@ function Page({ params }: { params: { singleCourse: string } }) {
       <NavigationCrumbs />
       <div className="flex flex-col px-5 md:flex-row w-full gap-10">
         <CourseDetails details={data} />
-        <CardDetails details={data}resourceData={resourceData}  />
+        <CardDetails details={data} resourceData={resourceData} />
       </div>
       <div className="mt-10">
         <Tabs>

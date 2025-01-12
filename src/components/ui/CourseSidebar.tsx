@@ -1,20 +1,20 @@
-import { useParams, useRouter } from "next/navigation";
-import React, { useEffect } from "react";
-import { GoArrowLeft } from "react-icons/go";
+import { useParams, useRouter } from 'next/navigation';
+import React, { useEffect } from 'react';
+import { GoArrowLeft } from 'react-icons/go';
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from '@/components/ui/accordion';
 import {
   useGetCourseResource,
   useGetSingleCourse,
-} from "@/hooks/react-query/useCourses";
+} from '@/hooks/react-query/useCourses';
 
-import { useCourseStore } from "../../../utils/zustandStore/lectures";
-import Loader from "../loader";
+import { useCourseStore } from '../../../utils/zustandStore/lectures';
+import Loader from '../loader';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -46,7 +46,7 @@ const CourseSidebar: React.FC<SidebarProps> = ({ isOpen }) => {
 
   const sections = courseData?.sections || [];
 
-  console.log("sections", sections);
+  console.log('sections', sections);
 
   const handleLectureClick = (lecture: any, sectionId: string) => {
     setLecture({ ...lecture, sectionId });
@@ -57,12 +57,12 @@ const CourseSidebar: React.FC<SidebarProps> = ({ isOpen }) => {
       {isLoading || (resourceisLoading && <Loader />)}
       <div
         className={`bg-cp-primary w-[220px] py-3 text-white shadow-md z-[10000] h-full fixed top-10 left-0 bottom-0 transform transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
+          isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0`}
       >
         <div
           className="bg-white w-full h-max p-3 py-4 flex justify-start items-center gap-2 text-black text-[16px] cursor-pointer hover:bg-cp-secondary hover:text-white"
-          onClick={() => Router.push("/student/home")}
+          onClick={() => Router.push('/student/home')}
         >
           <GoArrowLeft size={26} />
           Home
@@ -88,7 +88,7 @@ const CourseSidebar: React.FC<SidebarProps> = ({ isOpen }) => {
                   | undefined;
                 lectures: any[];
               },
-              index: number
+              index: number,
             ) => (
               <AccordionItem key={section.id} value={`item-${index + 1}`}>
                 <AccordionTrigger>
@@ -113,17 +113,17 @@ const CourseSidebar: React.FC<SidebarProps> = ({ isOpen }) => {
                         </span>
                         <span className="text-blue-500 text-sm">
                           {lecture.videoUrl
-                            ? "Watch"
+                            ? 'Watch'
                             : lecture.article
-                              ? "Read"
-                              : "N/A"}
-                        </span>{" "}
+                              ? 'Read'
+                              : 'N/A'}
+                        </span>{' '}
                       </div>
                     ))}
                   </div>
                 </AccordionContent>
               </AccordionItem>
-            )
+            ),
           )}
         </Accordion>
       </div>
