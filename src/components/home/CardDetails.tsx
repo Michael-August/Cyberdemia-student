@@ -12,7 +12,7 @@ function CardDetails({ details, resourceData }: any) {
   const { mutate, isLoading } = usePayCourseSubscription();
 
   const handleCheckout = () => {
-    const coursePrice = details?.price?.price || 0;
+    const coursePrice = details?.price?.price || 200;
     const instructorId = details?.courseInstructor?.id;
     const courseId = details?.id;
 

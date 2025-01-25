@@ -1,23 +1,23 @@
-"use client";
-import React, { useEffect } from "react";
-import { FaRegCircleCheck } from "react-icons/fa6";
-import ReactPlayer from "react-player";
+'use client';
+import React, { useEffect } from 'react';
+import { FaRegCircleCheck } from 'react-icons/fa6';
+import ReactPlayer from 'react-player';
 
-import Announcement from "@/components/coursePlayer/tabs/Announcement";
-import Qforum from "@/components/coursePlayer/tabs/Qforum";
-import Resources from "@/components/coursePlayer/tabs/Resources";
-import CourseOverview from "@/components/home/tabs/CourseOverview";
-import { Tab, Tabs } from "@/components/ui/Tab";
-import { useMarkAsComplete } from "@/hooks/react-query/useCourses";
+import Announcement from '@/components/coursePlayer/tabs/Announcement';
+import Qforum from '@/components/coursePlayer/tabs/Qforum';
+import Resources from '@/components/coursePlayer/tabs/Resources';
+import CourseOverview from '@/components/home/tabs/CourseOverview';
+import { Tab, Tabs } from '@/components/ui/Tab';
+import { useMarkAsComplete } from '@/hooks/react-query/useCourses';
 
-import { useLayoutContext } from "../../../../../../context/LayoutContext";
-import { useCourseStore } from "../../../../../../utils/zustandStore/lectures";
+import { useLayoutContext } from '../../../../../../context/LayoutContext';
+import { useCourseStore } from '../../../../../../utils/zustandStore/lectures';
 
 const Page: React.FC = () => {
   const { dispatch } = useLayoutContext();
   const { selectedLecture, courseData } = useCourseStore();
   const { mutate: markAsComplete, isLoading } = useMarkAsComplete();
-  const studentData = JSON.parse(sessionStorage.getItem("userProfile") || "{}");
+  const studentData = JSON.parse(sessionStorage.getItem('userProfile') || '{}');
 
   const handleMarkAsComplete = () => {
     if (!selectedLecture?.sectionId) {
@@ -35,8 +35,8 @@ const Page: React.FC = () => {
   };
 
   useEffect(() => {
-    dispatch({ type: "SET_NAVBAR", navbarType: "dashboardNavbar" });
-    dispatch({ type: "SET_SIDEBAR", sidebarType: "courseSideBar" });
+    dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
+    dispatch({ type: 'SET_SIDEBAR', sidebarType: 'courseSideBar' });
   }, [dispatch]);
 
   const renderLectureContent = () => {
@@ -46,11 +46,11 @@ const Page: React.FC = () => {
           url={selectedLecture.videoUrl}
           className="react-player"
           controls={true}
-          style={{ pointerEvents: "auto" }}
+          style={{ pointerEvents: 'auto' }}
           config={{
             file: {
               attributes: {
-                controlsList: "nodownload",
+                controlsList: 'nodownload',
                 disablePictureInPicture: true,
               },
             },

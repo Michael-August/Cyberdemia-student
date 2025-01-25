@@ -42,7 +42,7 @@ function Page({ params }: { params: { singleCourse: string } }) {
       <NavigationCrumbs />
       <div className="flex flex-col px-5 md:flex-row w-full gap-10">
         <CourseDetails details={data} />
-        <CardDetails details={data}resourceData={resourceData}  />
+        <CardDetails details={data} resourceData={resourceData} />
       </div>
       <div className="mt-10">
         <Tabs>

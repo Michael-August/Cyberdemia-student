@@ -2,7 +2,6 @@
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
-import CustomCourse from "@/components/home/CustomCourse";
 import RecomendedCourse from "@/components/home/RecomendedCourse";
 import ResumeLearning from "@/components/home/ResumeLearning";
 import Loader from "@/components/loader";
@@ -65,7 +64,7 @@ const Home = () => {
                 image={"/images/card1.svg"}
                 title={course?.title}
                 body={course?.subtitle}
-                handleClick={() => router.push(`courses/${course?.id}`)}
+                handleClick={() => router.push(`home/${course?.id}`)}
                 isCourseAvailable={true}
                 isCourseComing={false}
               />

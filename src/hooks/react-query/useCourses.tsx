@@ -27,6 +27,30 @@ export const useGetCourses = () => {
   return query;
 };
 
+export const usePersonalCourses = () => {
+  const query = useQuery(
+    'progress',
+    async () => {
+      try {
+        const config = {
+          method: 'get',
+          url: 'progress',
+        };
+        const responseData = await request(config);
+        return responseData?.data;
+      } catch (error: any) {
+        console.error(error);
+        toast.error(`${error?.response?.data?.message || error?.message}`);
+      }
+    },
+    {
+      enabled: true, // Prevents automatic execution
+    },
+  );
+
+  return query;
+};
+
 export const useGetSingleCourse = (id: string) => {
   const query = useQuery(
     `course-${id}`,
@@ -163,4 +187,3 @@ export const useMarkAsComplete = () => {
 
   return query;
 };
-
