@@ -2,10 +2,11 @@
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 
-import RecomendedCourse from '@/components/home/RecomendedCourse';
-import ResumeLearning from '@/components/home/ResumeLearning';
-import Loader from '@/components/loader';
-import { useGetCourses } from '@/hooks/react-query/useCourses';
+import RecomendedCourse from "@/components/home/RecomendedCourse";
+import ResumeLearning from "@/components/home/ResumeLearning";
+import Loader from "@/components/loader";
+import { useGetCourses } from "@/hooks/react-query/useCourses";
+
 
 import { useLayoutContext } from '../../../../../context/LayoutContext';
 const Home = () => {
@@ -64,7 +65,7 @@ const Home = () => {
                 image={'/images/card1.svg'}
                 title={course?.title}
                 body={course?.subtitle}
-                handleClick={() => router.push(`courses/${course?.id}`)}
+                handleClick={() => router.push(`home/${course?.id}`)}
                 isCourseAvailable={true}
                 isCourseComing={false}
               />
