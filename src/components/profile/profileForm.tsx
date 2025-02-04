@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useQueryClient } from 'react-query';
+import { toast } from 'react-toastify';
 
 import { useUpdateProfile } from '@/hooks/react-query/useProfile';
 
@@ -21,7 +22,7 @@ const ProfileForm = () => {
 
   const queryClient = useQueryClient();
 
-  const { data: updateProfile } = useUpdateProfile();
+  const { mutateAsync: updateProfile } = useUpdateProfile();
 
   const {
     register,
@@ -37,15 +38,29 @@ const ProfileForm = () => {
   });
 
   const submitForm = (data: any) => {
-    const formData = new FormData();
-    formData.append('firstName', data.firstname);
-    formData.append('lastName', data.lastname);
-    formData.append('phoneNumber', data.phoneNumber);
-    formData.append('bio', data.bio);
+    // const formData = new FormData();
+    // formData.append("firstName", data.firstname);
+    // formData.append("lastName", data.lastname);
+    // formData.append("phoneNumber", data.phoneNumber);
+    // formData.append("bio", data.bio);
 
-    updateProfile(formData);
-    queryClient.invalidateQueries(['profile']);
-    // console.log('Form submitted', data);
+    updateProfile(
+      {
+        firstName: data.firstname,
+        lastName: data.lastname,
+        phoneNumber: data.phoneNumber,
+        bio: data.bio,
+      },
+      {
+        onSuccess: () => {
+          queryClient.invalidateQueries(['profile']);
+          toast.success('Profile updated successfully!');
+        },
+        onError: (error) => {
+          console.error('Update failed:', error);
+        },
+      },
+    );
   };
   return (
     <div className="form">

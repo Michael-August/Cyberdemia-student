@@ -20,27 +20,34 @@ export const useGetProfile = () => {
 };
 
 export const useUpdateProfile = () => {
-  return useMutation(async (data: any) => {
-    try {
+  return useMutation(
+    async (data: any) => {
       const config = {
         method: 'patch',
-        url: `/update-profile`,
-        data: data,
+        url: '/update-profile',
+        data,
       };
-      const responseData = await request(config);
-      return responseData?.data;
-    } catch (error: any) {
-      console.error(error);
-      toast.error(`${error?.response?.data?.message || error?.message}`);
-    }
-  });
+      const response = await request(config);
+      return response?.data;
+    },
+    {
+      onError: (error: any) => {
+        console.error(error);
+        toast.error(
+          error?.response?.data?.message ||
+            error?.message ||
+            'An error occurred',
+        );
+      },
+    },
+  );
 };
 
 export const useUploadProfilePicture = () => {
   return useMutation(async (data: any) => {
     try {
       const config = {
-        method: 'put',
+        method: 'post',
         url: `/upload-image`,
         data: data,
       };

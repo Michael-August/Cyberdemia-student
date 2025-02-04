@@ -13,7 +13,9 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 
-function CompletedCourse() {
+import { Subscription } from '../../../types/SubscribedCourse.type';
+
+function CompletedCourse({ course }: { course: Subscription }) {
   const stars = document.querySelectorAll('.star');
 
   stars.forEach((star, index) => {
@@ -43,7 +45,7 @@ function CompletedCourse() {
       </div>
       <div className="flex flex-1 flex-col gap-3 justify-between">
         <span className="text-[14px] font-extrabold ">
-          Cyber Security Defense Analyst
+          {course?.course.title}
         </span>
         <div className="flex items-center gap-2">
           <Image
@@ -54,7 +56,8 @@ function CompletedCourse() {
             className="cursor-pointer"
           />
           <span className="text-[10px] text-gray-700 ">
-            4/8 Lessons Completed
+            {course.completedSections.length}/{course.course.sections.length}{' '}
+            Lessons Completed
           </span>
         </div>
         <div className="flex justify-end gap-4">
@@ -83,7 +86,7 @@ function CompletedCourse() {
                   />
                   <div className="flex flex-col gap-5 mt-2 justify-start items-start">
                     <span className="text-[17px] font-bold  ">
-                      Cyber Security Defense Analyst
+                      {course.course.title}
                     </span>
                     <div className="flex items-center gap-2 ">
                       <Image
@@ -94,7 +97,8 @@ function CompletedCourse() {
                         className="cursor-pointer"
                       />
                       <span className="text-[10px] text-gray-700 ">
-                        8/8 Lessons Completed
+                        {course.completedSections.length}/
+                        {course.course.sections.length} Lessons Completed
                       </span>
                     </div>
                   </div>
