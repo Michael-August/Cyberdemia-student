@@ -7,7 +7,6 @@ import { usePersonalCourses } from '@/hooks/react-query/useCourses';
 import { Subscription } from '../../../../types/SubscribedCourse.type';
 
 function InProgess() {
-
   const { data, isLoading } = usePersonalCourses();
 
   console.log('xxxx', data);

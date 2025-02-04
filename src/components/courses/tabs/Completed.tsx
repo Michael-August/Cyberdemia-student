@@ -30,7 +30,9 @@ function Completed() {
             ?.filter(
               (course: Subscription) => course.progressPercentage === 100,
             )
-            .map((course: Subscription) => <CompletedCourse key={course.id} course={course} />)}
+            .map((course: Subscription) => (
+              <CompletedCourse key={course.id} course={course} />
+            ))}
         </div>
       )}
     </div>
