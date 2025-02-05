@@ -2,24 +2,37 @@
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 
-import RecomendedCourse from "@/components/home/RecomendedCourse";
-import ResumeLearning from "@/components/home/ResumeLearning";
-import Loader from "@/components/loader";
-import { useGetCourses } from "@/hooks/react-query/useCourses";
-
+import RecomendedCourse from '@/components/home/RecomendedCourse';
+import ResumeLearning from '@/components/home/ResumeLearning';
+import Loader from '@/components/loader';
+import {
+  useGetCourses,
+  usePersonalCourses,
+} from '@/hooks/react-query/useCourses';
 
 import { useLayoutContext } from '../../../../../context/LayoutContext';
+import { Course } from '../../../../../types/Course.type';
+import { Subscription } from '../../../../../types/SubscribedCourse.type';
 const Home = () => {
+  const {
+    data: coursesInProgress,
+    refetch: refetchCoursesInProgress,
+    isLoading: isLoadingCoursesInProgress,
+  } = usePersonalCourses();
+
+  const router = useRouter();
+  const { data, refetch, isLoading } = useGetCourses();
+
   const { dispatch } = useLayoutContext();
+
   useEffect(() => {
     dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
     dispatch({ type: 'SET_SIDEBAR', sidebarType: 'defaultSidebar' });
   }, [dispatch]);
-  const router = useRouter();
-  const { data, refetch, isLoading } = useGetCourses();
 
   useEffect(() => {
     refetch();
+    refetchCoursesInProgress();
   }, []);
 
   return (
@@ -41,7 +54,15 @@ const Home = () => {
           </div>
         </div>
 
-        <ResumeLearning />
+        {isLoadingCoursesInProgress ? (
+          <Loader />
+        ) : (
+          <div className="flex flex-col gap-4">
+            {coursesInProgress?.map((course: Subscription) => (
+              <ResumeLearning key={course?.id} course={course} />
+            ))}
+          </div>
+        )}
 
         <hr
           style={{ height: '1px', backgroundColor: '#AC1D7E', border: 'none' }}
@@ -58,10 +79,10 @@ const Home = () => {
             Top Recommended Courses
           </span>
           <div className="grid md:grid-cols-3  gap-6">
-            {data?.courses.map((course: any) => (
+            {data?.courses.map((course: Course) => (
               <RecomendedCourse
                 key={course?.id}
-                availableCourses={`${course?.totalLearning} Total sections are available`}
+                availableCourses={`${course?.sections.length} Total sections are available`}
                 image={'/images/card1.svg'}
                 title={course?.title}
                 body={course?.subtitle}

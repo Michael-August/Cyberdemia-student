@@ -68,7 +68,7 @@ export const useGetSingleCourse = (id: string) => {
       }
     },
     {
-      enabled: false,
+      enabled: !!id,
     },
   );
 
@@ -92,7 +92,7 @@ export const useGetCourseResource = (id: string) => {
       }
     },
     {
-      enabled: false,
+      enabled: !!id,
     },
   );
 
@@ -162,7 +162,7 @@ export const useGetExam = (id: string) => {
       }
     },
     {
-      enabled: false,
+      enabled: !!id,
     },
   );
 
@@ -184,6 +184,49 @@ export const useMarkAsComplete = () => {
       toast.error(`${error?.response?.data?.message || error?.message}`);
     }
   });
+
+  return query;
+};
+
+export const useCourseRating = () => {
+  const query = useMutation(`review`, async (data: any) => {
+    try {
+      const config = {
+        method: 'post',
+        url: `rating`,
+        data,
+      };
+      const responseData = await request(config);
+      return responseData?.data;
+    } catch (error: any) {
+      console.error(error);
+      toast.error(`${error?.response?.data?.message || error?.message}`);
+    }
+  });
+
+  return query;
+};
+
+export const useGetCourseCertificate = (courseId: string) => {
+  const query = useQuery(
+    `course-cert-${courseId}`,
+    async () => {
+      try {
+        const config = {
+          method: 'get',
+          url: `certificate/course/${courseId}`,
+        };
+        const responseData = await request(config);
+        return responseData?.data;
+      } catch (error: any) {
+        console.error(error);
+        toast.error(`${error?.response?.data?.message || error?.message}`);
+      }
+    },
+    {
+      enabled: !!courseId,
+    },
+  );
 
   return query;
 };

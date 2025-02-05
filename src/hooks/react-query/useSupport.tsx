@@ -27,7 +27,7 @@ export const useSupport = (router: any) => {
     {
       onSuccess: () => {
         toast.success('Support request successful!'); // Notify user of success
-        router.push('/tutor/support'); // Navigate to support page
+        router.push('/student/support'); // Navigate to support page
       },
     },
   );

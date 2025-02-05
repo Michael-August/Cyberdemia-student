@@ -25,7 +25,7 @@ const Page: React.FC = () => {
     }
 
     const payload = {
-      studentId: studentData?.studentid,
+      studentId: studentData?.id,
       courseId: courseData?.id,
       sectionId: selectedLecture?.sectionId,
       lectureId: selectedLecture?.id,

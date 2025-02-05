@@ -2,12 +2,20 @@
 import React, { useEffect } from 'react';
 
 import Table from '@/components/payment/Table';
+import { useGetPayments } from '@/hooks/react-query/usePayments';
 
 import { useLayoutContext } from '../../../../../context/LayoutContext';
 
 // Renaming the function to start with an uppercase letter
 const Page = () => {
   const { dispatch } = useLayoutContext();
+
+  const { data, isLoading, refetch } = useGetPayments();
+
+  useEffect(() => {
+    refetch();
+    console.log(data);
+  }, []);
 
   useEffect(() => {
     dispatch({ type: 'SET_NAVBAR', navbarType: 'dashboardNavbar' });
@@ -32,7 +40,7 @@ const Page = () => {
         </div>
       </div>
       <div>
-        <Table />
+        <Table data={data} isLoading={isLoading} />
       </div>
     </>
   );

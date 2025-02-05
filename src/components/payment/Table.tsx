@@ -1,28 +1,29 @@
 'use client';
-import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import React from 'react';
 import DataTable, { TableColumn } from 'react-data-table-component';
 import { GoArrowRight } from 'react-icons/go';
 import { MdCancel, MdCheckCircle, MdPending } from 'react-icons/md';
 
+import { Course } from '../../../types/Course.type';
 import { formatPrice } from '../../../utils/constants';
-import { Tabledatas } from '../../../utils/datas';
+import Loader from '../loader';
 
 // Define the interface for a data row
 interface TableRow {
-  paymentId: string;
+  id: string;
   date: string;
-  course: string;
+  course: Course;
   status: string;
   amount: string;
 }
+interface TableProps {
+  data: any;
+  isLoading: boolean;
+}
 
-const Table: React.FC = () => {
-  // const [, setPage] = useState(1);
-  const [, setSelectedCourse] = useState({});
-
-  // const handlePageChange = (page: number) => {
-  //   // setPage(page);
-  // };
+const Table: React.FC<TableProps> = ({ data, isLoading }) => {
+  const router = useRouter();
 
   const customStyles = {
     headCells: {
@@ -45,7 +46,7 @@ const Table: React.FC = () => {
   const columns: TableColumn<TableRow>[] = [
     {
       name: 'Payment ID',
-      selector: (row) => row.paymentId,
+      selector: (row) => row.id,
       sortable: true,
       width: 'full',
     },
@@ -57,7 +58,7 @@ const Table: React.FC = () => {
     },
     {
       name: 'Course',
-      selector: (row) => row.course,
+      selector: (row) => row.course?.title,
       sortable: true,
     },
     {
@@ -85,7 +86,7 @@ const Table: React.FC = () => {
         <div className="flex justify-end cursor-pointer">
           <button
             className="bg-cp-secondary text-white w-[150px] py-3 flex justify-center hover:bg-cp-secondaryDarker items-center text-[13px] gap-2"
-            onClick={() => setSelectedCourse(row)}
+            onClick={() => router.push(`/student/courses/${row.course?.id}`)}
           >
             View Course
             <GoArrowRight size={19} />
@@ -101,28 +102,32 @@ const Table: React.FC = () => {
 
   return (
     <div className="rounded-[.5rem] px-2 py-10 bg-white shadow">
-      <DataTable
-        customStyles={{
-          headCells: {
-            style: {
-              backgroundColor: customStyles.headCells.style.backgroundColor,
-              fontWeight: customStyles.headCells.style.fontWeight,
-              fontSize: customStyles.headCells.style.fontSize,
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <DataTable
+          customStyles={{
+            headCells: {
+              style: {
+                backgroundColor: customStyles.headCells.style.backgroundColor,
+                fontWeight: customStyles.headCells.style.fontWeight,
+                fontSize: customStyles.headCells.style.fontSize,
+              },
             },
-          },
-          rows: {
-            style: {
-              minHeight: customStyles.rows.style.minHeight,
-              textTransform: 'none',
-              cursor: customStyles.rows.style.cursor,
+            rows: {
+              style: {
+                minHeight: customStyles.rows.style.minHeight,
+                textTransform: 'none',
+                cursor: customStyles.rows.style.cursor,
+              },
             },
-          },
-        }}
-        columns={columns}
-        data={Tabledatas}
-        pagination
-        // onChangePage={handlePageChange}
-      />
+          }}
+          columns={columns}
+          data={data}
+          pagination
+          // onChangePage={handlePageChange}
+        />
+      )}
     </div>
   );
 };

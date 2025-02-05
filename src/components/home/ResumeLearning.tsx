@@ -2,9 +2,12 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { GoArrowRight } from 'react-icons/go';
-function ResumeLearning() {
+
+import { Subscription } from '../../../types/SubscribedCourse.type';
+
+function ResumeLearning({ course }: { course: Subscription }) {
   const Router = useRouter();
-  const handleClick = () => Router.push('courses/coursePlayer');
+  const handleClick = () => Router.push(`courses/${course?.id}`);
 
   return (
     <div className="h-[153px] w-[100%] md:w-[752px] bg-[#f8cfeb] pl-0 md:pl-5 p-5 flex gap-5">
@@ -21,14 +24,18 @@ function ResumeLearning() {
       </div>
       <div className="flex flex-col gap-3 w-full">
         <span className="text-[14px] font-extrabold">
-          Cyber Security Defense Analyst
+          {course?.course?.title}
         </span>
         <div>
           <span className="text-[10px] flex justify-end text-gray-700 ">
-            4/8 Lessons Completed
+            {course.completedSections.length}/{course.course.sections.length}{' '}
+            Lessons Completed
           </span>
           <div className="h-[10px] w-[100%] md:w-[567px] bg-white">
-            <div className="w-[40%] h-full bg-[#5595F5] "></div>
+            <div
+              style={{ width: `${course.progressPercentage}%` }}
+              className={`h-full bg-[#5595F5] `}
+            ></div>
           </div>
         </div>
         <div className="flex md:justify-end mt-3 md:mt-0">
