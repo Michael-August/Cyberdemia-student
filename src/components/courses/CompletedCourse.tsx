@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useState } from 'react';
 import { GoArrowRight } from 'react-icons/go';
+
+import StarRatings from 'react-star-ratings';
 
 import {
   Dialog,
@@ -14,9 +16,22 @@ import {
 } from '@/components/ui/dialog';
 
 import { Subscription } from '../../../types/SubscribedCourse.type';
+import { useCourseRating } from '@/hooks/react-query/useCourses';
+import { toast } from 'react-toastify';
 
 function CompletedCourse({ course }: { course: Subscription }) {
   const stars = document.querySelectorAll('.star');
+
+  const [rating, setRating] = useState(0)
+  const [reviewText, setReviewText] = useState('')
+  const mutation = useCourseRating();
+
+  const handleRating = () => {
+
+    mutation.mutate(
+      { courseId: course.id, rating, review: reviewText }
+    );
+  };  
 
   stars.forEach((star, index) => {
     star.addEventListener('click', () => {
@@ -31,7 +46,10 @@ function CompletedCourse({ course }: { course: Subscription }) {
     });
   });
   const Router = useRouter();
-  const handleClick = () => Router.push('/student/courses/certificate');
+  const handleClick = () => {
+    localStorage.setItem("course-cert", course.id)
+    Router.push('/student/courses/certificate')
+  };
   return (
     <div className="h-[153px] w-[382px] md:w-[752px] bg-[#f8cfeb] p-5 flex gap-5">
       <div className="hidden md:flex">
@@ -112,6 +130,8 @@ function CompletedCourse({ course }: { course: Subscription }) {
                   <input
                     type="text"
                     placeholder="Enter text (up to 2000 characters)"
+                    value={reviewText}
+                    onChange={e => setReviewText(e.target.value)}
                     maxLength={2000}
                     className="border bg-[#F5F5F5] border-gray-300 rounded-md p-4 pb-20 shadow-sm w-full text-sm text-gray-700 placeholder-gray-400 outline-none resize-none"
                   />
@@ -120,43 +140,13 @@ function CompletedCourse({ course }: { course: Subscription }) {
                   <span className=" text-[10px] text-gray-700">
                     Give star rating
                   </span>
-                  <div className="star-rating flex gap-1">
-                    <Image
-                      src="/images/star2.svg"
-                      alt="Inactive Star"
-                      width={25}
-                      height={25}
-                      className="star inactive cursor-pointer"
-                    />
-                    <Image
-                      src="/images/star2.svg"
-                      alt="Inactive Star"
-                      width={25}
-                      height={25}
-                      className="star inactive cursor-pointer"
-                    />
-                    <Image
-                      src="/images/star2.svg"
-                      alt="Inactive Star"
-                      width={25}
-                      height={25}
-                      className="star inactive cursor-pointer"
-                    />
-                    <Image
-                      src="/images/star2.svg"
-                      width={25}
-                      height={25}
-                      alt="Inactive Star"
-                      className="star inactive cursor-pointer"
-                    />
-                    <Image
-                      src="/images/star2.svg"
-                      alt="Inactive Star"
-                      width={25}
-                      height={25}
-                      className="star inactive cursor-pointer"
-                    />
-                  </div>
+                  <StarRatings
+                    rating={rating}
+                    starRatedColor="gold"
+                    changeRating={(newRating: any) => setRating(newRating)}
+                    numberOfStars={5}
+                    name="rating"
+                  />
                 </div>
               </div>
               <DialogFooter className="flex flex-col md:flex-row gap-3">
@@ -170,7 +160,7 @@ function CompletedCourse({ course }: { course: Subscription }) {
                       cancel
                     </button>
                   </DialogClose>
-                  <button className="bg-cp-secondary hover:bg-pink-600 cursor-pointer py-2 px-4 md:px-2 w-[100%] md:w-auto text-white text-[12px] flex justify-center items-center gap-2">
+                  <button onClick={handleRating} className="bg-cp-secondary hover:bg-pink-600 cursor-pointer py-2 px-4 md:px-2 w-[100%] md:w-auto text-white text-[12px] flex justify-center items-center gap-2">
                     Submit
                     <GoArrowRight size={20} />
                   </button>
