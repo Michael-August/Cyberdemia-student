@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { GoArrowRight } from 'react-icons/go';
-
 import StarRatings from 'react-star-ratings';
 
 import {
@@ -14,24 +13,20 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { useCourseRating } from '@/hooks/react-query/useCourses';
 
 import { Subscription } from '../../../types/SubscribedCourse.type';
-import { useCourseRating } from '@/hooks/react-query/useCourses';
-import { toast } from 'react-toastify';
 
 function CompletedCourse({ course }: { course: Subscription }) {
   const stars = document.querySelectorAll('.star');
 
-  const [rating, setRating] = useState(0)
-  const [reviewText, setReviewText] = useState('')
+  const [rating, setRating] = useState(0);
+  const [reviewText, setReviewText] = useState('');
   const mutation = useCourseRating();
 
   const handleRating = () => {
-
-    mutation.mutate(
-      { courseId: course.id, rating, review: reviewText }
-    );
-  };  
+    mutation.mutate({ courseId: course.id, rating, review: reviewText });
+  };
 
   stars.forEach((star, index) => {
     star.addEventListener('click', () => {
@@ -47,8 +42,8 @@ function CompletedCourse({ course }: { course: Subscription }) {
   });
   const Router = useRouter();
   const handleClick = () => {
-    localStorage.setItem("course-cert", course.id)
-    Router.push('/student/courses/certificate')
+    localStorage.setItem('course-cert', course.id);
+    Router.push('/student/courses/certificate');
   };
   return (
     <div className="h-[153px] w-[382px] md:w-[752px] bg-[#f8cfeb] p-5 flex gap-5">
@@ -131,7 +126,7 @@ function CompletedCourse({ course }: { course: Subscription }) {
                     type="text"
                     placeholder="Enter text (up to 2000 characters)"
                     value={reviewText}
-                    onChange={e => setReviewText(e.target.value)}
+                    onChange={(e) => setReviewText(e.target.value)}
                     maxLength={2000}
                     className="border bg-[#F5F5F5] border-gray-300 rounded-md p-4 pb-20 shadow-sm w-full text-sm text-gray-700 placeholder-gray-400 outline-none resize-none"
                   />
@@ -160,7 +155,10 @@ function CompletedCourse({ course }: { course: Subscription }) {
                       cancel
                     </button>
                   </DialogClose>
-                  <button onClick={handleRating} className="bg-cp-secondary hover:bg-pink-600 cursor-pointer py-2 px-4 md:px-2 w-[100%] md:w-auto text-white text-[12px] flex justify-center items-center gap-2">
+                  <button
+                    onClick={handleRating}
+                    className="bg-cp-secondary hover:bg-pink-600 cursor-pointer py-2 px-4 md:px-2 w-[100%] md:w-auto text-white text-[12px] flex justify-center items-center gap-2"
+                  >
                     Submit
                     <GoArrowRight size={20} />
                   </button>
