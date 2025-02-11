@@ -56,8 +56,19 @@ function CourseOverview({ details }: any) {
         </ul>
       </div> */}
 
-      <div dangerouslySetInnerHTML={{ __html: details?.objective }} />
-      <div dangerouslySetInnerHTML={{ __html: details?.prerequisite }} />
+      <div>
+        <h1 className="text-[13px] font-extrabold pb-1">
+          Course Objectives:
+        </h1>
+        <div dangerouslySetInnerHTML={{ __html: details?.objective }} />
+      </div>
+
+      <div>
+        <h1 className="text-[13px] font-extrabold pb-1">
+          Prerequisite for learning:
+        </h1>
+        <div dangerouslySetInnerHTML={{ __html: details?.prerequisite }} />
+      </div>
       <h1 className="text-[15px] font-extrabold pt-10 ">Instructor</h1>
       <div className="flex flex-col gap-5">
         <div className="flex gap-3 items-center">

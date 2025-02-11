@@ -38,21 +38,23 @@ const Home = () => {
   return (
     <>
       <div className="flex flex-col gap-8 overflow-x-hidden mt-12 md:mt-5  h-[100%] px-4 md:px-0">
-        {coursesInProgress.length > 0 && <div className="flex flex-col gap-2 ">
-          <span className="text-sm font-extrabold text-[#AC1D7E]">
-            In Progress
-          </span>
-          <div className="">
-            <div className="w-[108px] h-[7px] bg-[#AC1D7E]"></div>
-            <hr
-              style={{
-                height: '1px',
-                backgroundColor: '#AC1D7E',
-                border: 'none',
-              }}
-            />
+        {coursesInProgress?.length > 0 && (
+          <div className="flex flex-col gap-2 ">
+            <span className="text-sm font-extrabold text-[#AC1D7E]">
+              In Progress
+            </span>
+            <div className="">
+              <div className="w-[108px] h-[7px] bg-[#AC1D7E]"></div>
+              <hr
+                style={{
+                  height: '1px',
+                  backgroundColor: '#AC1D7E',
+                  border: 'none',
+                }}
+              />
+            </div>
           </div>
-        </div>}
+        )}
 
         {isLoadingCoursesInProgress ? (
           <Loader />
