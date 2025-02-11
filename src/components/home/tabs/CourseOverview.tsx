@@ -57,9 +57,7 @@ function CourseOverview({ details }: any) {
       </div> */}
 
       <div>
-        <h1 className="text-[13px] font-extrabold pb-1">
-          Course Objectives:
-        </h1>
+        <h1 className="text-[13px] font-extrabold pb-1">Course Objectives:</h1>
         <div dangerouslySetInnerHTML={{ __html: details?.objective }} />
       </div>
 
