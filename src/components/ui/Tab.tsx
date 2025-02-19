@@ -23,7 +23,7 @@ export const Tabs: React.FC<TabsProps> = ({ children }) => {
 
   return (
     <div className="tabs ">
-      <div className="tab-list flex items-center gap-3 mb-5 relative">
+      <div className="tab-list flex items-center cursor-pointer gap-3 mb-5 relative">
         {React.Children.map(
           children,
           (child: React.ReactElement<TabProps>, index: number) => {

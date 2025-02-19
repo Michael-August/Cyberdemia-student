@@ -7,7 +7,7 @@ import { Subscription } from '../../../types/SubscribedCourse.type';
 
 function ResumeLearning({ course }: { course: Subscription }) {
   const Router = useRouter();
-  const handleClick = () => Router.push(`courses/${course?.id}`);
+  const handleClick = () => Router.push(`courses/${course?.course.id}`);
 
   return (
     <div className="h-[153px] w-[100%] md:w-[752px] bg-[#f8cfeb] pl-0 md:pl-5 p-5 flex gap-5">

@@ -28,9 +28,11 @@ const comments = [
   },
 ];
 interface RepliesProps {
-  handleReply: () => void;
+  handleReply: (commentId: string | undefined) => void;
+  comment: any;
+  replies: any[];
 }
-const Replies: React.FC<RepliesProps> = ({ handleReply }) => {
+const Replies: React.FC<RepliesProps> = ({ handleReply, comment, replies }) => {
   const [visibleCount, setVisibleCount] = useState(10);
 
   const handleShowMore = () => {
@@ -43,44 +45,32 @@ const Replies: React.FC<RepliesProps> = ({ handleReply }) => {
     <div className="fade-enter-active flex flex-col gap-5 pt-5 pb-20">
       <div
         className="flex gap-1 w-max p-2 border border-cp-secondary text-[12px] items-center justify-center cursor-pointer hover:bg-cp-secondary hover:text-white"
-        onClick={handleReply}
+        onClick={() => handleReply(undefined)}
       >
         <MdArrowBack />
         Back to Q&A
       </div>
 
       <CommentedSection
-        key={'00'}
-        logo={'p'}
-        name={'Alice Johnson'}
-        time={'7 days ago'}
-        comment={''}
-        replies={
-          'This is a great article! I appreciate the depth of analysis and the well-researched points made. It was very enlightening.'
-        }
-        likes={'3'}
+        key={comment.id}
+        comment={comment}
         isReply={true}
-        handleReply={function (): void {
-          throw new Error('Function not implemented.');
-        }}
+        // handleReply={handleReply}
       />
-      <Comment title={'Write a reply?'} />
+      <Comment commentId={comment?.id} title={'Write a reply?'} />
       <p className=" text-[12px] font-extrabold cursor-pointer text-cp-secondary">
-        (2 replies)
+        ({replies?.length} replies)
       </p>
-      {comments.slice(0, visibleCount).map((comment) => (
-        <CommentedSection
-          key={comment.id}
-          logo={comment.initial}
-          name={comment.name}
-          time={comment.daysAgo}
-          comment={comment.comment}
-          replies={comment.replies}
-          likes={comment.likes}
-          isReply={false}
-          handleReply={function (): void {}}
-        />
-      ))}
+      {replies
+        ?.slice(0, visibleCount)
+        .map((comment) => (
+          <CommentedSection
+            key={comment.id}
+            comment={comment}
+            isReply={true}
+            handleReply={handleReply}
+          />
+        ))}
 
       {visibleCount < comments.length ? (
         <div className="flex justify-center">

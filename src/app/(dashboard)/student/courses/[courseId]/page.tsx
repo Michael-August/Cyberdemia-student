@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { FaRegCircleCheck } from 'react-icons/fa6';
 import ReactPlayer from 'react-player';
+import { toast } from 'react-toastify';
 
 import Announcement from '@/components/coursePlayer/tabs/Announcement';
 import Qforum from '@/components/coursePlayer/tabs/Qforum';
@@ -15,7 +16,7 @@ import { useCourseStore } from '../../../../../../utils/zustandStore/lectures';
 
 const Page: React.FC = () => {
   const { dispatch } = useLayoutContext();
-  const { selectedLecture, courseData } = useCourseStore();
+  const { selectedLecture, courseData, resourceData } = useCourseStore();
   const { mutate: markAsComplete, isLoading } = useMarkAsComplete();
   const studentData = JSON.parse(sessionStorage.getItem('userProfile') || '{}');
 
@@ -31,7 +32,12 @@ const Page: React.FC = () => {
       lectureId: selectedLecture?.id,
     };
 
-    markAsComplete(payload);
+    try {
+      markAsComplete(payload);
+      toast.success('progress updated successfully');
+    } catch (error) {
+      toast.error('Failed to update progress');
+    }
   };
 
   useEffect(() => {
@@ -97,13 +103,13 @@ const Page: React.FC = () => {
       <div className="px-3 w-[55%] md:w-full">
         <Tabs>
           <Tab title="Course overview">
-            <CourseOverview />
+            <CourseOverview details={courseData} />
           </Tab>
           <Tab title="Q&A Forums">
             <Qforum />
           </Tab>
           <Tab title="Resources">
-            <Resources />
+            <Resources resources={resourceData} />
           </Tab>
           <Tab title="Announcements">
             <Announcement />

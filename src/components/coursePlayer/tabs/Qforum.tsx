@@ -1,6 +1,13 @@
 'use client';
+import { useParams } from 'next/navigation';
 import React, { useState } from 'react';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
+
+import Loader from '@/components/loader';
+import {
+  useGetQAReplies,
+  useGetQAs,
+} from '@/hooks/react-query/useCommunications';
 
 import Comment from '../Comment';
 import CommentedSection from '../CommentedSection';
@@ -131,6 +138,15 @@ const comments = [
 function Qforum() {
   const [visibleCount, setVisibleCount] = useState(10);
 
+  const [commentId, setCommentId] = useState('');
+  const [commentToReply, setCommentToReply] = useState<any>({});
+
+  const { courseId } = useParams();
+
+  const { data: qas, isLoading: qasLoading } = useGetQAs(courseId as string);
+
+  const { data: qaReplies } = useGetQAReplies(courseId as string, commentId);
+
   const handleShowMore = () => {
     setVisibleCount(comments.length);
   };
@@ -138,52 +154,61 @@ function Qforum() {
     setVisibleCount(10);
   };
   const [reply, setReply] = useState(true);
-  const handleReply = () => {
+
+  const handleReply = (commentId?: string) => {
+    if (commentId) {
+      setCommentId(commentId);
+      setCommentToReply(qas?.find((comment: any) => comment.id === commentId));
+    }
     setReply(!reply);
   };
 
   return (
     <div>
       {reply === true ? (
-        <div className="pb-40 flex flex-col gap-5 px-2">
-          <Comment title={'Have a questions to ask?'} />
+        qasLoading ? (
+          <Loader />
+        ) : (
+          <div className="pb-40 flex flex-col gap-5 px-2">
+            <Comment title={'Have a questions to ask?'} />
 
-          {comments.slice(0, visibleCount).map((comment) => (
-            <CommentedSection
-              key={comment.id}
-              logo={comment.initial}
-              name={comment.name}
-              time={comment.daysAgo}
-              comment={comment.comment}
-              replies={comment.replies}
-              likes={comment.likes}
-              isReply={true}
-              handleReply={handleReply}
-            />
-          ))}
+            {qas.slice(0, visibleCount).map((comment: any) => (
+              <CommentedSection
+                key={comment.id}
+                comment={comment}
+                isReply={true}
+                handleReply={handleReply}
+              />
+            ))}
 
-          {visibleCount < comments.length ? (
-            <div className="flex  w-full items-center justify-center ml-20 md:ml-0">
-              <button
-                className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
-                onClick={handleShowMore}
-              >
-                Show more <MdKeyboardArrowDown size={16} />
-              </button>
-            </div>
-          ) : (
-            <div className="flex justify-center w-full items-center ml-20 md:ml-0">
-              <button
-                className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
-                onClick={handleShowLess}
-              >
-                Show Less <MdKeyboardArrowUp size={16} />
-              </button>
-            </div>
-          )}
-        </div>
+            {qas.length > 10 &&
+              (visibleCount < comments.length ? (
+                <div className="flex w-full items-center justify-center ml-20 md:ml-0">
+                  <button
+                    className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
+                    onClick={handleShowMore}
+                  >
+                    Show more <MdKeyboardArrowDown size={16} />
+                  </button>
+                </div>
+              ) : (
+                <div className="flex justify-center w-full items-center ml-20 md:ml-0">
+                  <button
+                    className="bg-cp-secondary p-2 text-white w-max flex text-[12px] gap-1 items-center justify-center mr-40"
+                    onClick={handleShowLess}
+                  >
+                    Show Less <MdKeyboardArrowUp size={16} />
+                  </button>
+                </div>
+              ))}
+          </div>
+        )
       ) : (
-        <Replies handleReply={handleReply} />
+        <Replies
+          handleReply={handleReply}
+          comment={commentToReply}
+          replies={qaReplies}
+        />
       )}
     </div>
   );

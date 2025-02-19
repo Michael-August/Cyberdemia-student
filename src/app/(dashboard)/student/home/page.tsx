@@ -60,9 +60,13 @@ const Home = () => {
           <Loader />
         ) : (
           <div className="flex flex-col gap-4">
-            {coursesInProgress?.map((course: Subscription) => (
-              <ResumeLearning key={course?.id} course={course} />
-            ))}
+            {coursesInProgress
+              ?.filter(
+                (course: Subscription) => course.progressPercentage !== 100,
+              )
+              .map((course: Subscription) => (
+                <ResumeLearning key={course?.id} course={course} />
+              ))}
           </div>
         )}
 
