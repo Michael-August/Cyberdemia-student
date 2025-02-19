@@ -6,7 +6,6 @@ import React from 'react';
 
 import { useGetCourseAnnouncement } from '@/hooks/react-query/useCommunications';
 
-
 // const comments = [
 //   {
 //     id: 1,
