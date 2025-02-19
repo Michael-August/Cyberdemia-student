@@ -134,7 +134,7 @@ export const useGetAssignments = (sectionIds: any) => {
           }),
         );
         return assignments;
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
         toast.error(`${error?.response?.data?.message || error?.message}`);
       }
