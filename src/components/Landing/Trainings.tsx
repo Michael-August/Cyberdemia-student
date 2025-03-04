@@ -1,9 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-import {
-  PublicTrainings,
-} from '../../../utils/constants/trainings';
+import { PublicTrainings } from '../../../utils/constants/trainings';
 import Training from './Training';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
@@ -14,9 +12,7 @@ const Trainings = () => {
   const switchTab = (tab: string) => setTab(tab);
 
   // Fetch courses from API
-  const {
-    data: courses,
-  } = useQuery(
+  const { data: courses } = useQuery(
     ['unauthenticated courses'],
     async () => {
       try {
