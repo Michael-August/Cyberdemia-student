@@ -17,7 +17,8 @@ const Join = () => {
             and defensively through real-world examples and exercises, hands-on
             labs and expert instruction. Training is essential to preparing the
             cybersecurity workforce of tomorrow, and for keeping current
-            cybersecurity workers up-to-date on skills and evolving threats.{' '}
+            cybersecurity workers up-to-date on skills and evolving
+            threats.{' '}
           </span>
         </div>
         <div className="buttons flex flex-wrap md:gap-6 gap-3 w-full">

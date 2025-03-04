@@ -7,7 +7,8 @@ import { useReactToPrint } from 'react-to-print';
 import Certificate from '@/components/courses/Certificate';
 import Loader from '@/components/loader';
 import { NavigationCrumbs } from '@/components/NavigationCrumbs';
-import { useGetCourseCertificate } from '@/hooks/react-query/useCourses';
+import { useGetStudentCertificate } from '@/hooks/react-query/useCourses';
+// import { useGetCourseCertificate } from '@/hooks/react-query/useCourses';
 
 const Page = () => {
   const componentRef = useRef<HTMLDivElement>(null);
@@ -15,9 +16,12 @@ const Page = () => {
     content: () => componentRef.current,
   });
 
-  const certCourseId = localStorage.getItem('course-cert');
+  // const certCourseId = localStorage.getItem('course-cert');
 
-  const { isLoading } = useGetCourseCertificate(certCourseId as string);
+  // const { isLoading } = useGetCourseCertificate(certCourseId as string);
+  const { data: certificates, isLoading } = useGetStudentCertificate();
+
+  console.log(certificates);
 
   return (
     <div className="px-5 mt-14 mb-5 md:mt-0 md:mb-0 flex gap-10 flex-col overflow-x-hidden">

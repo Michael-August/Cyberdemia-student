@@ -8,7 +8,7 @@
     "start": "next start",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\" --log-level error --single-quote --trailing-comma all",
     "lint": "next lint",
-    "lint:fix": "yarn format && yarn lint --fix",
+    "lint:fix": "npm run format && npm run lint --fix",
     "prepare": "husky install"
   },
   "dependencies": {

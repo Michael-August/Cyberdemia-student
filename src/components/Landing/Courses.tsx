@@ -1,7 +1,11 @@
+'use client';
+
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { IoArrowDown } from 'react-icons/io5';
 
 const Courses = () => {
+  const router = useRouter();
   return (
     <div className="courses mt-20 md:mt-32">
       <div className="secion-title relative mb-6 md:mb-10 text-[#000000CC] text-base font-semibold">
@@ -47,7 +51,10 @@ const Courses = () => {
                 Earn Certificate on Completion
               </span>
             </div>
-            <button className="flex hover:bg-cp-primary transition-all items-center justify-center text-xs md:text-xs gap-2 p-[0.625rem] md:px-[1.875rem] md:py-5 bg-cp-secondary text-white">
+            <button
+              onClick={() => router.push('/student/courses')}
+              className="flex hover:bg-cp-primary transition-all items-center justify-center text-xs md:text-xs gap-2 p-[0.625rem] md:px-[1.875rem] md:py-5 bg-cp-secondary text-white"
+            >
               Explore Courses
               <IoArrowDown size={22} />
             </button>
@@ -91,7 +98,10 @@ const Courses = () => {
                 Earn Certificate on Completion
               </span>
             </div>
-            <button className="flex items-center hover:bg-cp-primary transition-all justify-center text-xs md:text-xs gap-2 p-[0.625rem] md:px-[1.875rem] md:py-5 bg-cp-secondary text-white">
+            <button
+              onClick={() => router.push('/student/courses')}
+              className="flex items-center hover:bg-cp-primary transition-all justify-center text-xs md:text-xs gap-2 p-[0.625rem] md:px-[1.875rem] md:py-5 bg-cp-secondary text-white"
+            >
               Explore Courses
               <IoArrowDown size={22} />
             </button>

@@ -3,13 +3,36 @@ import { useState } from 'react';
 
 import {
   PublicTrainings,
-  TechnicalTrainings,
 } from '../../../utils/constants/trainings';
 import Training from './Training';
+import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
+import { request } from '@/hooks/request';
 
 const Trainings = () => {
   const [tab, setTab] = useState('available-tech');
   const switchTab = (tab: string) => setTab(tab);
+
+  // Fetch courses from API
+  const {
+    data: courses,
+  } = useQuery(
+    ['unauthenticated courses'],
+    async () => {
+      try {
+        const config = {
+          method: 'get',
+          url: '/courses',
+        };
+        const responseData = await request(config);
+        return responseData?.data;
+      } catch (error: any) {
+        console.error(error);
+        toast.error(`${error?.response?.data?.message || error?.message}`);
+      }
+    },
+    { staleTime: 60000 }, // Cache for 1 min
+  );
 
   return (
     <>
@@ -60,12 +83,12 @@ const Trainings = () => {
               <div className="tab-contents hidden xs:block">
                 <div className="available-tech">
                   <div className="w-full flex gap-5 overflow-x-scroll">
-                    {TechnicalTrainings.map((techTrain) => (
+                    {courses?.courses.map((course: any) => (
                       <Training
-                        image={techTrain.image}
-                        title={techTrain.title}
-                        detail={techTrain.detail}
-                        key={techTrain.id}
+                        title={course?.title}
+                        detail={course?.objective}
+                        courseId={course?.id}
+                        key={course?.id}
                       />
                     ))}
                   </div>
@@ -74,17 +97,22 @@ const Trainings = () => {
               <div className="tab-contents block xs:hidden">
                 <div className="available flex">
                   <div className="w-full flex gap-5 overflow-x-scroll">
-                    {TechnicalTrainings.map((techTrain) => (
+                    {courses?.courses.map((course: any) => (
                       <Training
-                        image={techTrain.image}
-                        title={techTrain.title}
-                        detail={techTrain.detail}
-                        key={techTrain.id}
+                        title={course?.title}
+                        detail={course?.objective}
+                        courseId={course?.id}
+                        key={course?.id}
                       />
                     ))}
                   </div>
                 </div>
               </div>
+            </div>
+          )}
+          {tab === 'coming-tech' && (
+            <div className="flex items-center justify-center text-gray-600">
+              Coming soon!
             </div>
           )}
         </div>
@@ -96,6 +124,25 @@ const Trainings = () => {
 export const AwarenessTraining = () => {
   const [tab2, setTab2] = useState('available');
   const switchTab2 = (tab: string) => setTab2(tab);
+
+  // Fetch courses from API
+  // const { data: courses, isLoading, error } = useQuery(
+  //   ['unauthenticated courses'],
+  //   async () => {
+  //     try {
+  //       const config = {
+  //         method: 'get',
+  //         url: '/courses',
+  //       };
+  //       const responseData = await request(config);
+  //       return responseData?.data;
+  //     } catch (error: any) {
+  //       console.error(error);
+  //       toast.error(`${error?.response?.data?.message || error?.message}`);
+  //     }
+  //   },
+  //   { staleTime: 60000 } // Cache for 1 min
+  // );
 
   return (
     <>
@@ -142,8 +189,8 @@ export const AwarenessTraining = () => {
                 {PublicTrainings.map((training) => (
                   <Training
                     key={training.id}
-                    image={training.image}
                     title={training.title}
+                    // courseId={course?.id}
                     detail={training.detail}
                   />
                 ))}
@@ -156,8 +203,8 @@ export const AwarenessTraining = () => {
                 {PublicTrainings.map((training) => (
                   <Training
                     key={training.id}
-                    image={training.image}
                     title={training.title}
+                    // courseId={course?.id}
                     detail={training.detail}
                   />
                 ))}
