@@ -10,18 +10,14 @@ const Why = () => {
       <div className="paragraph">
         <div className="first mb-7">
           <span className="text-sm md:text-sm text-[#000000CC]">
-            CyberDemia is a product from{' '}
+            CyberDemia, a flagship cybersecurity education initiative by{' '}
             <span className="text-cp-secondary font-semibold">CyberPlural</span>{' '}
-            that focuses on CyberSecurity Education and Awareness
+            is dedicated to bridging the cybersecurity skills gap in Africa.
           </span>
         </div>
         <div className="second mb-7">
           <span className="text-[#000000B2] text-sm md:text-sm">
-            Lorem ipsum dolor sit amet consectetur. Ut porttitor et viverra
-            malesuada fringilla. Dictum vitae mi nunc a tellus. Faucibus ac id
-            pellentesque interdum. Vestibulum convallis velit feugiat aliquam
-            pellentesque etiam. In posuere purus aliquet dolor pretium eget
-            dictum.
+            Our platform offers structured courses from foundational to advanced levels, empowering beginners and professionals with industry-relevant expertise. Through CyberDemia, we aim to develop a skilled workforce, enhance cyber resilience, and drive economic growth.
           </span>
         </div>
       </div>

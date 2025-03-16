@@ -1,4 +1,6 @@
+import moment from 'moment';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -15,30 +17,36 @@ const Footer = () => {
           <span className="text-sm">A product of CyberPlural</span>
 
           <div className="socials flex gap-5 items-center mt-7">
-            <Image
-              width={23.2}
-              height={23.2}
-              src="/icons/xlogo.svg"
-              alt="x logo"
-            />
-            <Image
-              width={23.2}
-              height={23.2}
-              src="/icons/iglogo.svg"
-              alt="instagram logo"
-            />
-            <Image
-              width={23.2}
-              height={23.2}
-              src="/icons/inlogo.svg"
-              alt="linkedin logo"
-            />
-            <Image
+            <Link target='_blank' href={'https://x.com/cyberplural'}>
+              <Image
+                width={23.2}
+                height={23.2}
+                src="/icons/xlogo.svg"
+                alt="x logo"
+              />
+            </Link>
+            <Link target='_blank' href={'https://www.instagram.com/cyberplural'}>
+              <Image
+                width={23.2}
+                height={23.2}
+                src="/icons/iglogo.svg"
+                alt="instagram logo"
+              />
+            </Link>
+            <Link target='_blank' href={'https://www.linkedin.com/company/cyberplural/'}>
+              <Image
+                width={23.2}
+                height={23.2}
+                src="/icons/inlogo.svg"
+                alt="linkedin logo"
+              />
+            </Link>
+            {/* <Image
               width={23.2}
               height={23.2}
               src="/icons/fblogo.svg"
               alt="facebook logo"
-            />
+            /> */}
           </div>
         </div>
         <div className="moreinfo flex flex-col md:flex-row md:items-center gap-10 xl:gap-20">
@@ -63,7 +71,7 @@ const Footer = () => {
       </div>
       <div className="bootom mt-5 flex md:flex-row flex-col gap-5 md:gap-0 items-center justify-between">
         <span className="text-xs font-medium">
-          © 2024 CyberDemia All Rights Reserved.
+          © {moment().year()} CyberDemia All Rights Reserved.
         </span>
         <div className="policy-conditions flex">
           <span className="border-r text-sm border-solid border-white pr-4">
