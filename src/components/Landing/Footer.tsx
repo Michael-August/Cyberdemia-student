@@ -17,7 +17,7 @@ const Footer = () => {
           <span className="text-sm">A product of CyberPlural</span>
 
           <div className="socials flex gap-5 items-center mt-7">
-            <Link target='_blank' href={'https://x.com/cyberplural'}>
+            <Link target="_blank" href={'https://x.com/cyberplural'}>
               <Image
                 width={23.2}
                 height={23.2}
@@ -25,7 +25,10 @@ const Footer = () => {
                 alt="x logo"
               />
             </Link>
-            <Link target='_blank' href={'https://www.instagram.com/cyberplural'}>
+            <Link
+              target="_blank"
+              href={'https://www.instagram.com/cyberplural'}
+            >
               <Image
                 width={23.2}
                 height={23.2}
@@ -33,7 +36,10 @@ const Footer = () => {
                 alt="instagram logo"
               />
             </Link>
-            <Link target='_blank' href={'https://www.linkedin.com/company/cyberplural/'}>
+            <Link
+              target="_blank"
+              href={'https://www.linkedin.com/company/cyberplural/'}
+            >
               <Image
                 width={23.2}
                 height={23.2}

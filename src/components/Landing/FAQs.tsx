@@ -2,12 +2,16 @@
 
 import { useState } from 'react';
 import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
-import { communityFaqs, generalFaqs, supportFaqs } from '../../../utils/constants/faqs';
+import {
+  communityFaqs,
+  generalFaqs,
+  supportFaqs,
+} from '../../../utils/constants/faqs';
 
 const FAQs = () => {
   const [faqs, setFaqs] = useState(generalFaqs);
-  const [communityFaq, setCommunityFaq] = useState(communityFaqs)
-  const [technicalSupportFaq, setTechnicalSupportFaq] = useState(supportFaqs)
+  const [communityFaq, setCommunityFaq] = useState(communityFaqs);
+  const [technicalSupportFaq, setTechnicalSupportFaq] = useState(supportFaqs);
 
   const expandFaq = (faqId: number) => {
     const faqsUpdated = faqs.map((faq) => {

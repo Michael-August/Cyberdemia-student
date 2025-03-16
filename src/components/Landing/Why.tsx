@@ -17,7 +17,11 @@ const Why = () => {
         </div>
         <div className="second mb-7">
           <span className="text-[#000000B2] text-sm md:text-sm">
-            Our platform offers structured courses from foundational to advanced levels, empowering beginners and professionals with industry-relevant expertise. Through CyberDemia, we aim to develop a skilled workforce, enhance cyber resilience, and drive economic growth.
+            Our platform offers structured courses from foundational to advanced
+            levels, empowering beginners and professionals with
+            industry-relevant expertise. Through CyberDemia, we aim to develop a
+            skilled workforce, enhance cyber resilience, and drive economic
+            growth.
           </span>
         </div>
       </div>
