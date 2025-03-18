@@ -16,10 +16,12 @@ const Page = () => {
     content: () => componentRef.current,
   });
 
-  // const certCourseId = localStorage.getItem('course-cert');
+  const certCourseId = localStorage.getItem('course-cert');
 
-  // const { isLoading } = useGetCourseCertificate(certCourseId as string);
-  const { data: certificates, isLoading } = useGetStudentCertificate();
+  // const { data: certificate, isLoading } = useGetCourseCertificate(certCourseId as string);
+  const { data: certificates, isLoading } = useGetStudentCertificate(
+    certCourseId as string,
+  );
 
   console.log(certificates);
 

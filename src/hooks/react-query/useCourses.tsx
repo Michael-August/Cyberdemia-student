@@ -207,36 +207,36 @@ export const useCourseRating = () => {
   return query;
 };
 
-// export const useGetCourseCertificate = (courseId: string) => {
-//   const query = useQuery(
-//     `course-cert-${courseId}`,
-//     async () => {
-//       try {
-//         const config = {
-//           method: 'get',
-//           url: `certificate/course/${courseId}`,
-//         };
-//         const responseData = await request(config);
-//         return responseData?.data;
-//       } catch (error: any) {
-//         console.error(error);
-//         toast.error(`${error?.response?.data?.message || error?.message}`);
-//       }
-//     },
-//     {
-//       enabled: !!courseId,
-//     },
-//   );
+export const useGetCourseCertificate = (courseId: string) => {
+  const query = useQuery(
+    `course-cert-${courseId}`,
+    async () => {
+      try {
+        const config = {
+          method: 'get',
+          url: `certificate/course/${courseId}`,
+        };
+        const responseData = await request(config);
+        return responseData?.data;
+      } catch (error: any) {
+        console.error(error);
+        toast.error(`${error?.response?.data?.message || error?.message}`);
+      }
+    },
+    {
+      enabled: !!courseId,
+    },
+  );
 
-//   return query;
-// };
+  return query;
+};
 
-export const useGetStudentCertificate = () => {
+export const useGetStudentCertificate = (courseId: string) => {
   const query = useQuery(`student certs`, async () => {
     try {
       const config = {
         method: 'get',
-        url: `certificate/student/issued`,
+        url: `certificate/student/issued/${courseId}`,
       };
       const responseData = await request(config);
       return responseData?.data;

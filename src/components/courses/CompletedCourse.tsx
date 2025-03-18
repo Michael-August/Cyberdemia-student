@@ -42,7 +42,7 @@ function CompletedCourse({ course }: { course: Subscription }) {
   });
   const Router = useRouter();
   const handleClick = () => {
-    localStorage.setItem('course-cert', course.id);
+    localStorage.setItem('course-cert', course?.course?.id);
     Router.push('/student/courses/certificate');
   };
   return (
