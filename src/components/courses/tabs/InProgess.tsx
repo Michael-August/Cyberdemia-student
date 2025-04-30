@@ -5,6 +5,8 @@ import Loader from '@/components/loader';
 import { usePersonalCourses } from '@/hooks/react-query/useCourses';
 
 import { Subscription } from '../../../../types/SubscribedCourse.type';
+import { Timer } from 'lucide-react';
+import { EmptyState } from '@/components/EmptyState';
 
 function InProgess() {
   const { data, isLoading } = usePersonalCourses();
@@ -16,13 +18,21 @@ function InProgess() {
         <Loader />
       ) : (
         <div className="flex flex-col gap-4">
-          {data
-            ?.filter(
-              (course: Subscription) => course.progressPercentage !== 100,
-            )
-            ?.map((course: Subscription) => (
-              <ResumeLearning key={course?.id} course={course} />
-            ))}
+          {data?.length === 0 ? (
+            <EmptyState
+              title="No Course in progress"
+              description="You will see courses here when you enroll in a course"
+              icon={Timer}
+            />
+          ) : (
+            data
+              ?.filter(
+                (course: Subscription) => course.progressPercentage !== 100,
+              )
+              ?.map((course: Subscription) => (
+                <ResumeLearning key={course?.id} course={course} />
+              ))
+          )}
         </div>
       )}
       {/* <ResumeLearning />

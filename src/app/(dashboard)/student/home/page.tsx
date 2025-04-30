@@ -13,6 +13,8 @@ import {
 import { useLayoutContext } from '../../../../../context/LayoutContext';
 import { Course } from '../../../../../types/Course.type';
 import { Subscription } from '../../../../../types/SubscribedCourse.type';
+import { EmptyState } from '@/components/EmptyState';
+import { Timer } from 'lucide-react';
 const Home = () => {
   const {
     data: coursesInProgress,
@@ -85,18 +87,26 @@ const Home = () => {
             Top Recommended Courses
           </span>
           <div className="grid md:grid-cols-3  gap-6">
-            {data?.courses.map((course: Course) => (
-              <RecomendedCourse
-                key={course?.id}
-                availableCourses={`${course?.sections.length} Total sections are available`}
-                image={'/images/card1.svg'}
-                title={course?.title}
-                body={course?.subtitle}
-                handleClick={() => router.push(`home/${course?.id}`)}
-                isCourseAvailable={true}
-                isCourseComing={false}
+            {data?.courses.length === 0 ? (
+              <EmptyState
+                title="No Course Posted Yet"
+                description="Courses will be displayed here when tutors post"
+                icon={Timer}
               />
-            ))}
+            ) : (
+              data?.courses.map((course: Course) => (
+                <RecomendedCourse
+                  key={course?.id}
+                  availableCourses={`${course?.sections.length} Total sections are available`}
+                  image={'/images/card1.svg'}
+                  title={course?.title}
+                  body={course?.subtitle}
+                  handleClick={() => router.push(`home/${course?.id}`)}
+                  isCourseAvailable={true}
+                  isCourseComing={false}
+                />
+              ))
+            )}
           </div>
         </div>
       </div>

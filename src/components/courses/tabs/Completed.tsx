@@ -5,6 +5,8 @@ import { usePersonalCourses } from '@/hooks/react-query/useCourses';
 
 import { Subscription } from '../../../../types/SubscribedCourse.type';
 import CompletedCourse from '../CompletedCourse';
+import { EmptyState } from '@/components/EmptyState';
+import { Timer } from 'lucide-react';
 
 function Completed() {
   const { data, isLoading, refetch } = usePersonalCourses();
@@ -22,9 +24,11 @@ function Completed() {
           {data?.filter(
             (course: Subscription) => course.progressPercentage === 100,
           ).length === 0 && (
-            <span className="text-sm text-gray-800">
-              No completed course yet
-            </span>
+            <EmptyState
+              title="No completed Course yet"
+              description="Courses will be displayed here when you complete a course"
+              icon={Timer}
+            />
           )}
           {data
             ?.filter(
