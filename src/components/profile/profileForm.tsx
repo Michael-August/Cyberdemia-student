@@ -72,7 +72,7 @@ const ProfileForm = () => {
         <div className="w-full flex flex-col md:flex-row gap-5">
           <div className="w-full flex flex-col gap-3">
             <Label className="text-xs text-[#000000CC]" htmlFor="firstname">
-              First Name
+              First Name <span className="text-red-600">*</span>
             </Label>
             <Input
               className="w-full !p-3 focus:!outline-none focus:!ring-0 border text-xs !border-solid !border-[#00000033] !bg-[#F5F5F5]"
@@ -91,7 +91,9 @@ const ProfileForm = () => {
             )}
           </div>
           <div className="w-full flex flex-col gap-3">
-            <Label htmlFor="lastname">Last Name</Label>
+            <Label htmlFor="lastname">
+              Last Name <span className="text-red-600">*</span>
+            </Label>
             <Input
               className="w-full !p-3 text-xs focus:!outline-none focus:!ring-0 border !border-solid !border-[#00000033] !bg-[#F5F5F5]"
               placeholder="Last Name"
@@ -113,7 +115,7 @@ const ProfileForm = () => {
         <div className="w-full flex flex-col md:flex-row gap-5">
           <div className="w-full flex flex-col gap-3">
             <Label className="text-xs text-[#000000CC]" htmlFor="phone">
-              Phone Number
+              Phone Number <span className="text-red-600">*</span>
             </Label>
             <Input
               className="w-full text-xs !p-3 focus:!outline-none focus:!ring-0 border !border-solid !border-[#00000033] !bg-[#F5F5F5]"
@@ -123,6 +125,10 @@ const ProfileForm = () => {
               id="phone"
               {...register('phoneNumber', {
                 required: 'Phone number is required',
+                pattern: {
+                  value: /^(?:\+234|0)(?:70|80|81|90|91|89|88)\d{8}$/,
+                  message: 'Please enter a valid Nigerian phone number',
+                },
               })}
             />
             {errors.phoneNumber && (

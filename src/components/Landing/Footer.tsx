@@ -58,8 +58,16 @@ const Footer = () => {
         <div className="moreinfo flex flex-col md:flex-row md:items-center gap-10 xl:gap-20">
           <div className="group flex flex-col gap-3">
             <span className="heading text-sm font-semibold">Quick Links</span>
-            <span className="text-xs">Become an Instructor</span>
-            <span className="text-xs">Become a Student</span>
+            <Link
+              href={'https://cyberdemia-tutor.vercel.app/signin'}
+              target="_blank"
+              className="text-xs"
+            >
+              Become an Instructor
+            </Link>
+            <Link href={'/signin'} className="text-xs">
+              Become a Student
+            </Link>
           </div>
           <div className="group flex flex-col gap-3">
             <span className="heading text-sm font-semibold">Contact us</span>

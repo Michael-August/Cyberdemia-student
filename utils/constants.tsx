@@ -33,4 +33,4 @@ export const formatPrice = (price: number) => {
   }).format(price);
 };
 
-export const baseUrl = 'https://cyberdemia-backend.onrender.com/api/v1';
+export const baseUrl = 'https://cyberdemia-service.onrender.com/api/v1';

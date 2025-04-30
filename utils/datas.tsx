@@ -191,7 +191,15 @@ export const Tabledatas = [
 
 export const genderOptions = ['Male', 'Female', 'Other'];
 
-export const hearAboutOptions = ['Facebook', '2go', 'Other'];
+export const hearAboutOptions = [
+  'Facebook',
+  '2go',
+  'linkedin',
+  'WhatsApp',
+  'Twitter',
+  'Instagram',
+  'Other',
+];
 
 export const countryOptions = [
   'Afghanistan',
