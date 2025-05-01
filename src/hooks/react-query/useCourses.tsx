@@ -236,7 +236,8 @@ export const useGetStudentCertificate = (courseId: string) => {
     try {
       const config = {
         method: 'get',
-        url: `certificate/student/issued/${courseId}`,
+        url: `certificate/${courseId}/issued/ 
+`,
       };
       const responseData = await request(config);
       return responseData?.data;

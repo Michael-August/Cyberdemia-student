@@ -62,6 +62,9 @@ const Home = () => {
           <Loader />
         ) : (
           <div className="flex flex-col gap-4">
+            {coursesInProgress?.filter(
+                (course: Subscription) => course.progressPercentage !== 100,
+              ).length === 0 && <span className="text-sm font-extrabold text-[#AC1D7E]">No Courses in Progress</span>}
             {coursesInProgress
               ?.filter(
                 (course: Subscription) => course.progressPercentage !== 100,
