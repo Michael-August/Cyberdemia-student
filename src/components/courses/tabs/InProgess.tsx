@@ -18,7 +18,9 @@ function InProgess() {
         <Loader />
       ) : (
         <div className="flex flex-col gap-4">
-          {data?.length === 0 ? (
+          {data?.filter(
+            (course: Subscription) => course.progressPercentage !== 100,
+          ).length === 0 ? (
             <EmptyState
               title="No Course in progress"
               description="You will see courses here when you enroll in a course"

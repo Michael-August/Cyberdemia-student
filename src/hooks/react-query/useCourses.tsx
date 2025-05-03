@@ -232,20 +232,24 @@ export const useGetCourseCertificate = (courseId: string) => {
 };
 
 export const useGetStudentCertificate = (courseId: string) => {
-  const query = useQuery(`student certs`, async () => {
-    try {
-      const config = {
-        method: 'get',
-        url: `certificate/issued/${courseId} 
+  const query = useQuery(
+    `student certs`,
+    async () => {
+      try {
+        const config = {
+          method: 'get',
+          url: `certificate/student/issued/${courseId} 
 `,
-      };
-      const responseData = await request(config);
-      return responseData?.data;
-    } catch (error: any) {
-      console.error(error);
-      toast.error(`${error?.response?.data?.message || error?.message}`);
-    }
-  });
+        };
+        const responseData = await request(config);
+        return responseData?.data;
+      } catch (error: any) {
+        console.error(error);
+        toast.error(`${error?.response?.data?.message || error?.message}`);
+      }
+    },
+    { enabled: !!courseId },
+  );
 
   return query;
 };
