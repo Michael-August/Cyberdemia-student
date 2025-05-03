@@ -3,12 +3,18 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import ReactPlayer from 'react-player';
 
-import { coursesData } from '../../../utils/datas';
 import Header from './Header';
 import StandardCard from './StandardCard';
+import { usePersonalCourses } from '@/hooks/react-query/useCourses';
+import { Subscription } from '../../../types/SubscribedCourse.type';
+import { EmptyState } from '../EmptyState';
+import { Timer } from 'lucide-react';
 
 const Index = () => {
   const router = useRouter();
+
+  const { data } = usePersonalCourses();
+
   return (
     <div>
       <Header />
@@ -24,21 +30,26 @@ const Index = () => {
         <h1 className="text-[16px] font-extrabold  py-10 text-center sm:text-start">
           Courses with Virtual Labs included
         </h1>
-        <div className="flex justify-between items-center gap-2  overflow-x-scroll">
-          {coursesData?.map((course, index) => (
-            <StandardCard
-              key={index}
-              imageSrc={course.imageSrc}
-              imageAlt={course.imageAlt}
-              title={course.title}
-              description={course.description}
-              buttonText={course.buttonText}
-              isComingSoon={course.isComingSoon}
-              handleViewCourse={() => {
-                router.push(`/student/home/dhjfhjdfh/${course?.title}`);
-              }}
+        <div className="flex items-center gap-2  overflow-x-scroll">
+          {data?.length === 0 ? (
+            <EmptyState
+              title="No Course in progress"
+              description="You will see courses here when you enroll in a course"
+              icon={Timer}
             />
-          ))}
+          ) : (
+            data?.map((course: Subscription) => (
+              <StandardCard
+                key={course?.id}
+                imageSrc={'/images/card1.svg'}
+                imageAlt={'course Image'}
+                title={course?.course.title}
+                handleViewCourse={() => {
+                  router.push(`/student/labs/${course?.course.id}`);
+                }}
+              />
+            ))
+          )}
         </div>
       </div>
     </div>

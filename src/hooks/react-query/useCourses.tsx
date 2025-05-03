@@ -253,3 +253,27 @@ export const useGetStudentCertificate = (courseId: string) => {
 
   return query;
 };
+
+export const useCourseLabs = (courseId?: string) => {
+  const query = useQuery(
+    `labs-course-${courseId}`,
+    async () => {
+      try {
+        const config = {
+          method: 'get',
+          url: `labs/course/${courseId}`,
+        };
+        const responseData = await request(config);
+        return responseData?.data;
+      } catch (error: any) {
+        console.error(error);
+        toast.error(`${error?.response?.data?.message || error?.message}`);
+      }
+    },
+    {
+      enabled: !!courseId,
+    },
+  );
+
+  return query;
+};
