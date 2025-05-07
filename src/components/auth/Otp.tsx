@@ -38,7 +38,7 @@ const Otp = () => {
               Please verify your email address
             </h1>
             <p className="text-black py-5">
-              A 5-digit code has been sent to your email address. Please enter
+              A 6-digit code has been sent to your email address. Please enter
               the code below.
             </p>
           </div>

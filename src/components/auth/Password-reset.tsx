@@ -34,8 +34,8 @@ const PasswordReset = () => {
           <div>
             <h1 className="text-3xl font-bold">Reset Password</h1>
             <p className="text-black py-2">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Doloribus, accusantium!
+              Unlock Your Potential! Are you ready to take your learning to the
+              next level? Join our dynamic learning platform today!
             </p>
           </div>
           <PasswordRestForm />
