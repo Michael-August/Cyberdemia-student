@@ -26,7 +26,9 @@ export const useStudentSignUp = (router: any) => {
     },
     {
       onSuccess: () => {
-        toast.success('Sign up successful!, check your spam for OTP if not found in primary emails'); // Notify user of success
+        toast.success(
+          'Sign up successful!, check your spam for OTP if not found in primary emails',
+        ); // Notify user of success
         router.push('/otp'); // Navigate to OTP page
       },
     },

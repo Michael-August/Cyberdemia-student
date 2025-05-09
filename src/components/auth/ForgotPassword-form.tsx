@@ -32,7 +32,6 @@ const ForgotPassword: React.FC = () => {
     } catch (error) {
       console.error('Error submitting form:', error);
     }
-    
   };
 
   return (
